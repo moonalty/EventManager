@@ -1,17 +1,19 @@
+import { showCategories } from "../actionCreators/categoriesAC";
 import { allCategoriesReducer } from "../reducers/categoriesReducer";
 import { categoriesAllRenderAC } from "../actionCreators/categoriesAC"
 
-export const getFetchCategories = () => {
+export const getFetchCategories = (cat) => {
   return (dispatch) => {
-    fetch("/concerts")
+    fetch(`/categories/${cat}`)
       .then((response) => response.json())
-      .then((data) => dispatch(allCategoriesReducer(data)));
+      // .then((data) => console.log(data));
+    .then((data) => dispatch(showCategories(data)));
   };
 };
 
 export const getFetchAllCategories = () => {
   return (dispatch) => {
-    fetch("/categories")
+    fetch("/title")
       .then((response) => response.json())
       .then((data) => dispatch(categoriesAllRenderAC(data)));
      

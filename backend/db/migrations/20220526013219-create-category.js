@@ -11,13 +11,13 @@ module.exports = {
       name: {
         type: Sequelize.TEXT,
       },
-      card_id: {
-        references: {
-          model: "Cards",
-          key: "id",
-        },
-        type: Sequelize.INTEGER,
-      },
+      // card_id: {
+      //   references: {
+      //     model: "Cards",
+      //     key: "id",
+      //   },
+      //   type: Sequelize.INTEGER,
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

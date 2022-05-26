@@ -53,9 +53,12 @@ const StyledMenu = styled((props) => (
   },
 }));
 
-function Categories() {
+function Categories1() {
   const dispatch = useDispatch();
   const { allCategories } = useSelector(state => state.allCategories)
+
+  console.log(allCategories);
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   // console.log(allCategories)
   const navigate = useNavigate()
@@ -67,7 +70,7 @@ function Categories() {
     // console.log(param);
     setAnchorEl(null);
     if (typeof(param)==='number'){ 
-    navigate(`/category/${param}`)}
+    navigate(`/categories/${param}`)}
   };
 
   useEffect(() => {
@@ -97,11 +100,11 @@ function Categories() {
         open={open}
         onClose={handleClose}
       >
-        {open && allCategories?.allCategories?.map(eachcategory => <EachCategories key={eachcategory.id} eachcategory={eachcategory} handleClose={handleClose}/>)}
+        {open && allCategories?.title?.map(eachcategory => <EachCategories key={eachcategory.id} eachcategory={eachcategory} handleClose={handleClose}/>)}
        
       </StyledMenu>
     </div>
   );
 }
 
-export default Categories
+export default Categories1
