@@ -18,23 +18,11 @@ function Registration() {
       password2: e.target.password2.value,
     };
 
-    // fetch("/registration", {
-    //   headers: { "content-type": "application/json" },
-    //   method: "POST",
-    //   body: JSON.stringify(data),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
 
-    //     dispatch(addUserAC(data))
-    //     navigate("/");
-    //   } );
-    if (password === password2) {
-      dispatch(registrationFetch());
+    if (data.password === data.password2) {
+      dispatch(registrationFetch(data));
       navigate("/");
-    } else {
-      ("Пароли не совпадают");
-    }
+    } 
   };
   return (
     <div className="container">

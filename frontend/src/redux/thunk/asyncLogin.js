@@ -1,5 +1,5 @@
 import { loginUserAC } from "../actionCreators/login_user_AC";
-export const loginFetch=()=>{
+export const loginFetch=(data)=>{
 
   return (dispatch)=>{
 

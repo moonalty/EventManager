@@ -1,5 +1,5 @@
 import "./App.css";
-import { store } from "../../redux/store";
+import { Provider } from "react-redux";
 import Categories from "../Categories/Categories";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Map from "../Aside/components/Map/Map";

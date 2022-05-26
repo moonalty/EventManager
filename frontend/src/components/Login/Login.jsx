@@ -24,7 +24,7 @@ function Login() {
     //   .then((res) => res.json())
     //   .then((data) => dispatch(loginUserAC(data)))
 
-    dispatch(loginFetch());
+    dispatch(loginFetch(data));
     navigate("/");
   };
 
