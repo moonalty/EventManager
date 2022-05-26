@@ -1,8 +1,8 @@
 import { allCategoriesReducer } from "../reducers/categoriesReducer";
 
-export const getFetchCategories = () => {
+export const getFetchCategories = ({ cat }) => {
   return (dispatch) => {
-    fetch("/concerts")
+    fetch(`/concerts/${cat}`)
       .then((response) => response.json())
       .then((data) => dispatch(allCategoriesReducer(data)));
   };

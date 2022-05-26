@@ -1,19 +1,20 @@
-require('dotenv').config()
-const express = require('express')
-const path = require('path')
+require("dotenv").config();
+const express = require("express");
 
-const config = require('./config/config')
+const config = require("./config/config");
 
-const PORT = process.env.PORT ?? 3000
+const PORT = process.env.PORT ?? 3000;
 
-const mainRouter = require('./routes/main.route')
+const mainRouter = require("./routes/main.route");
+const categoriesRouter = require("./routes/APIroutes/categories.route");
 
-const app = express()
+const app = express();
 
-config(app)
+config(app);
 
-app.use('/', mainRouter)
+app.use("/", mainRouter);
+app.use("/categories", categoriesRouter);
 
 app.listen(PORT, () => {
   console.log(`**** BOBM HAS BEEN PLANTED on ${PORT}`);
-})
+});
