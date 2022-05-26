@@ -1,10 +1,10 @@
-const session = require('express-session');
-const FileStore = require('session-file-store')(session);
+const session = require("express-session");
+const FileStore = require("session-file-store")(session);
 
 const sessionConfig = {
   store: new FileStore(),
-  name: 'user_sid', // Имя куки для хранения id сессии. По умолчанию - connect.sid
-  secret: process.env.SESSION_SEKRET ?? 'test', // Секретное слово для шифрования, может быть любым
+  name: "user_sid", // Имя куки для хранения id сессии. По умолчанию - connect.sid
+  secret: process.env.SESSION_SEKRET ?? "test", // Секретное слово для шифрования, может быть любым
   resave: false, // Пересохранять ли куку при каждом запросе
   saveUninitialized: false, // Создавать ли сессию без инициализации ключей в req.session
   cookie: {
@@ -13,4 +13,4 @@ const sessionConfig = {
     // path: '/count'
   },
 };
-module.exports = sessionConfig
+module.exports = sessionConfig;

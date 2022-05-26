@@ -1,10 +1,12 @@
-const router = require('express').Router();
-const { Category } = require('../../db/models');
+const router = require("express").Router();
+const { Category, Card } = require("../../db/models");
 
-router.route('/')
-.get(async(req,res)=>{
-  const allCategories = await Category.findAll({raw:true})
-  res.json({allCategories})
-})
+router.route("/:cat").get(async (req, res) => {
+  const { cat } = req.params;
+  console.log(">>>>>", cat);
+  const cat1 = await Card.findAll({ where: { category_id: cat } });
+  // console.log(cat1);
+  res.json(cat1);
+});
 
 module.exports = router;

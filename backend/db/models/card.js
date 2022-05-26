@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate({ User, Subscription, Category }) {
       Card.belongsTo(User, { foreignKey: "user_id" });
+      Card.belongsTo(Category, { foreignKey: "category_id" });
       Card.hasMany(Subscription, { foreignKey: "card_id" });
-      Card.hasMany(Category, { foreignKey: "card_id" });
     }
   }
   Card.init(
@@ -54,6 +54,13 @@ module.exports = (sequelize, DataTypes) => {
       user_id: {
         references: {
           model: "User",
+          key: "id",
+        },
+        type: DataTypes.INTEGER,
+      },
+      category_id: {
+        references: {
+          model: "Category",
           key: "id",
         },
         type: DataTypes.INTEGER,
