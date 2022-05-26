@@ -97,7 +97,7 @@ function Categories() {
         open={open}
         onClose={handleClose}
       >
-        {open&&allCategories?.allCategories?.map(eachcategory => <EachCategories eachcategory={eachcategory} handleClose={handleClose}/>)}
+        {open && allCategories?.allCategories?.map(eachcategory => <EachCategories key={eachcategory.id} eachcategory={eachcategory} handleClose={handleClose}/>)}
        
       </StyledMenu>
     </div>

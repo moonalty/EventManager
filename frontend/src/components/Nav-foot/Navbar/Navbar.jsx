@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Categories from '../Categories/Categories';
+import { useNavigate } from 'react-router-dom';
 
 function LinkTab(props) {
   return (
@@ -18,6 +19,7 @@ function LinkTab(props) {
 
  function Navbar() {
   const [value, setValue] = React.useState(1);
+   const navigate = useNavigate()
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -27,9 +29,9 @@ function LinkTab(props) {
     <Box sx={{ width: '100%' }}>
       <Tabs value={value} onChange={handleChange} aria-label="nav tabs example">
         <Categories />
-        <LinkTab label="Поиск" href="/trash" />
-        <LinkTab label="Регистрация" href="/registration" />
-        <LinkTab label="Логин" href="/login" />
+        <LinkTab label="Поиск"  />
+        <LinkTab label="Регистрация" onClick={() => navigate(`/registration`)} />
+        <LinkTab label="Логин" onClick={() => navigate(`/login`)} />
       </Tabs>
     </Box>
   );

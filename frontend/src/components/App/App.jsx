@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { store } from "../../redux/store";
 import { Provider } from "react-redux";
 import Navbar from "../Nav-foot/Navbar/Navbar";
+import Reg from "../Reg/Reg";
+import Log from "../Reg/Log";
 
 
 function App() {
@@ -12,8 +14,8 @@ function App() {
     <BrowserRouter>
     <Navbar />
         <Routes>
-          <Route path='/registration'  />
-          <Route path='/login'  />
+          <Route path='/registration' element={<Reg />} />
+          <Route path='/login' element={<Log />} />
         </Routes>
       Hello, world!
       {/* <Categories /> */}
