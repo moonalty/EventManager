@@ -11,7 +11,6 @@ import { Grid } from "@mui/material";
 // import Categories from '../Nav-foot/Categories/Categories'
 import { store } from "../../redux/store";
 import Navbar from "../Nav-foot/Navbar/Navbar";
-
 import Registration from "../Registration/Registration";
 import Login from "../Login/Login";
 
@@ -21,9 +20,7 @@ import Login from "../Login/Login";
 function App() {
   return (
 <Provider store={store}>
-
     <BrowserRouter>
-
       <Grid container direction='column' style={{ width: '100%', height: '100%' }} >
         <Grid item>
           <Navbar />
@@ -50,8 +47,6 @@ function App() {
       </Grid>
     </BrowserRouter>
 </Provider>
-
-
   );
 }
 

@@ -13,7 +13,7 @@ export const getFetchCategories = (cat) => {
 
 export const getFetchAllCategories = () => {
   return (dispatch) => {
-    fetch("/categories")
+    fetch("/title")
       .then((response) => response.json())
       .then((data) => dispatch(categoriesAllRenderAC(data)));
      
