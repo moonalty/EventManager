@@ -5,6 +5,12 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { categoriesAllRenderAC } from '../../../redux/actionCreators/categoriesAC';
+import { useEffect } from 'react';
+import { getFetchAllCategories } from '../../../redux/thunk/asyncCategories';
+import { useSelector } from 'react-redux';
+import EachCategories from '../EachCategories/EachCategories';
 
 const StyledMenu = styled((props) => (
   <Menu
@@ -48,16 +54,25 @@ const StyledMenu = styled((props) => (
 }));
 
 function Categories() {
+  const dispatch = useDispatch();
+  const { allCategories } = useSelector(state => state.allCategories)
   const [anchorEl, setAnchorEl] = React.useState(null);
-  // const navigate = useNavigate()
+  // console.log(allCategories)
+  const navigate = useNavigate()
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+  const handleClose = (param) => {
+    // console.log(param);
     setAnchorEl(null);
-    // navigate(`/category/party`)
+    if (typeof(param)==='number'){ 
+    navigate(`/category/${param}`)}
   };
+
+  useEffect(() => {
+    dispatch(getFetchAllCategories())
+  }, [dispatch])
 
   return (
     <div>
@@ -82,22 +97,8 @@ function Categories() {
         open={open}
         onClose={handleClose}
       >
-        
-        {/* <MenuItem onClick={handleClose} disableRipple>
-          Edit
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          Duplicate
-        </MenuItem>
-        
-        <MenuItem onClick={handleClose} disableRipple>
-         
-          Archive
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          
-          More
-        </MenuItem> */}
+        {open&&allCategories?.allCategories?.map(eachcategory => <EachCategories eachcategory={eachcategory} handleClose={handleClose}/>)}
+       
       </StyledMenu>
     </div>
   );
