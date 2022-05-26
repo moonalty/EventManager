@@ -30,7 +30,6 @@ module.exports = {
           time_end: "21-00",
           adress: "Кирочная 26",
           cost: 300,
-          category: "Fun",
           people_count: 30,
           org_link: "govegas.com",
           is_active: true,
@@ -46,6 +45,18 @@ module.exports = {
       [
         {
           user_id: 1,
+          card_id: 1,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+      ],
+      {}
+    );
+    await queryInterface.bulkInsert(
+      "Categories",
+      [
+        {
+          name: "Fun",
           card_id: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
