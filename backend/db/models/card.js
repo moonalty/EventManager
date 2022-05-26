@@ -7,9 +7,10 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({ User, Subscription }) {
+    static associate({ User, Subscription, Category }) {
       Card.belongsTo(User, { foreignKey: "user_id" });
       Card.hasMany(Subscription, { foreignKey: "card_id" });
+      Card.hasMany(Category, { foreignKey: "card_id" });
     }
   }
   Card.init(
@@ -40,9 +41,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       cost: {
         type: DataTypes.INTEGER,
-      },
-      category: {
-        type: DataTypes.TEXT,
       },
       people_count: {
         type: DataTypes.INTEGER,

@@ -35,9 +35,6 @@ module.exports = {
       cost: {
         type: Sequelize.INTEGER,
       },
-      category: {
-        type: Sequelize.TEXT,
-      },
       people_count: {
         type: Sequelize.INTEGER,
       },
