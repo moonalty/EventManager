@@ -28,7 +28,8 @@ function LinkTab(props) {
       <Tabs value={value} onChange={handleChange} aria-label="nav tabs example">
         <Categories />
         <LinkTab label="Поиск" href="/trash" />
-        <LinkTab label="Регистрация" href="/spam" />
+        <LinkTab label="Регистрация" href="/registration" />
+        <LinkTab label="Логин" href="/login" />
       </Tabs>
     </Box>
   );

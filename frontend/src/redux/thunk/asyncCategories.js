@@ -1,10 +1,20 @@
 import { allCategoriesReducer } from "../reducers/categoriesReducer";
+import { categoriesAllRenderAC } from "../actionCreators/categoriesAC"
 
 export const getFetchCategories = () => {
   return (dispatch) => {
     fetch("/concerts")
       .then((response) => response.json())
       .then((data) => dispatch(allCategoriesReducer(data)));
+  };
+};
+
+export const getFetchAllCategories = () => {
+  return (dispatch) => {
+    fetch("/categories")
+      .then((response) => response.json())
+      .then((data) => dispatch(categoriesAllRenderAC(data)));
+     
   };
 };
 
