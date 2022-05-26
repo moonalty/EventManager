@@ -1,10 +1,11 @@
-import { allCategoriesReducer } from "../reducers/categoriesReducer";
+import { showCategories } from "../actionCreators/categoriesAC";
 
-export const getFetchCategories = ({ cat }) => {
+export const getFetchCategories = (cat) => {
   return (dispatch) => {
-    fetch(`/concerts/${cat}`)
+    fetch(`/categories/${cat}`)
       .then((response) => response.json())
-      .then((data) => dispatch(allCategoriesReducer(data)));
+      // .then((data) => console.log(data));
+    .then((data) => dispatch(showCategories(data)));
   };
 };
 

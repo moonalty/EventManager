@@ -1,11 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-const OneEventCard = ({ state }) => {
+const OneEventCard = ({ el }) => {
+  const { categories: list } = useSelector((state) => state.categories);
   return (
     <>
       <div className="mainBox">
         <div className="headerBox">
-          <p>{state.title}</p>
+          <p>{el.title}</p>
           <button>Like</button>
           <button>Subscribe</button>
         </div>
@@ -13,29 +15,29 @@ const OneEventCard = ({ state }) => {
           Info:
           <div className="dateBox">
             Date:
-            <div>{state.date_start}</div>
-            <div>{state.date_end}</div>
+            <div>{el.date_start}</div>
+            <div>{el.date_end}</div>
           </div>
           <div className="timeBox">
             Time:
-            <div>{state.time_start}</div>
-            <div>{state.time_end}</div>
+            <div>{el.time_start}</div>
+            <div>{el.time_end}</div>
           </div>
           <div className="costBox">
             Cost:
-            <div>{state.cost}</div>
+            <div>{el.cost}</div>
           </div>
           <div>
             People:
-            <div>{state.people_count}</div>
+            <div>{el.people_count}</div>
           </div>
           <div>
             Org Link:
-            <div>{state.org_link}</div>
+            <div>{el.org_link}</div>
           </div>
         </div>
-        <div className="imageBox">{state.image}</div>
-        <div className="bodyBox">{state.body}</div>
+        <div className="imageBox">{el.image}</div>
+        <div className="bodyBox">{el.body}</div>
       </div>
     </>
   );

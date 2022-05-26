@@ -1,27 +1,21 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { allCategoriesReducer } from "../../redux/reducers/categoriesReducer";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import OneEventCard from "../OneEventCard/OneEventCard";
+import { getFetchCategories } from "../../redux/thunk/asyncCategories";
 const Categories = () => {
-  const [sta, setState] = useState(false);
+  const { categories: list } = useSelector((state) => state.categories);
+  console.log("LIST>>>", list);
   const { cat } = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(allCategoriesReducer(cat));
-  });
-  let state;
-  fetch("/categories/1")
-    .then((res) => res.json())
-    .then((data) => (state = data));
+    dispatch(getFetchCategories(cat));
+  }, []);
   return (
     <div>
       Categories
-      <>
-        <button onClick={() => setState(!sta)}>show</button>
-        <OneEventCard state={state} />
-      </>
+      <>{list.map((el) => (el = <OneEventCard key={el.id} el={el} />))}</>
     </div>
   );
 };

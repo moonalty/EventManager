@@ -18,6 +18,18 @@ module.exports = {
       {}
     );
     await queryInterface.bulkInsert(
+      "Categories",
+      [
+        {
+          name: "Fun",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+      ],
+      {}
+    );
+
+    await queryInterface.bulkInsert(
       "Cards",
       [
         {
@@ -34,29 +46,19 @@ module.exports = {
           org_link: "govegas.com",
           is_active: true,
           user_id: 1,
+          category_id: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
       ],
       {}
     );
+    
     await queryInterface.bulkInsert(
       "Subscriptions",
       [
         {
           user_id: 1,
-          card_id: 1,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-      ],
-      {}
-    );
-    await queryInterface.bulkInsert(
-      "Categories",
-      [
-        {
-          name: "Fun",
           card_id: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
