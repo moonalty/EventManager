@@ -6,7 +6,7 @@ const path = require('path')
 
 const config = require('./config/config')
 
-const PORT = process.env.PORT ?? 3000
+const PORT = process.env.PORT ?? 4000
 
 const mainRouter = require('./routes/main.route')
 
