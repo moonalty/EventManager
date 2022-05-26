@@ -11,6 +11,8 @@ import { Grid } from "@mui/material";
 import Categories from '../Nav-foot/Categories/Categories'
 import { store } from "../../redux/store";
 import Navbar from "../Nav-foot/Navbar/Navbar";
+import Reg from "../Reg/Reg";
+import Log from "../Reg/Log";
 
 
 function App() {
@@ -42,6 +44,7 @@ function App() {
       </Grid>
     </BrowserRouter>
 </Provider>
+
 
   );
 }
