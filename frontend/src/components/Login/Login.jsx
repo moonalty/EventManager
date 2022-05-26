@@ -6,7 +6,7 @@ import { loginFetch } from "../../redux/thunk/asyncLogin";
 
 function Login() {
   const dispatch = useDispatch();
-  const navigation = useNavigate();
+  const navigate = useNavigate();
 
   const logUser = (e) => {
     e.preventDefault();
@@ -24,8 +24,8 @@ function Login() {
     //   .then((res) => res.json())
     //   .then((data) => dispatch(loginUserAC(data)))
 
-    dispatch(loginFetch());
-    navigation("/");
+    dispatch(loginFetch(data));
+    navigate("/");
   };
 
   return (

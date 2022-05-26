@@ -1,5 +1,5 @@
 import "./App.css";
-import { store } from "../../redux/store";
+import { Provider } from "react-redux";
 import Categories from "../Categories/Categories";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Map from "../Aside/components/Map/Map";
@@ -11,8 +11,11 @@ import { Grid } from "@mui/material";
 // import Categories from '../Nav-foot/Categories/Categories'
 import { store } from "../../redux/store";
 import Navbar from "../Nav-foot/Navbar/Navbar";
-import Reg from "../Reg/Reg";
-import Log from "../Reg/Log";
+
+import Registration from "../Registration/Registration";
+import Login from "../Login/Login";
+
+
 
 
 function App() {
@@ -20,6 +23,7 @@ function App() {
 <Provider store={store}>
 
     <BrowserRouter>
+
       <Grid container direction='column' style={{ width: '100%', height: '100%' }} >
         <Grid item>
           <Navbar />
@@ -28,8 +32,8 @@ function App() {
           <Grid container>
             <Grid item sm={8}>
               <Routes>
-                <Route path='/registration' />
-                <Route path='/login' />
+                <Route path='/registration' element={<Registration/>}/>
+                <Route path='/login'  element={<Login/>}/>
                 <Route path="/" element={<Home />} />
                    <Route path="/categories/:cat" element={<Categories />} />
 

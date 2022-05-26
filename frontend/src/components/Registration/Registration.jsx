@@ -6,7 +6,7 @@ import { registrationFetch } from "../../redux/thunk/asyncReg";
 
 function Registration() {
   const dispatch = useDispatch();
-  const navigation = useNavigate();
+  const navigate = useNavigate();
 
   const addUser = (e) => {
     e.preventDefault();
@@ -15,27 +15,14 @@ function Registration() {
       name: e.target.name.value,
       email: e.target.email.value,
       password: e.target.password.value,
-      password2: e.target.password.value,
+      password2: e.target.password2.value,
     };
 
-    // fetch("/registration", {
-    //   headers: { "content-type": "application/json" },
-    //   method: "POST",
-    //   body: JSON.stringify(data),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
 
-    //     dispatch(addUserAC(data))
-    //     navigation("/");
-    //   } );
-    if (password === password2) {
-      dispatch(registrationFetch());
-      navigation("/");
-    } else {
-      ("Пароли не совпадают");
-      
-    }
+    if (data.password === data.password2) {
+      dispatch(registrationFetch(data));
+      navigate("/");
+    } 
   };
   return (
     <div className="container">
