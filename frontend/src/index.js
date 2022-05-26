@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.css';
 import App from './components/App/App';
 import * as ReactDOMClient from 'react-dom/client';
 
