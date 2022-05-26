@@ -1,14 +1,14 @@
-import "./App.css";
-import Categories from "./components/Categories/Categories";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { store as globalStore } from "../../redux/store";
-import { Provider } from "react-redux";
+// import react from "react";
+
+import Categories from "../Categories/Categories";
 
 function App() {
   return (
     <>
       Hello, world!
-      <Categories />
+      <div>
+        <Categories />
+      </div>
     </>
   );
 }
