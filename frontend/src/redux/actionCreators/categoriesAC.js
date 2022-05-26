@@ -1,6 +1,6 @@
 import { SHOW_CATEGORIES, SHOW_ALL_CATEGORIES} from "../actionTypes/categoriesAT";
 
-export const categoriesRenderAC = (payload) => {
+export const showCategories = (payload) => {
   return {
     type: SHOW_CATEGORIES,
     payload,

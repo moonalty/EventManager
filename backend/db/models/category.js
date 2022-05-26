@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({ Card }) {
-      Category.belongsTo(Card, { foreignKey: "card_id" });
+      Category.hasMany(Card, { foreignKey: "category_id" });
     }
   }
   Category.init(
@@ -16,13 +16,9 @@ module.exports = (sequelize, DataTypes) => {
       name: {
         type: DataTypes.TEXT,
       },
-      card_id: {
-        references: {
-          model: "Cards",
-          key: "id",
-        },
-        type: DataTypes.INTEGER,
-      },
+      // card_id: {
+      //   type: DataTypes.INTEGER,
+      // },
     },
     {
       sequelize,
