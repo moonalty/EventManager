@@ -1,13 +1,16 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
-const OneEventCard = ({ el }) => {
+const OneEventCard = () => {
   const { categories: list } = useSelector((state) => state.categories);
+  const { el } = useParams();
+
   return (
     <>
       <div className="mainBox">
         <div className="headerBox">
-          <p>{el.title}</p>
+          <p>{list[el - 1].title}</p>
           <button>Like</button>
           <button>Subscribe</button>
         </div>
@@ -15,29 +18,29 @@ const OneEventCard = ({ el }) => {
           Info:
           <div className="dateBox">
             Date:
-            <div>{el.date_start}</div>
-            <div>{el.date_end}</div>
+            <div>{list[el - 1].date_start}</div>
+            <div>{list[el - 1].date_end}</div>
           </div>
           <div className="timeBox">
             Time:
-            <div>{el.time_start}</div>
-            <div>{el.time_end}</div>
+            <div>{list[el - 1].time_start}</div>
+            <div>{list[el - 1].time_end}</div>
           </div>
           <div className="costBox">
             Cost:
-            <div>{el.cost}</div>
+            <div>{list[el - 1].cost}</div>
           </div>
           <div>
             People:
-            <div>{el.people_count}</div>
+            <div>{list[el - 1].people_count}</div>
           </div>
           <div>
             Org Link:
-            <div>{el.org_link}</div>
+            <div>{list[el - 1].org_link}</div>
           </div>
         </div>
-        <div className="imageBox">{el.image}</div>
-        <div className="bodyBox">{el.body}</div>
+        <div className="imageBox">{list[el - 1].image}</div>
+        <div className="bodyBox">{list[el - 1].body}</div>
       </div>
     </>
   );
