@@ -3,6 +3,11 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginFetch } from "../../redux/thunk/asyncLogin";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+
+import Button from '@mui/material/Button';
+
 
 function Login() {
   const dispatch = useDispatch();
@@ -31,35 +36,34 @@ function Login() {
   };
 
   return (
-    <div className="container">
-      <div className="container">
-        <form onSubmit={logUser}>
-          <input
-            id="email"
-            type="text"
-            placeholder="электронная почта"
-            className="validate"
-            required
-          />
-          <input
-            id="password"
-            minLength="8"
-            maxLength="16"
-            type="password"
-            placeholder="пароль"
-            className="validate"
-            required
-          />
 
-          <button
-            type="submit"
-            className="waves-effect waves-light btn-large brown lighten-2"
-          >
-            Авторизоваться<i className="material-icons left"></i>
-          </button>
-        </form>
-      </div>
+<Box className="login"  onSubmit={logUser}
+    component="form"
+    sx={{
+      '& > :not(style)': { m: 1, width: '25ch' , display: "box" , marginLeft: 'auto',
+      marginRight:'auto', padding:'20', textAlign:'center' },
+    
+    }}
+    noValidate
+    autoComplete="off"
+  >
+   <div >
+
+  <TextField id="email" placeholder="электронная почта"  variant="filled" />
     </div>
+    <div>
+    <TextField id="password"   placeholder="пароль" minLength="8" maxLength="16" type="password" required variant="filled" />
+    
+    </div>
+    <div >
+     <Button 
+      variant="contained" type="submit" >Авторизоваться</Button>
+   
+     </div>
+  </Box>
+
+
+
   );
 }
 export default Login;
