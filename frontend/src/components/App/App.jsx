@@ -14,41 +14,42 @@ import Navbar from "../Nav-foot/Navbar/Navbar";
 import Registration from "../Registration/Registration";
 import Login from "../Login/Login";
 import OneEventCard from "../OneEventCard/OneEventCard";
+import OrgProfile from "../Profile/components/OrgProfile/OrgProfile";
 
 
 
 
 function App() {
   return (
-<Provider store={store}>
-    <BrowserRouter>
-      <Grid container direction='column' style={{ width: '100%', height: '100%' }} >
-        <Grid item>
-          <Navbar />
-        </Grid>
-        <Grid >
-          <Grid container>
-            <Grid item sm={8}>
-              <Routes>
-                <Route path="/categories/:cat/:el" element={<OneEventCard />}/>
-                <Route path='/registration' element={<Registration/>}/>
-                <Route path='/login'  element={<Login/>}/>
-                <Route path="/" element={<Home />} />
-                   <Route path="/categories/:cat" element={<Categories />} />
-
-                <Route path="/map" element={<Map />} />
-                <Route path="/adverstising" element={<Advertising />} />
-                <Route path="/calendar" element={<Calendar />} />
-              </Routes>
-            </Grid>
-            <Grid item sm={4}  >
-              <Aside />
+    <Provider store={store}>
+      <BrowserRouter>
+        <Grid container direction='column' style={{ width: '100%', height: '100%' }} >
+          <Grid item>
+            <Navbar />
+          </Grid>
+          <Grid >
+            <Grid container>
+              <Grid item sm={8}>
+                <Routes>
+                  <Route path="/categories/:cat/:el" element={<OneEventCard />} />
+                  <Route path='/registration' element={<Registration />} />
+                  <Route path='/login' element={<Login />} />
+                  <Route path="/" element={<Home />} />
+                  <Route path="/categories/:cat" element={<Categories />} />
+                  <Route path="/map" element={<Map />} />
+                  <Route path="/adverstising" element={<Advertising />} />
+                  <Route path="/calendar" element={<Calendar />} />
+                  <Route path="/profile" element={<OrgProfile/>}/>
+                </Routes>
+              </Grid>
+              <Grid item sm={4}  >
+                <Aside />
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
-      </Grid>
-    </BrowserRouter>
-</Provider>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
