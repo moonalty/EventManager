@@ -17,7 +17,7 @@ import Login from "../Login/Login";
 import Footer from "../Nav-foot/Footer/Footer";
 
 import OneEventCard from "../OneEventCard/OneEventCard";
-import SearchCards from "../SearchCards/SearchCards";
+import SearchCards from "../Nav-foot/Search/SearchCards/SearchCards";
 
 
 
