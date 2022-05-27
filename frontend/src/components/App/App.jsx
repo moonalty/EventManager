@@ -19,6 +19,8 @@ import Footer from "../Nav-foot/Footer/Footer";
 import OneEventCard from "../OneEventCard/OneEventCard";
 import SearchCards from "../Nav-foot/Search/SearchCards/SearchCards";
 import Profile from "../Profile/Profile";
+import TinyProfileEventCard from "../TinyProfileEventCard/TinyProfileEventCard";
+import OneProfileEventCard from "../OneProfileEventCard/OneProfileEventCard";
 
 
 
@@ -46,6 +48,7 @@ function App() {
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="/search" element={<SearchCards />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/profile/:id" element={<OneProfileEventCard />} />
               </Routes>
             </Grid>
             <Grid item sm={4}  >
