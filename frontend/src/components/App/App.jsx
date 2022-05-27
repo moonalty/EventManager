@@ -17,6 +17,7 @@ import Login from "../Login/Login";
 import Footer from "../Nav-foot/Footer/Footer";
 
 import OneEventCard from "../OneEventCard/OneEventCard";
+import SearchCards from "../SearchCards/SearchCards";
 
 
 
@@ -38,11 +39,11 @@ function App() {
                 <Route path='/registration' element={<Registration/>}/>
                 <Route path='/login'  element={<Login/>}/>
                 <Route path="/" element={<Home />} />
-                   <Route path="/categories/:cat" element={<Categories />} />
-
+                <Route path="/categories/:cat" element={<Categories />} />
                 <Route path="/map" element={<Map />} />
                 <Route path="/adverstising" element={<Advertising />} />
                 <Route path="/calendar" element={<Calendar />} />
+                <Route path="/search" element={<SearchCards />} />
               </Routes>
             </Grid>
             <Grid item sm={4}  >

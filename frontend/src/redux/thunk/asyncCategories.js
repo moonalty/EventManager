@@ -17,6 +17,7 @@ export const getFetchAllCategories = () => {
   };
 };
 
+
 // export const delFetchTasks = (id) => {
 //   return (dispatch) => {
 //     fetch("/add-task", {
