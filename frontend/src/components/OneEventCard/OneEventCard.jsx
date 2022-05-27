@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { getFetchOneCategory } from "../../redux/thunk/asyncCategories";
 
 const OneEventCard = () => {
-  const { categories: list } = useSelector((state) => state.categories);
-  const { el } = useParams();
-
+  const { oneCategory: oneCat } = useSelector((state) => state.oneCategory);
+  const { cat, el } = useParams();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getFetchOneCategory(el, cat));
+  }, [dispatch]);
   return (
     <>
       <div className="mainBox">
         <div className="headerBox">
-          <p>{list[el - 1].title}</p>
+          <p>{oneCat.title}</p>
           <button>Like</button>
           <button>Subscribe</button>
         </div>
@@ -18,29 +22,29 @@ const OneEventCard = () => {
           Info:
           <div className="dateBox">
             Date:
-            <div>{list[el - 1].date_start}</div>
-            <div>{list[el - 1].date_end}</div>
+            <div>{oneCat.date_start}</div>
+            <div>{oneCat.date_end}</div>
           </div>
           <div className="timeBox">
             Time:
-            <div>{list[el - 1].time_start}</div>
-            <div>{list[el - 1].time_end}</div>
+            <div>{oneCat.time_start}</div>
+            <div>{oneCat.time_end}</div>
           </div>
           <div className="costBox">
             Cost:
-            <div>{list[el - 1].cost}</div>
+            <div>{oneCat.cost}</div>
           </div>
           <div>
             People:
-            <div>{list[el - 1].people_count}</div>
+            <div>{oneCat.people_count}</div>
           </div>
           <div>
             Org Link:
-            <div>{list[el - 1].org_link}</div>
+            <div>{oneCat.org_link}</div>
           </div>
         </div>
-        <div className="imageBox">{list[el - 1].image}</div>
-        <div className="bodyBox">{list[el - 1].body}</div>
+        <div className="imageBox">{oneCat.image}</div>
+        <div className="bodyBox">{oneCat.body}</div>
       </div>
     </>
   );

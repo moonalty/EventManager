@@ -1,4 +1,7 @@
-import { showCategories } from "../actionCreators/categoriesAC";
+import {
+  oneCategoryRenderAC,
+  showCategories,
+} from "../actionCreators/categoriesAC";
 import { categoriesAllRenderAC } from "../actionCreators/categoriesAC";
 
 export const getFetchCategories = (cat) => {
@@ -17,6 +20,14 @@ export const getFetchAllCategories = () => {
   };
 };
 
+export const getFetchOneCategory = (cat, el) => {
+  return (dispatch) => {
+    fetch(`/categories/${cat}/${el}`)
+      .then((response) => response.json())
+      // .then((data) => console.log(data))
+      .then((data) => dispatch(oneCategoryRenderAC(data)));
+  };
+};
 // export const delFetchTasks = (id) => {
 //   return (dispatch) => {
 //     fetch("/add-task", {
