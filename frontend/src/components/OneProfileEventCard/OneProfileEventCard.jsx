@@ -1,23 +1,18 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import {
-  getFetchDeleteCard,
-  getFetchOneCategory,
-  getFetchSubscribe,
-} from "../../redux/thunk/asyncCategories";
+import { getFetchOneCategory } from "../../redux/thunk/asyncCategories";
 
-const OneEventCard = () => {
+const OneProfileEventCard = () => {
   const navigator = useNavigate();
   const { oneCategory: oneCat } = useSelector((state) => state.oneCategory);
-  const { el, cat } = useParams();
-  console.log("CAT+EL>>>>>", cat, el);
+  const { id } = useParams();
+  
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getFetchOneCategory(el));
+    dispatch(getFetchOneCategory(id));
   }, [dispatch]);
-  const subscribe = () => {
-    dispatch(getFetchSubscribe(cat, el));
+  const likeButton = () => {
     navigator(-1);
   };
   return (
@@ -27,8 +22,7 @@ const OneEventCard = () => {
         <div className="headerBox">
           <img className="imageBox" src={oneCat.image} alt="#" />
 
-          <button>Like</button>
-          <button onClick={subscribe}>Subscribe</button>
+          <button onClick={likeButton}>Like</button>
         </div>
         <div className="infoBox">
           Info:
@@ -61,4 +55,4 @@ const OneEventCard = () => {
   );
 };
 
-export default OneEventCard;
+export default OneProfileEventCard;

@@ -17,44 +17,63 @@ import Login from "../Login/Login";
 import Footer from "../Nav-foot/Footer/Footer";
 
 import OneEventCard from "../OneEventCard/OneEventCard";
+
 import SearchCards from "../Nav-foot/Search/SearchCards/SearchCards";
 
 
 
 
+import Profile from "../Profile/Profile";
+import OneProfileEventCard from "../OneProfileEventCard/OneProfileEventCard";
+
+
 
 function App() {
   return (
-<Provider store={store}>
-    <BrowserRouter>
-      <Grid container direction='column' style={{ width: '100%', height: '100%' }} >
-        <Grid item>
-          <Navbar />
-        </Grid>
-        <Grid >
-          <Grid container>
-            <Grid item sm={8}>
-              <Routes>
-                <Route path="/categories/:cat/:el" element={<OneEventCard />}/>
-                <Route path='/registration' element={<Registration/>}/>
-                <Route path='/login'  element={<Login/>}/>
-                <Route path="/" element={<Home />} />
-                <Route path="/categories/:cat" element={<Categories />} />
-                <Route path="/map" element={<Map />} />
-                <Route path="/adverstising" element={<Advertising />} />
-                <Route path="/calendar" element={<Calendar />} />
-                <Route path="/search" element={<SearchCards />} />
-              </Routes>
-            </Grid>
-            <Grid item sm={4}  >
-              <Aside />
+
+    <Provider store={store}>
+      <BrowserRouter>
+        <Grid
+          container
+          direction="column"
+          style={{ width: "100%", height: "100%" }}
+        >
+          <Grid item>
+            <Navbar />
+          </Grid>
+          <Grid>
+            <Grid container>
+              <Grid item sm={8}>
+                <Routes>
+                  <Route path="/profile" element={<Profile />} />
+                  <Route
+                    path="/profile/:id"
+                    element={<OneProfileEventCard />}
+                  />
+                  <Route
+                    path="/categories/:cat/:el"
+                    element={<OneEventCard />}
+                  />
+                  <Route path="/registration" element={<Registration />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/" element={<Home />} />
+                  <Route path="/categories/:cat" element={<Categories />} />
+
+                  <Route path="/map" element={<Map />} />
+                  <Route path="/adverstising" element={<Advertising />} />
+                  <Route path="/calendar" element={<Calendar />} />
+                    <Route path="/search" element={<SearchCards />} />
+                </Routes>
+              </Grid>
+              <Grid item sm={4}>
+                <Aside />
+              </Grid>
             </Grid>
           </Grid>
           <Footer />
         </Grid>
-      </Grid>
-    </BrowserRouter>
-</Provider>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

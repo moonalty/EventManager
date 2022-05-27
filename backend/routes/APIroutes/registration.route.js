@@ -8,6 +8,7 @@ router.post('/', async (req, res) => {
     email,
     password,
     password2,
+    role,
   } = req.body;
   console.log(req.body)
   const user = await User.findOne({
@@ -25,14 +26,30 @@ router.post('/', async (req, res) => {
       text: 'Пароли не совпадают',
     });
   } else {
-    const newUser = await User.create({
-      name,
-      email,
-      password: await bcrypt.hash(password, 10),
-    });
-    req.session.user = newUser;
-    req.session.uid = newUser.id;
-   res.json({message:"!!"})
+    if(role){
+      const newUser = await User.create({
+        name,
+        email,
+        password: await bcrypt.hash(password, 10),
+        role: "Организатор",
+      });
+      
+     res.json({message:"Организатор!!"})
+    
+ 
+    } else {
+      const newUser = await User.create({
+        name,
+        email,
+        password: await bcrypt.hash(password, 10),
+        role: "Пользователь",
+      });
+     
+     res.json({message:"Пользователь !!"})
+    
+     
+    }
+ 
   }
 });
 

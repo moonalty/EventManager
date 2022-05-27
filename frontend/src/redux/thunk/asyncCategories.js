@@ -1,4 +1,7 @@
-import { showCategories } from "../actionCreators/categoriesAC";
+import {
+  oneCategoryRenderAC,
+  showCategories,
+} from "../actionCreators/categoriesAC";
 import { categoriesAllRenderAC } from "../actionCreators/categoriesAC";
 
 export const getFetchCategories = (cat) => {
@@ -18,16 +21,40 @@ export const getFetchAllCategories = () => {
 };
 
 
+
 // export const delFetchTasks = (id) => {
+
+export const getFetchOneCategory = (cat, el) => {
+  return (dispatch) => {
+    fetch(`/categories/${cat}/${el}`)
+      .then((response) => response.json())
+      // .then((data) => console.log(data))
+      .then((data) => dispatch(oneCategoryRenderAC(data)));
+  };
+};
+
+export const getFetchSubscribe = (cat, el) => {
+  return (dispatch) => {
+    fetch(`/subscribe/${el}`)
+      .then((response) => response.json())
+      // .then((data) => console.log('STATUS>>>>',data));
+      .then((data) =>
+        data.message === "ALREADY EXIST" ? alert("EXIST") : console.log("")
+      );
+  };
+};
+// export const getFetchDeleteCard = (cat) => {
+
 //   return (dispatch) => {
-//     fetch("/add-task", {
+//     fetch(`/categories/${cat}`, {
 //       headers: { "content-type": "application/json" },
 //       method: "delete",
-//       body: JSON.stringify({ id }),
+//       body: JSON.stringify({ cat }),
 //     })
-//       // .then((res) => res.json())
-//       .then(() => dispatch(delTask(id)));
-//   };
+//       .then((res) => res.json())
+//       .then((data) => console.log(data));
+// .then(() => dispatch(delTask(id)));
+// };
 // };
 
 // export const postFetchTasks = (task) => {

@@ -16,15 +16,17 @@ function Login() {
       password: e.target.password.value,
     };
 
-    // fetch("/login", {
-    //   headers: { "content-type": "application/json" },
-    //   method: "POST",
-    //   body: JSON.stringify(data),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => dispatch(loginUserAC(data)))
 
     dispatch(loginFetch(data));
+    // if(!localStorage.getItem('user')){  
+    //   localStorage.setItem('user',data.email) 
+    // }else{
+    //   localStorage.removeItem('user') 
+    //   localStorage.setItem('user',data.email) 
+    // }
+
+
+    
     navigate("/");
   };
 

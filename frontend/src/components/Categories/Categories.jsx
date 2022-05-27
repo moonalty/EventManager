@@ -13,12 +13,13 @@ const Categories = () => {
   useEffect(() => {
     dispatch(getFetchCategories(cat));
   }, []);
+  // console.log(cat);
   return (
     <div>
       Categories
       {/* <>{list.map((el) => (el = <OneEventCard key={el.id} el={el} />))}</> */}
       {list.map(
-        (el) => (el = <TinyOneEventCard key={el.id} el={el} cat={cat + 1} />)
+        (el) => (el = <TinyOneEventCard el={el} key={el.id} cat={cat} />)
       )}
     </div>
   );

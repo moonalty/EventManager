@@ -16,12 +16,15 @@ function Registration() {
       email: e.target.email.value,
       password: e.target.password.value,
       password2: e.target.password2.value,
-    };
+      role: e.target.role.checked,
 
+      
+    };
+      console.log(data, "после ввода")
 
     if (data.password === data.password2) {
       dispatch(registrationFetch(data));
-      navigate("/");
+      navigate("/login");
     } 
   };
   return (
@@ -59,6 +62,7 @@ function Registration() {
           >
             Зарегистрироваться<i className="material-icons left"></i>
           </button>
+      <input id="role" type="checkbox"  className="validate"/>Организатор мероприятия
         </form>
       </div>
     </div>
