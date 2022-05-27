@@ -39,7 +39,9 @@ export const getFetchSubscribe = (cat, el) => {
       .then((response) => response.json())
       // .then((data) => console.log('STATUS>>>>',data));
       .then((data) =>
-        data.message === "ALREADY EXIST" ? alert("EXIST") : console.log("")
+        data.message === "exist"
+          ? alert("Вы уже подписались на это мероприятие!")
+          : data
       );
   };
 };

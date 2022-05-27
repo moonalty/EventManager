@@ -19,8 +19,10 @@ router.route("/:el").get(async (req, res) => {
   const finder = userFinder.find((ele) => ele.card_id === +el);
   console.log("FINDER>>>>>>>>>>>>>>>>>", finder);
   if (!finder) {
-    console.log("POPAL");
+    res.json({message:"added"})
     await Subscription.create({ card_id: +el, user_id: userId });
+  } else {
+    res.json({message: "exist"})
   }
 
   // if (!finder) {

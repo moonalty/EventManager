@@ -8,10 +8,19 @@
   
 }
 .tinyMainbox{
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 20px;
   border: 1px solid teal;
+  width: 40vw;
 }
 .headerBox{
   width: 100%;
+  
   height: 31%;
   display: flex;
   justify-content: space-around;
