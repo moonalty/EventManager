@@ -1,4 +1,8 @@
-import { SHOW_CATEGORIES, SHOW_ALL_CATEGORIES} from "../actionTypes/categoriesAT";
+import {
+  SHOW_CATEGORIES,
+  SHOW_ALL_CATEGORIES,
+  ONE_CATEGORY,
+} from "../actionTypes/categoriesAT";
 
 export const showCategories = (payload) => {
   return {
@@ -10,6 +14,13 @@ export const showCategories = (payload) => {
 export const categoriesAllRenderAC = (payload) => {
   return {
     type: SHOW_ALL_CATEGORIES,
+    payload,
+  };
+};
+
+export const oneCategoryRenderAC = (payload) => {
+  return {
+    type: ONE_CATEGORY,
     payload,
   };
 };

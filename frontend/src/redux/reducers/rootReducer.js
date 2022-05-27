@@ -4,4 +4,5 @@ import { allCategoriesReducer } from "./categoriesReducer";
 export const rootReducer = combineReducers({
   categories: allCategoriesReducer,
   allCategories: allCategoriesReducer,
+  oneCategory: allCategoriesReducer,
 });
