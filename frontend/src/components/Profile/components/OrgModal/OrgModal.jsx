@@ -15,13 +15,21 @@ const ITEM_HEIGHT = 48;
 
 
 function OrgModal({ active, setActive }, props) {
-  const { allCategories } = useSelector(state => state.allCategories)
+  const  {allCategories} = useSelector(state => state.allCategories)
+  console.log(allCategories);
   console.log('ACTIVE STATE', active);
   const [people, setPeople] = React.useState('');
-
+  const [categories, setCategories] = React.useState('')
+  
+  const categoriesChange = (event) => {
+    setCategories(event.target.value)
+  }
   const handleChange = (event) => {
     setPeople(event.target.value);
   }
+
+
+
   return (
     <div className={`modal_wrapper ${active ? 'open' : 'close'}`} onClick={() => setActive()}>
       <div  onClick={e => e.stopPropagation()}>
@@ -37,16 +45,29 @@ function OrgModal({ active, setActive }, props) {
           />
           <CardContent>
             <TextField
+            name='title'
             style={{ width: "400px", margin: "5px" }}
               id="outlined-required"
               label="Название мероприятия"
             />
             <br/>
-            <TextField
+            <Select
             style={{ width: "400px", margin: "5px" }}
-              id="outlined-required"
-              label="Категория мероприятия"
-            />
+              id="demo-simple-select-helper"
+              value={categories}
+              displayEmpty
+              placeholder="Категория мероприятия"
+              onChange={categoriesChange}
+              renderValue={(selected) => {
+                if (selected.length === 0) {
+                  return <em>Категория мероприятия</em>;
+                }
+                return selected.name;
+              }}
+            >
+              {allCategories?.title?.map((category) => <MenuItem key={category.id} value={category}>{category.name}</MenuItem>)}
+              
+            </Select>
             <br />
             <TextField
             style={{ width: "400px", margin: "5px" }}
@@ -84,13 +105,14 @@ function OrgModal({ active, setActive }, props) {
               placeholder="Количество участников"
               onChange={handleChange}
               renderValue={(selected) => {
+            
                 if (selected.length === 0) {
                   return <em>Количество участников</em>;
                 }
                 return selected;
               }}
             >
-              <MenuItem value=''><em>Количество участников</em></MenuItem>
+          
               
               <MenuItem value={'15'}>До 15</MenuItem>
               <MenuItem value={'20'}>До 20</MenuItem>
