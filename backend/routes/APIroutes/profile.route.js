@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Subscription, Card } = require("../../db/models");
+const { Subscription, Card } = require("../../db/models");
 
 router.route("/").get(async (req, res) => {
   const userId = req.session.user.id;
@@ -13,7 +13,10 @@ router.route("/").get(async (req, res) => {
   }
   // console.log("ARR", arr);
   // const userSubs = await Card.findAll({where: {id: }})
-  res.json( arr );
+  res.json(arr);
 });
-
+router.route("/:id").get((req, res) => {
+  const { id } = req.params;
+  console.log(id);
+});
 module.exports = router;

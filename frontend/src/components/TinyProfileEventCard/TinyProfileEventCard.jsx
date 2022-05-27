@@ -1,11 +1,10 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const TinyOneEventCard = ({ el, cat }) => {
+const TinyProfileEventCard = ({ el, cat }) => {
   const navigate = useNavigate();
   const openItem = () => {
-    navigate(`/categories/${cat}/${el.id}`);
+    navigate(`/profile/${el.id}`);
   };
   return (
     <div className="tinyMainbox" onClick={openItem}>
@@ -22,4 +21,4 @@ const TinyOneEventCard = ({ el, cat }) => {
   );
 };
 
-export default TinyOneEventCard;
+export default TinyProfileEventCard;
