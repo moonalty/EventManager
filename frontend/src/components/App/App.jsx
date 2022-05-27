@@ -13,6 +13,7 @@ import { store } from "../../redux/store";
 import Navbar from "../Nav-foot/Navbar/Navbar";
 import Registration from "../Registration/Registration";
 import Login from "../Login/Login";
+import Footer from "../Nav-foot/Footer/Footer";
 
 
 
@@ -43,6 +44,7 @@ function App() {
               <Aside />
             </Grid>
           </Grid>
+          <Footer />
         </Grid>
       </Grid>
     </BrowserRouter>
