@@ -7,6 +7,7 @@ const OneProfileEventCard = () => {
   const navigator = useNavigate();
   const { oneCategory: oneCat } = useSelector((state) => state.oneCategory);
   const { id } = useParams();
+  
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getFetchOneCategory(id));

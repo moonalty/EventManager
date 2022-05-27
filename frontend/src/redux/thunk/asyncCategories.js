@@ -33,7 +33,10 @@ export const getFetchSubscribe = (cat, el) => {
   return (dispatch) => {
     fetch(`/subscribe/${el}`)
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      // .then((data) => console.log('STATUS>>>>',data));
+      .then((data) =>
+        data.message === "ALREADY EXIST" ? alert("EXIST") : console.log("")
+      );
   };
 };
 // export const getFetchDeleteCard = (cat) => {

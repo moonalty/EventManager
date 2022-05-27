@@ -4,7 +4,7 @@ import { regUserAC } from "../actionCreators/reg_user_AC";
 
 
 export const registrationFetch=(data)=>{
-console.log(data);
+console.log(data, "asyncReg перед");
 return (dispatch)=>{
 
 fetch("/registration", {
@@ -13,12 +13,12 @@ fetch("/registration", {
   body: JSON.stringify(data),
 
 })
-  // .then((res) => res.json())
-  // .then((data) => {
-
-  //   dispatch(regUserAC(data))
+  .then((res) => res.json())
+  .then((data) => {
+      console.log(data, "asyncReg после json")
+    dispatch(regUserAC(data))
  
-  // } );
+  } );
 }
 }
 

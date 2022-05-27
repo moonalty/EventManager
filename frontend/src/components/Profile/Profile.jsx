@@ -9,7 +9,7 @@ import  OrgProfile from "./components/OrgProfile/OrgProfile";
 const Profile = () => {
   const dispatch = useDispatch();
   const { subscribed } = useSelector((state) => state.subscribed);
-  // console.log('>>>>SUBS',subscribed);
+  console.log('>>>>SUBS',subscribed);
   useEffect(() => {
     dispatch(getFetchSubs());
   }, [dispatch]);
