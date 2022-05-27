@@ -4,6 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { useNavigate } from 'react-router-dom';
 import Categories1 from '../Categories1/Categories1';
+import { useSelector } from 'react-redux';
 
 function LinkTab(props) {
   return (
@@ -20,6 +21,8 @@ function LinkTab(props) {
  function Navbar() {
   const [value, setValue] = React.useState(1);
    const navigate = useNavigate()
+   const {user} = useSelector(store=>store.user)
+   console.log(user, "после деструктуризации");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
