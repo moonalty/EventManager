@@ -9,6 +9,7 @@ const Categories = () => {
   const { categories: list } = useSelector((state) => state.categories);
   const { cat } = useParams();
   const dispatch = useDispatch();
+  console.log('//////',list);
   useEffect(() => {
     dispatch(getFetchCategories(cat));
   }, []);
