@@ -13,6 +13,7 @@ import { store } from "../../redux/store";
 import Navbar from "../Nav-foot/Navbar/Navbar";
 import Registration from "../Registration/Registration";
 import Login from "../Login/Login";
+import OneEventCard from "../OneEventCard/OneEventCard";
 
 
 
@@ -29,6 +30,7 @@ function App() {
           <Grid container>
             <Grid item sm={8}>
               <Routes>
+                <Route path="/categories/:cat/:el" element={<OneEventCard />}/>
                 <Route path='/registration' element={<Registration/>}/>
                 <Route path='/login'  element={<Login/>}/>
                 <Route path="/" element={<Home />} />
