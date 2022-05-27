@@ -9,7 +9,7 @@ const TinyOneEventCard = ({ el, cat }) => {
   return (
     <div className="tinyMainbox" onClick={openItem}>
       <div className="tinyBoxTitle">{el.title}</div>
-      <div className="tinyBoxImage">{el.image}</div>
+      <img src={el.image} alt="#" className="tinyBoxImage"></img>
       <div className="tinyBoxDate">
         {el.date_start}---{el.date_end}
       </div>
