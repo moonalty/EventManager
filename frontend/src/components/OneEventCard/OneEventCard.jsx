@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getFetchOneCategory, getFetchSubscribe } from "../../redux/thunk/asyncCategories";
+import {
+  getFetchOneCategory,
+  getFetchSubscribe,
+} from "../../redux/thunk/asyncCategories";
 
 const OneEventCard = () => {
   const { oneCategory: oneCat } = useSelector((state) => state.oneCategory);
@@ -11,13 +14,15 @@ const OneEventCard = () => {
     dispatch(getFetchOneCategory(el, cat));
   }, [dispatch]);
   const subscribe = () => {
-    dispatch(getFetchSubscribe(cat, el))
-  }
+    dispatch(getFetchSubscribe(cat, el));
+  };
   return (
     <>
       <div className="mainBox">
+        <p>{oneCat.title}</p>
         <div className="headerBox">
-          <p>{oneCat.title}</p>
+          <img className="imageBox" src={oneCat.image} alt="#" />
+
           <button>Like</button>
           <button onClick={subscribe}>Subscribe</button>
         </div>
@@ -46,7 +51,6 @@ const OneEventCard = () => {
             <div>{oneCat.org_link}</div>
           </div>
         </div>
-        <div className="imageBox">{oneCat.image}</div>
         <div className="bodyBox">{oneCat.body}</div>
       </div>
     </>
