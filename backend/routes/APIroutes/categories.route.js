@@ -7,7 +7,10 @@ router.route("/:cat").get(async (req, res) => {
   // console.log(cat1);
   res.json(cat1);
 });
-
+// router.route("/:cat").delete((req, res) => {
+//   const { cat } = req.params;
+//   console.log("CAT>>>", cat);
+// });
 router.route("/:cat/:el").get(async (req, res) => {
   const { cat, el } = req.params;
   const oneCategory = await Card.findOne({ where: { id: cat } });

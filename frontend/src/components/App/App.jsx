@@ -18,6 +18,7 @@ import Footer from "../Nav-foot/Footer/Footer";
 
 import OneEventCard from "../OneEventCard/OneEventCard";
 import Profile from "../Profile/Profile";
+import OneProfileEventCard from "../OneProfileEventCard/OneProfileEventCard";
 
 
 function App() {
@@ -37,6 +38,10 @@ function App() {
               <Grid item sm={8}>
                 <Routes>
                   <Route path="/profile" element={<Profile />} />
+                  <Route
+                    path="/profile/:id"
+                    element={<OneProfileEventCard />}
+                  />
                   <Route
                     path="/categories/:cat/:el"
                     element={<OneEventCard />}

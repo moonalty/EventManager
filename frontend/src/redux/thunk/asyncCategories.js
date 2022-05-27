@@ -32,19 +32,21 @@ export const getFetchOneCategory = (cat, el) => {
 export const getFetchSubscribe = (cat, el) => {
   return (dispatch) => {
     fetch(`/subscribe/${el}`)
-    .then((response) => console.log(response))
-  }
-}
-// export const delFetchTasks = (id) => {
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  };
+};
+// export const getFetchDeleteCard = (cat) => {
 //   return (dispatch) => {
-//     fetch("/add-task", {
+//     fetch(`/categories/${cat}`, {
 //       headers: { "content-type": "application/json" },
 //       method: "delete",
-//       body: JSON.stringify({ id }),
+//       body: JSON.stringify({ cat }),
 //     })
-//       // .then((res) => res.json())
-//       .then(() => dispatch(delTask(id)));
-//   };
+//       .then((res) => res.json())
+//       .then((data) => console.log(data));
+// .then(() => dispatch(delTask(id)));
+// };
 // };
 
 // export const postFetchTasks = (task) => {
