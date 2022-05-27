@@ -17,7 +17,7 @@ const OneEventCard = () => {
     dispatch(getFetchOneCategory(el));
   }, [dispatch]);
   const subscribe = () => {
-    dispatch(getFetchSubscribe(el, cat));
+    dispatch(getFetchSubscribe(cat, el));
     navigator(-1);
   };
   return (
