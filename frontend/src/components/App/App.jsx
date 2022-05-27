@@ -13,14 +13,11 @@ import { store } from "../../redux/store";
 import Navbar from "../Nav-foot/Navbar/Navbar";
 import Registration from "../Registration/Registration";
 import Login from "../Login/Login";
-
+import OneEventCard from "../OneEventCard/OneEventCard";
+import OrgProfile from "../Profile/components/OrgProfile/OrgProfile";
 import Footer from "../Nav-foot/Footer/Footer";
 
-import OneEventCard from "../OneEventCard/OneEventCard";
-
 import SearchCards from "../Nav-foot/Search/SearchCards/SearchCards";
-
-
 
 
 import Profile from "../Profile/Profile";
@@ -41,7 +38,7 @@ function App() {
           <Grid item>
             <Navbar />
           </Grid>
-          <Grid>
+          <Grid item>
             <Grid container>
               <Grid item sm={8}>
                 <Routes>
@@ -69,8 +66,10 @@ function App() {
                 <Aside />
               </Grid>
             </Grid>
-          </Grid>
+          <Grid item>
           <Footer />
+          </Grid>
+          </Grid>
         </Grid>
       </BrowserRouter>
     </Provider>
