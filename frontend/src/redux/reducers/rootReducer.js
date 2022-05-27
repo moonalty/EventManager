@@ -5,4 +5,5 @@ export const rootReducer = combineReducers({
   categories: allCategoriesReducer,
   allCategories: allCategoriesReducer,
   oneCategory: allCategoriesReducer,
+  subscribe: allCategoriesReducer,
 });

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getFetchOneCategory } from "../../redux/thunk/asyncCategories";
+import { getFetchOneCategory, getFetchSubscribe } from "../../redux/thunk/asyncCategories";
 
 const OneEventCard = () => {
   const { oneCategory: oneCat } = useSelector((state) => state.oneCategory);
@@ -10,13 +10,16 @@ const OneEventCard = () => {
   useEffect(() => {
     dispatch(getFetchOneCategory(el, cat));
   }, [dispatch]);
+  const subscribe = () => {
+    dispatch(getFetchSubscribe(cat, el))
+  }
   return (
     <>
       <div className="mainBox">
         <div className="headerBox">
           <p>{oneCat.title}</p>
           <button>Like</button>
-          <button>Subscribe</button>
+          <button onClick={subscribe}>Subscribe</button>
         </div>
         <div className="infoBox">
           Info:

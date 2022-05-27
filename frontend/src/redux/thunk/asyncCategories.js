@@ -28,6 +28,13 @@ export const getFetchOneCategory = (cat, el) => {
       .then((data) => dispatch(oneCategoryRenderAC(data)));
   };
 };
+
+export const getFetchSubscribe = (cat, el) => {
+  return (dispatch) => {
+    fetch(`/subscribe/${el}`)
+    .then((response) => console.log(response))
+  }
+}
 // export const delFetchTasks = (id) => {
 //   return (dispatch) => {
 //     fetch("/add-task", {
