@@ -20,6 +20,10 @@ export const getFetchAllCategories = () => {
   };
 };
 
+
+
+// export const delFetchTasks = (id) => {
+
 export const getFetchOneCategory = (cat, el) => {
   return (dispatch) => {
     fetch(`/categories/${cat}/${el}`)
@@ -40,6 +44,7 @@ export const getFetchSubscribe = (cat, el) => {
   };
 };
 // export const getFetchDeleteCard = (cat) => {
+
 //   return (dispatch) => {
 //     fetch(`/categories/${cat}`, {
 //       headers: { "content-type": "application/json" },

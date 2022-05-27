@@ -9,6 +9,7 @@ import Categories1 from '../Categories1/Categories1';
 import { useSelector,useDispatch } from 'react-redux';
 
 import { getFetchLogout } from '../../../redux/thunk/asyncLogout';
+import Search from '../Search/Search';
 
 
 
@@ -47,7 +48,7 @@ function Navbar() {
         <Categories1 />
 
         <LinkTab label="Логотип" onClick={() => navigate(`/`)} />
-        <LinkTab label="Поиск"  />
+        <Search />
         <LinkTab label="Регистрация" onClick={() => navigate(`/registration`)} />
         <LinkTab label="Логин" onClick={() => navigate(`/login`)} />
         <LinkTab label="Личный кабинет" onClick={() => navigate("/profile")} />

@@ -17,12 +17,20 @@ import Login from "../Login/Login";
 import Footer from "../Nav-foot/Footer/Footer";
 
 import OneEventCard from "../OneEventCard/OneEventCard";
+
+import SearchCards from "../Nav-foot/Search/SearchCards/SearchCards";
+
+
+
+
 import Profile from "../Profile/Profile";
 import OneProfileEventCard from "../OneProfileEventCard/OneProfileEventCard";
 
 
+
 function App() {
   return (
+
     <Provider store={store}>
       <BrowserRouter>
         <Grid
@@ -54,6 +62,7 @@ function App() {
                   <Route path="/map" element={<Map />} />
                   <Route path="/adverstising" element={<Advertising />} />
                   <Route path="/calendar" element={<Calendar />} />
+                    <Route path="/search" element={<SearchCards />} />
                 </Routes>
               </Grid>
               <Grid item sm={4}>

@@ -1,3 +1,4 @@
+
 const express = require("express");
 const router = express.Router();
 
@@ -8,6 +9,7 @@ const titleRouter = require("./APIroutes/title.route");
 const subscribeRouter = require("./APIroutes/subscribe.route");
 const categoriesRouteApi = require("./APIroutes/categories.route");
 const profileRouter = require("./APIroutes/profile.route");
+const cardsRouter = require('./APIroutes/cards.route');
 
 router.use("/categories", categoriesRouteApi);
 router.use("/subscribe", subscribeRouter);
@@ -16,5 +18,7 @@ router.use("/registration", regRouter);
 router.use("/login", loginRouter);
 router.use("/logout", logoutRouter);
 router.use("/profile", profileRouter);
+router.use('/cards', cardsRouter);
+
 
 module.exports = router;
