@@ -1,12 +1,12 @@
+import Aside from "../Aside/Aside";
+import Map from "../Aside/components/Map/Map";
+import Categories from "../Categories/Categories";
+import Advertising from "../Aside/components/Advertising/Advertising";
 import "./App.css";
 import { Provider } from "react-redux";
-import Categories from "../Categories/Categories";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Map from "../Aside/components/Map/Map";
-import Advertising from "../Aside/components/Advertising/Advertising";
 import Calendar from "../Aside/components/Calendar/Calendar";
 import Home from "../Home/Home";
-import Aside from "../Aside/Aside";
 import { Grid } from "@mui/material";
 // import Categories from '../Nav-foot/Categories/Categories'
 import { store } from "../../redux/store";
@@ -19,15 +19,11 @@ import Footer from "../Nav-foot/Footer/Footer";
 
 import SearchCards from "../Nav-foot/Search/SearchCards/SearchCards";
 
-
 import Profile from "../Profile/Profile";
 import OneProfileEventCard from "../OneProfileEventCard/OneProfileEventCard";
 
-
-
 function App() {
   return (
-
     <Provider store={store}>
       <BrowserRouter>
         <Grid
@@ -59,16 +55,16 @@ function App() {
                   <Route path="/map" element={<Map />} />
                   <Route path="/adverstising" element={<Advertising />} />
                   <Route path="/calendar" element={<Calendar />} />
-                    <Route path="/search" element={<SearchCards />} />
+                  <Route path="/search" element={<SearchCards />} />
                 </Routes>
               </Grid>
               <Grid item sm={4}>
                 <Aside />
               </Grid>
             </Grid>
-          <Grid item>
-          <Footer />
-          </Grid>
+            <Grid item>
+              <Footer />
+            </Grid>
           </Grid>
         </Grid>
       </BrowserRouter>
