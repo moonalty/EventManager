@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFetchAllCards, getFetchSerchCards, postFetchSerchCards } from '../../../redux/thunk/asyncCards';
 import { useNavigate } from 'react-router-dom';
+import SearchIcon from '@mui/icons-material/Search';
 
 function Search() {
   const dispatch = useDispatch();
@@ -18,12 +19,13 @@ function Search() {
 
   console.log(cards.data);
   return (
-    <Stack spacing={1} sx={{ width: 200 }}>
+   
       <Autocomplete
         id="free-solo-demo"
         freeSolo
         options={cards?.data?.map((option) => option.title)}
-        renderInput={(params) => <TextField {...params} label="Search" />}
+      renderInput={(params) => <TextField variant="standard" {...params}  label="Поиск" />}
+        sx={{ width: 150, height: 20 }}
         onKeyDown={(e)=>{
           if (e.key === 'Enter'){
             e.defaultMuiPrevented = true;
@@ -33,7 +35,7 @@ function Search() {
           }
           }}
       />
-    </Stack>
+   
   );
 }
 export default Search

@@ -1,16 +1,23 @@
 const router = require("express").Router();
-const { Subscription, Card } = require("../../db/models");
+const { Subscription, Card, User } = require("../../db/models");
 
 router.route("/").get(async (req, res) => {
   const userId = req.session.user.id;
-  const arr = [];
-
-  const subs = await Subscription.findAll({ where: { user_id: userId } });
-  for (let i = 0; i < subs.length; i++) {
-    let jj = await Card.findAll({ where: { id: subs[i].card_id }, raw: true });
-    // console.log(jj);
-    arr.push(jj);
-  }
+  let arr = [];
+  const user = await User.findOne({where: {id : userId}})
+  console.log(user.role);
+  if (user.role === 'Пользователь'){
+    const subs = await Subscription.findAll({ where: { user_id: userId } });
+    for (let i = 0; i < subs.length; i++) {
+      let jj = await Card.findAll({ where: { id: subs[i].card_id }, raw: true });
+      // console.log(jj);
+      arr.push(jj);
+    }
+  } else if(user.role === 'Организатор') {
+    const creatorCards = await Card.findAll({where: {user_id: userId}})
+    console.log(creatorCards);
+    arr = creatorCards
+}
   // console.log("ARR", arr);
   // const userSubs = await Card.findAll({where: {id: }})
   res.json(arr);
