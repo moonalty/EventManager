@@ -10,13 +10,16 @@ const RatingSystem = ({ setRate }) => {
   const dispatch = useDispatch();
   return (
     <>
-      <Stack spacing={1}> Оценить: 
+      <Stack spacing={1}>
+        {" "}
+        Оценить:
         <Rating
           onClick={setRate}
           name="rating"
           defaultValue={0}
           precision={1}
-        /> Рейтинг организатора: 
+        />{" "}
+        Рейтинг организатора:
         {rate.result === 1 && (
           <Rating name="rating-read" defaultValue={1} precision={1} readOnly />
         )}

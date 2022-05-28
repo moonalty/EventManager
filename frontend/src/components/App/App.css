@@ -1,10 +1,16 @@
 .mainBox{
-  border: 1px solid teal;
+  background-color: rgb(233, 208, 254);
+  padding: 10px;
   margin: 0 auto;
   width: 50vw;
+  margin-top: 10px;
   display: flex;
+  justify-content: space-between;
   height: 800px;
   flex-direction: column;
+  border: 1px solid purple;
+  border-radius: 15%;
+
   
 }
 .tinyMainbox{
@@ -15,37 +21,61 @@
   flex-direction: column;
   margin: auto;
   margin-top: 20px;
-  border: 1px solid teal;
+  border: 1px solid purple;
+  border-radius: 15%;
+
   width: 40vw;
+  background-color: rgb(233, 208, 254);
+  padding: 10px;
+  
 }
 .headerBox{
   width: 100%;
-  
+  align-items: center;
   height: 31%;
   display: flex;
   justify-content: space-around;
   
 }
 .infoBox{
-  display: flex;
-  flex-direction: column;
-  height: 31%;
-  border: 1px solid black;
+  margin: 2px;
+  padding: 5px;
+
 }
 .infoBox{
   
 }
 .timeBox{
+
   
 }
 .imageBox{
   height: 100%;
 }
 .bodyBox{
-  height: 31%;
-  border: 1px solid black;
 }
 .tinyBoxImage{
   height: 150px;
   width: 100px;
+}
+.subButton{
+  background-color: rgb(251, 251, 8);
+  height: 70px;
+  width: 150px;
+  border-radius: 10%;
+  border: 2px solid purple;
+  text-shadow: 2px purple;
+}
+.subAndRateBox{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.titleP{
+}
+.titleBox{
+  display: flex;
+  justify-content: center;
+}
+.infosDiv{
 }
