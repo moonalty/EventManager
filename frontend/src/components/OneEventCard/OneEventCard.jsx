@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import {
@@ -10,11 +10,17 @@ import {
 const OneEventCard = () => {
   const navigator = useNavigate();
   const { oneCategory: oneCat } = useSelector((state) => state.oneCategory);
+  const { subscribed } = useSelector((state) => state.subscribed);
+  const [subState, setSubState] = useState(true);
   const { el, cat } = useParams();
-  console.log("CAT+EL>>>>>", cat, el);
+  console.log("CAT+EL>>>>>", el, cat);
+
+  console.log("subscribed>>>>>", subscribed);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getFetchOneCategory(el));
+    const finder = subscribed.find((ele) => ele[0].id === +el);
+    if (finder) setSubState(!subState);
   }, [dispatch]);
   const subscribe = () => {
     dispatch(getFetchSubscribe(cat, el));
@@ -28,7 +34,7 @@ const OneEventCard = () => {
           <img className="imageBox" src={oneCat.image} alt="#" />
 
           <button>Like</button>
-          <button onClick={subscribe}>Subscribe</button>
+          {subState && <button onClick={subscribe}>Subscribe</button>}
         </div>
         <div className="infoBox">
           Info:

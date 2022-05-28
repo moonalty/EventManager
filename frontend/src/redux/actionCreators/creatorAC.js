@@ -1,9 +1,8 @@
-import {CREATOR} from '../actionTypes/creatorAT'
+import { CREATOR } from "../actionTypes/creatorAT";
 
-
-export const creatorAC = () => {
+export const creatorAC = (payload) => {
   return {
     type: CREATOR,
     payload,
   };
-}
+};
