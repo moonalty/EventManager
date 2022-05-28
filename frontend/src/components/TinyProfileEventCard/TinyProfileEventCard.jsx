@@ -11,11 +11,11 @@ const TinyProfileEventCard = ({ el, cat }) => {
       <div className="tinyBoxTitle">{el.title}</div>
       <img src={el.image} alt="#" className="tinyBoxImage"></img>
       <div className="tinyBoxDate">
-        {el.date_start}---{el.date_end}
+        Дата мероприятия: 
+        {el.date_start}
       </div>
-      <div className="tinyBoxTime">
-        {el.time_start}---
-        {el.time_end}
+      <div className="tinyBoxCost">
+        Стоимость: {el.cost} рублей
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { SUBSCRIBED } from "../actionTypes/subscribesAT";
 
-const initialState = { subscribes: [] };
+const initialState = { subscribed: [] };
 
 export const subscribedReducer = (state = initialState, action) => {
   switch (action.type) {
