@@ -3,7 +3,6 @@ import { rateReducer } from "../reducers/rateReducer";
 
 export const getFetchRate = (el, rate) => {
   return (dispatch) => {
-    // console.log("myRate", el);
     fetch(`/rate/${el}`, {
       headers: { "content-type": "application/json" },
       method: "POST",
@@ -17,7 +16,6 @@ export const getFetchCheckRate = (el) => {
     console.log("EL>>>>>>>>>", el);
     fetch(`/rate/${el}`)
       .then((res) => res.json())
-      // .then((data) => console.log(data));
       .then((data) => dispatch(rateAC(data)));
   };
 };
