@@ -10,6 +10,9 @@ import { useSelector,useDispatch } from 'react-redux';
 
 import { getFetchLogout } from '../../../redux/thunk/asyncLogout';
 import Search from '../Search/Search';
+import Profile from '../Profile/Profile';
+import { Avatar, ListItem, Stack } from '@mui/material';
+import { margin } from '@mui/system';
 
 
 
@@ -30,30 +33,27 @@ function Navbar() {
    const navigate = useNavigate()
 
    const {user} = useSelector(store=>store.user)
-   console.log(user, "после деструктуризации");
-
-   const dispatch = useDispatch();
-
+   
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const logout = () =>{
-    dispatch(getFetchLogout())
-  }
+
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Tabs value={value} onChange={handleChange} aria-label="nav tabs example">
+    <Box sx={{ width: "100%", height:'100px' ,backgroundColor:'#ffef62'}} >
+      <Tabs aria-label="nav tabs example" sx={{ paddingY: '20px', height: '100px'}} centered>
         <Categories1 />
-
-        <LinkTab label="Логотип" onClick={() => navigate(`/`)} />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png" alt="" style={{ width: 144, height: 40, margin:10}} onClick={() => navigate(`/`)}/>
         <Search />
+        {Object.keys(user).length == 0 ? 
+        <>
         <LinkTab label="Регистрация" onClick={() => navigate(`/registration`)} />
         <LinkTab label="Логин" onClick={() => navigate(`/login`)} />
-        <LinkTab label="Личный кабинет" onClick={() => navigate("/profile")} />
-        <LinkTab label="Выйти" onClick={logout} />
-
+          </> :
+        <Profile />
+        
+      }
       </Tabs>
     </Box>
   );

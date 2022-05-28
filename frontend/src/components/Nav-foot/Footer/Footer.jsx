@@ -24,6 +24,7 @@ import Link from '@mui/material/Link';
       sx={{
         display: 'flex',
         flexDirection: 'column',
+        width:'100%'
         
       }}
     >

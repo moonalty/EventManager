@@ -1,5 +1,6 @@
 
 import { LOGIN_USER } from "../actionTypes/login_user_AT";
+import { LOGOUT } from "../actionTypes/logoutAT";
 
 const initialState = { user: {} };
 
@@ -9,6 +10,8 @@ export const loginUser = (state = initialState, action) => {
       
       return { ...state, user: action.payload };
       
+      case LOGOUT:
+        return {...state, user:{}}
 
    
     default:

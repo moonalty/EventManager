@@ -1,6 +1,6 @@
 import { LOGOUT } from "../actionTypes/logoutAT";
 
-export const getFetchlogout = (payload) => {
+export const logoutAC = (payload) => {
   return {
     type: LOGOUT,
     payload,
