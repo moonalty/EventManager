@@ -30,12 +30,12 @@ module.exports = (sequelize, DataTypes) => {
       date_end: {
         type: DataTypes.DATE,
       },
-      time_start: {
-        type: DataTypes.TEXT,
-      },
-      time_end: {
-        type: DataTypes.TEXT,
-      },
+      // time_start: {
+      //   type: DataTypes.TEXT,
+      // },
+      // time_end: {
+      //   type: DataTypes.TEXT,
+      // },
       adress: {
         type: DataTypes.TEXT,
       },

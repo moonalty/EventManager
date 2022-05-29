@@ -12,7 +12,7 @@ import { registrationFetch } from '../../../redux/thunk/asyncReg';
 import { getFetchLogout } from '../../../redux/thunk/asyncLogout';
 import { sessionFetch } from '../../../redux/thunk/asyncLogin';
 import Search from '../Search/Search';
-import Profile from '../Profile/Profile';
+import Profile from '../ProfileNav/ProfileNav';
 import { Avatar, ListItem, Stack } from '@mui/material';
 import { margin } from '@mui/system';
 
