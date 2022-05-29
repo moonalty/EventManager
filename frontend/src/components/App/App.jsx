@@ -13,24 +13,28 @@ import { store } from "../../redux/store";
 import Navbar from "../Nav-foot/Navbar/Navbar";
 import Registration from "../Registration/Registration";
 import Login from "../Login/Login";
-import OneEventCard from "../OneEventCard/OneEventCard";
+// import OneEventCard from "../OneEventCard/OneEventCard";
 
 import SearchCards from "../Nav-foot/Search/SearchCards/SearchCards";
 
-
-import OrgProfile from "../Profile/components/OrgProfile/OrgProfile";
+// import OrgProfile from "../Profile/components/OrgProfile/OrgProfile";
 import Footer from "../Nav-foot/Footer/Footer";
 
-
 import Profile from "../Profile/Profile";
+
 import TinyProfileEventCard from "../TinyProfileEventCard/TinyProfileEventCard";
 import OneProfileEventCard from "../OneProfileEventCard/OneProfileEventCard";
 import Categories1 from "../Nav-foot/Categories1/Categories1";
 import Categories2 from "../Nav-foot/Categories1/Categories2";
 
+// import TinyProfileEventCard from "../TinyProfileEventCard/TinyProfileEventCard";
+// import OneProfileEventCard from "../OneProfileEventCard/OneProfileEventCard";
+import OneEventCard from "../MaterialBigCard/MaterialBigCard";
+import OneProfileEventCard from "../MaterialProfileBigCard/MaterialProfileBigCard";
+
+
 function App() {
   return (
-
     <Provider store={store}>
       <BrowserRouter>
         <Grid
@@ -78,10 +82,10 @@ function App() {
               <Footer />
             </Grid>
           </Grid>
-
         </Grid>
     </BrowserRouter>
 </Provider>
+
   );
 }
 
