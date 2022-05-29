@@ -3,6 +3,7 @@ const { Subscription, Card, User } = require("../../db/models");
 
 router.route("/").get(async (req, res) => {
   const userId = req.session.user.id;
+  // console.log(req.session.user)
   let arr = [];
   const user = await User.findOne({where: {id : userId}})
   console.log(user.role);

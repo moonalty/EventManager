@@ -15,7 +15,7 @@ const Categories = () => {
   // console.log('//////',list);
   useEffect(() => {
     dispatch(getFetchCategories(cat));
-    dispatch(getFetchSubs());
+    // dispatch(getFetchSubs());
   }, []);
   // console.log(cat);
   return (
