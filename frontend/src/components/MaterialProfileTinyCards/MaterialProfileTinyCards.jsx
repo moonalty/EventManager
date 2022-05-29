@@ -10,23 +10,23 @@ import { useNavigate } from "react-router-dom";
 const TinyProfileEventCard = ({ el, cat }) => {
   const navigate = useNavigate();
   const openItem = () => {
-    navigate(`/profile/${el.id}`);
+    navigate(`/profile/${el?.id}`);
   };
   return (
     <div className="materialMainBox">
       <Card sx={{ maxWidth: 345 }}>
-        <CardMedia component="img" height="340" image={el.image} alt="#" />
+        <CardMedia component="img" height="340" image={el?.image} alt="#" />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {el.title}
+            {el?.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             Дата мероприятия:
-            {el.date_start}
+            {el?.date_start}
           </Typography>
           <Typography>
             Стоимость мероприятия:
-            {el.cost} рублей
+            {el?.cost} рублей
           </Typography>
         </CardContent>
         <CardActions>
