@@ -20,7 +20,6 @@ const Categories = () => {
   // console.log(cat);
   return (
     <div className="TinyMAINBOX">
-      Categories
       {/* <>{list.map((el) => (el = <OneEventCard key={el.id} el={el} />))}</> */}
       {list.map(
         (el) => (el = <TinyOneEventCard el={el} key={el.id} cat={cat} />)

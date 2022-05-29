@@ -17,11 +17,11 @@ import Login from "../Login/Login";
 
 import SearchCards from "../Nav-foot/Search/SearchCards/SearchCards";
 
-import OrgProfile from "../Profile/components/OrgProfile/OrgProfile";
+// import OrgProfile from "../Profile/components/OrgProfile/OrgProfile";
 import Footer from "../Nav-foot/Footer/Footer";
 
 import Profile from "../Profile/Profile";
-import TinyProfileEventCard from "../TinyProfileEventCard/TinyProfileEventCard";
+// import TinyProfileEventCard from "../TinyProfileEventCard/TinyProfileEventCard";
 // import OneProfileEventCard from "../OneProfileEventCard/OneProfileEventCard";
 import OneEventCard from "../MaterialBigCard/MaterialBigCard";
 import OneProfileEventCard from "../MaterialProfileBigCard/MaterialProfileBigCard";
