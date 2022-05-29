@@ -6,9 +6,11 @@ import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import { ImageList, ImageListItem } from '@mui/material';
 import OrgModal from '../OrgModal/OrgModal';
-
+import { useSelector, useDispatch } from "react-redux";
 
 export default function OrgProfile() {
+  const {creators} = useSelector((state) => state.creators)
+  console.log('CREATORS+++++++', creators);
   const [orgModalActive, setOrgModalActive] = React.useState(false)
   return (
     <Box sx={{ minWidth: 275 }}>
@@ -21,8 +23,8 @@ export default function OrgProfile() {
             </Button>
             <OrgModal active={orgModalActive} setActive={()=>setOrgModalActive(false)} />
             <ImageList sx={{ width: 500, height: 450 }} variant="woven" cols={3} gap={8}>
-              <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1Fb9pVwy2gp232EnXGqKtjSWVD_34DLmOOQ&usqp=CAU' />
-              {/* {itemData.map((item) => (
+              {/* <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1Fb9pVwy2gp232EnXGqKtjSWVD_34DLmOOQ&usqp=CAU' /> */}
+              {creators?.map((item) => (
     <ImageListItem key={item.img}>
       <img
         src={`${item.img}?w=161&fit=crop&auto=format`}
@@ -31,7 +33,7 @@ export default function OrgProfile() {
         loading="lazy"
       />
     </ImageListItem>
-  ))} */}
+  ))} 
             </ImageList>
           </CardContent>
         </React.Fragment>

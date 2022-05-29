@@ -1,36 +1,33 @@
-
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getFetchSubs } from "../../redux/thunk/asyncSubscribes";
 // import TinyProfileEventCard from "../TinyProfileEventCard/TinyProfileEventCard";
-import TinyProfileEventCard from "../MaterialProfileTinyCards/MaterialProfileTinyCards";
 import { Grid } from "@mui/material";
-import  OrgProfile from "./components/OrgProfile/OrgProfile";
-
+import OrgProfile from "./components/OrgProfile/OrgProfile";
+import UserProfile from "./components/UserProfile/UserProfile";
+import { creatorAC } from "../../redux/actionCreators/creatorAC";
+import { subscribedAC } from "../../redux/actionCreators/subscribesAC";
 const Profile = () => {
   const dispatch = useDispatch();
   const { subscribed } = useSelector((state) => state.subscribed);
-  console.log('>>>>SUBS',subscribed);
+  const { user } = useSelector((state) => state.user);
   useEffect(() => {
-    dispatch(getFetchSubs());
-  }, [dispatch]);
+    console.log(">>>>SUBS", user);
+    const data = getFetchSubs();
+    console.log("BLYAAAAAAAAAAAAAAAAAAAA", data);
+    if (user.role === "Организатор") {
+      dispatch(creatorAC(data));
+    } else {
+      dispatch(subscribedAC(data));
+    }
+  }, [user.role, dispatch]);
   return (
     <Grid container>
-      <Grid item style={{ width: '100%', height: '100%' }}>
-    <div>
-      <OrgProfile/>
-    </div>
-    <h1>Вы подписаны на мероприятия: </h1>
-    <div>
-        {subscribed?.map(
-          (el) => (el = <TinyProfileEventCard el={el[0]} key={el[0].id} />)
-        )}
-      </div>
+      <Grid item style={{ width: "100%", height: "100%" }}>
+        {user.role === "Организатор" ? <OrgProfile /> : <UserProfile />}
       </Grid>
     </Grid>
-    )
-  };
-
+  );
+};
 
 export default Profile;
-
