@@ -20,7 +20,7 @@ router.route("/").get(async (req, res) => {
 }
   // console.log("ARR", arr);
   // const userSubs = await Card.findAll({where: {id: }})
-  res.json(arr);
+  res.json(arr)
 });
 router.route("/:id").get((req, res) => {
   const { id } = req.params;
