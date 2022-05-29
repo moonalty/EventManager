@@ -15,7 +15,9 @@ function Search() {
     dispatch(getFetchAllCards())
   }, [dispatch])
 
-  const { cards } = useSelector(state => state.cards)
+  const { cards } = useSelector(state => state.cards);
+  const { search } = useSelector(state => state.search)
+  console.log(search);
 
   console.log(cards.data);
   return (
@@ -30,7 +32,7 @@ function Search() {
           if (e.key === 'Enter'){
             e.defaultMuiPrevented = true;
             dispatch(postFetchSerchCards(e.target.value))
-            navigate("/search");
+            navigate(`/search/${search.data[0].category_id}/${search.data[0].id}`);
             console.log(e.target.value)
           }
           }}

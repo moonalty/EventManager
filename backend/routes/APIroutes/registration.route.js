@@ -2,6 +2,14 @@ const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const {User} = require('../../db/models')
 
+router.get('/',(req,res)=>{
+
+  const user = req.session.user;
+res.json({user})
+
+})
+
+
 router.post('/', async (req, res) => {
   const {
     name,
@@ -18,14 +26,15 @@ router.post('/', async (req, res) => {
   });
   console.log(user);
   if (user) {
-    res.status(401).json({
-      text: 'Такой пользователь уже зарегистрирован',
+    res.json({
+      text: 'false',
     });
   } else if (password !== password2) {
-    res.status(401).json({
-      text: 'Пароли не совпадают',
+    res.json({
+      text: 'false',
     });
   } else {
+
     if(role){
       const newUser = await User.create({
         name,
@@ -34,9 +43,10 @@ router.post('/', async (req, res) => {
         role: "Организатор",
       });
       
-     res.json({message:"Организатор!!"})
-    
  
+     
+      res.json({text:"true"})
+      
     } else {
       const newUser = await User.create({
         name,
@@ -45,8 +55,9 @@ router.post('/', async (req, res) => {
         role: "Пользователь",
       });
      
-     res.json({message:"Пользователь !!"})
     
+      
+      res.json({text:"true"})
      
     }
  

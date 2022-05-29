@@ -20,6 +20,11 @@ router.route("/").post(async (req, res) => {
   if (!cardTitle) {
     const category = await Category.findOne({ where: { name: categoryName } });
     console.log('CATEGORY!!!!!!!!!!!!!!!!!!!!!!!!!', category);
+  console.log(req.session.user.id)
+  const {title} = req.body
+  const cardTitle = await Card.findOne({where: {title}})
+  if(!cardTitle){
+
     const newCard = await Card.create({
       title,
       image: picture,

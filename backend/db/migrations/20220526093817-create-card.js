@@ -23,12 +23,12 @@ module.exports = {
       date_end: {
         type: Sequelize.DATE,
       },
-      time_start: {
-        type: Sequelize.TEXT,
-      },
-      time_end: {
-        type: Sequelize.TEXT,
-      },
+      // time_start: {
+      //   type: Sequelize.TEXT,
+      // },
+      // time_end: {
+      //   type: Sequelize.TEXT,
+      // },
       adress: {
         type: Sequelize.TEXT,
       },

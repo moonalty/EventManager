@@ -24,7 +24,8 @@ import Link from '@mui/material/Link';
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        width:'100%'
+        width:'100%',
+        
         
       }}
     >
@@ -45,10 +46,7 @@ import Link from '@mui/material/Link';
           py: 3,
           px: 2,
           mt: 20,
-          backgroundColor: (theme) =>
-            theme.palette.mode === 'light'
-              ? theme.palette.grey[200]
-              : theme.palette.grey[800],
+          backgroundColor: '#ffef62'
         }}
       >
         <Container maxWidth="sm">

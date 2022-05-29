@@ -1,7 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { registrationFetch } from "../../redux/thunk/asyncReg";
+
+import {  registrationFetch } from "../../redux/thunk/asyncReg";
+
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
@@ -11,7 +12,7 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 function Registration() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  
 
   const addUser = (e) => {
     e.preventDefault();
@@ -25,12 +26,15 @@ function Registration() {
 
       
     };
-      console.log(data, "после ввода")
 
-    if (data.password === data.password2) {
+   
+      
       dispatch(registrationFetch(data));
-      navigate("/login");
-    } 
+     
+      
+  
+     
+    
   };
   return (
 
@@ -67,44 +71,7 @@ function Registration() {
 
 
 
-    // <div className="container">
-    //   <div className="container">
-    //     <form onSubmit={addUser}>
-    //       <input id="name" type="text" placeholder="имя" className="validate" />
-    //       <input
-    //         id="email"
-    //         type="text"
-    //         placeholder="электронная почта"
-    //         className="validate"
-    //       />
-    //       <input
-    //         id="password"
-    //         minLength="8"
-    //         maxLength="16"
-    //         placeholder="пароль"
-    //         type="password"
-    //         className="validate"
-    //         required
-    //       />
-    //       <input
-    //         id="password2"
-    //         minLength="8"
-    //         maxLength="16"
-    //         placeholder="повторите пароль"
-    //         type="password"
-    //         className="validate"
-    //         required
-    //       />
-    //       <button
-    //         type="submit"
-    //         className="waves-effect waves-light btn-large brown lighten-2"
-    //       >
-    //         Зарегистрироваться<i className="material-icons left"></i>
-    //       </button>
-    //   <input id="role" type="checkbox"  className="validate"/>Организатор мероприятия
-    //     </form>
-    //   </div>
-    // </div>
+
   );
 }
 
