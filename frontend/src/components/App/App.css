@@ -24,7 +24,7 @@
   border: 1px solid purple;
   border-radius: 15%;
 
-  width: 40vw;
+  width: 20vw;
   background-color: rgb(233, 208, 254);
   padding: 10px;
   
@@ -78,4 +78,23 @@
   justify-content: center;
 }
 .infosDiv{
+}
+
+.tinyMainbox2{
+  margin: 0;
+}
+
+.materialMainBox{
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 20px;
+
+  width: 20vw;
+  background-color: rgb(235, 244, 116);
+  padding: 10px;
+  border-radius: 2%;
 }

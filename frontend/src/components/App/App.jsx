@@ -72,7 +72,6 @@ function App() {
             </Grid>
           </Grid>
 
-        </Grid>
       </Grid>
     </BrowserRouter>
 </Provider>

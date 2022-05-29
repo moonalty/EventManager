@@ -52,7 +52,9 @@ const OneEventCard = () => {
             <div className="infosDiv">Закончится: {oneCat.time_end}</div>
           </div>
           <div className="costBox">
-            <div className="infosDiv">Стоимость входа: {oneCat.cost} рублей</div>
+            <div className="infosDiv">
+              Стоимость входа: {oneCat.cost} рублей
+            </div>
           </div>
           <div>
             <div className="infosDiv">
@@ -64,18 +66,24 @@ const OneEventCard = () => {
             <div className="infosDiv">
               Ссылка на организатора:
               <a href={oneCat.org_link}>{oneCat.org_link}</a>
-               
             </div>
           </div>
         </div>
         <div className="bodyBox">{oneCat.body}</div>
         <div className="subAndRateBox">
-          <RatingSystem setRate={setRate} />
+          <button
+            className="subButton"
+            // onClick={alert("Функция временно недоступна")}
+          >
+            Купить билет
+          </button>
+
           {subState && (
             <button className="subButton" onClick={subscribe}>
               Я хочу пойти!
             </button>
           )}
+          <RatingSystem setRate={setRate} />
         </div>
       </div>
     </>
