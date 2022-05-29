@@ -27,10 +27,10 @@ function Registration() {
     };
       console.log(data, "после ввода")
 
-    if (data.password === data.password2) {
+    
       dispatch(registrationFetch(data));
       navigate("/login");
-    } 
+    
   };
   return (
 

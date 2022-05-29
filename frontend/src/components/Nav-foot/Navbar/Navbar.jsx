@@ -1,5 +1,6 @@
 
 import * as React from 'react';
+
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -7,8 +8,9 @@ import { useNavigate } from 'react-router-dom';
 import Categories1 from '../Categories1/Categories1';
 
 import { useSelector,useDispatch } from 'react-redux';
-
+import { registrationFetch } from '../../../redux/thunk/asyncReg';
 import { getFetchLogout } from '../../../redux/thunk/asyncLogout';
+import { sessionFetch } from '../../../redux/thunk/asyncReg';
 import Search from '../Search/Search';
 import Profile from '../Profile/Profile';
 import { Avatar, ListItem, Stack } from '@mui/material';
@@ -30,9 +32,14 @@ function LinkTab(props) {
 
 function Navbar() {
   const [value, setValue] = React.useState(1);
-   const navigate = useNavigate()
+   const navigate = useNavigate();
+   const dispatch = useDispatch();
 
-   const {user} = useSelector(store=>store.user)
+   const {user} = useSelector(store=>store.user);
+
+   React.useEffect(()=>{
+    dispatch(sessionFetch())
+   },[])
    
 
   const handleChange = (event, newValue) => {

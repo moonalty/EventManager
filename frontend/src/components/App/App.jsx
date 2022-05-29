@@ -73,7 +73,7 @@ function App() {
           </Grid>
 
         </Grid>
-      </Grid>
+      
     </BrowserRouter>
 </Provider>
   );
