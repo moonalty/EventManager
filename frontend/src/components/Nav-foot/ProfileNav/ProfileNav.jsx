@@ -11,7 +11,7 @@ import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getFetchLogout } from '../../../redux/thunk/asyncLogout';
 import { useNavigate } from 'react-router-dom';
 
@@ -20,6 +20,7 @@ import { useNavigate } from 'react-router-dom';
    const dispatch = useDispatch();
    const navigate = useNavigate()
   const open = Boolean(anchorEl);
+   const { user } = useSelector((state) => state.user);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -39,8 +40,9 @@ import { useNavigate } from 'react-router-dom';
             aria-controls={open ? 'account-menu' : undefined}
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
+          
           >
-            <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+          <Avatar sx={{ width: 32, height: 32 ,backgroundColor: 'red'}}>{user?.name[0]}</Avatar>
           </IconButton>
         </Tooltip>
       <Menu
