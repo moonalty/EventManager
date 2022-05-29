@@ -2,6 +2,14 @@ const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const {User} = require('../../db/models')
 
+router.get('/',(req,res)=>{
+
+  const user = req.session.user;
+res.json({user})
+
+})
+
+
 router.post('/', async (req, res) => {
   const {
     name,
