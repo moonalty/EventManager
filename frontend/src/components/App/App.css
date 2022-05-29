@@ -24,7 +24,7 @@
   border: 1px solid purple;
   border-radius: 15%;
 
-  width: 40vw;
+  width: 20vw;
   background-color: rgb(233, 208, 254);
   padding: 10px;
   
@@ -78,4 +78,60 @@
   justify-content: center;
 }
 .infosDiv{
+}
+
+.tinyMainbox2{
+  margin: 0;
+}
+
+.materialMainBox{
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 20px;
+  
+  width: 20vw;
+  background-color: rgb(235, 244, 116);
+  padding: 10px;
+  border-radius: 2%;
+}
+.materialBigMainBox{
+  
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 2%;
+}
+.TinyMAINBOX{
+display: flex;
+justify-content: flex-start;
+align-items: flex-start;
+flex-wrap: wrap;
+margin: 10px;
+padding: 10px;
+
+}
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
