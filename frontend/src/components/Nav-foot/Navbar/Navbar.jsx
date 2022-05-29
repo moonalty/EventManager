@@ -10,7 +10,7 @@ import Categories1 from '../Categories1/Categories1';
 import { useSelector,useDispatch } from 'react-redux';
 import { registrationFetch } from '../../../redux/thunk/asyncReg';
 import { getFetchLogout } from '../../../redux/thunk/asyncLogout';
-import { sessionFetch } from '../../../redux/thunk/asyncReg';
+import { sessionFetch } from '../../../redux/thunk/asyncLogin';
 import Search from '../Search/Search';
 import Profile from '../ProfileNav/ProfileNav';
 import { Avatar, ListItem, Stack } from '@mui/material';
@@ -36,8 +36,9 @@ function Navbar() {
    const dispatch = useDispatch();
 
    const {user} = useSelector(store=>store.user);
-
+    console.log("----------------------->",user)
    React.useEffect(()=>{
+     
     dispatch(sessionFetch())
    },[])
    
