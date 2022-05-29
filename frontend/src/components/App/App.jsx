@@ -25,7 +25,9 @@ import Profile from "../Profile/Profile";
 // import TinyProfileEventCard from "../TinyProfileEventCard/TinyProfileEventCard";
 // import OneProfileEventCard from "../OneProfileEventCard/OneProfileEventCard";
 // import Categories1 from "../Nav-foot/Categories1/Categories1";
+
 import CategoriesList from "../Nav-foot/Categories1/CategoriesList";
+
 
 // import TinyProfileEventCard from "../TinyProfileEventCard/TinyProfileEventCard";
 // import OneProfileEventCard from "../OneProfileEventCard/OneProfileEventCard";
