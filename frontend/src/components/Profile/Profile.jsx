@@ -2,7 +2,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getFetchSubs } from "../../redux/thunk/asyncSubscribes";
-import TinyProfileEventCard from "../TinyProfileEventCard/TinyProfileEventCard";
+// import TinyProfileEventCard from "../TinyProfileEventCard/TinyProfileEventCard";
+import TinyProfileEventCard from "../MaterialProfileTinyCards/MaterialProfileTinyCards";
 import { Grid } from "@mui/material";
 import  OrgProfile from "./components/OrgProfile/OrgProfile";
 
@@ -19,6 +20,7 @@ const Profile = () => {
     <div>
       <OrgProfile/>
     </div>
+    <h1>Вы подписаны на мероприятия: </h1>
     <div>
         {subscribed?.map(
           (el) => (el = <TinyProfileEventCard el={el[0]} key={el[0].id} />)
@@ -31,3 +33,4 @@ const Profile = () => {
 
 
 export default Profile;
+

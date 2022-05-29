@@ -53,13 +53,19 @@ const OneProfileEventCard = () => {
           </div>
           <div>
             <div className="infosDiv">
-              Ссылка на организатора: 
+              Ссылка на организатора:
               <a href={oneCat.org_link}>{oneCat.org_link}</a>
             </div>
           </div>
         </div>
         <div className="bodyBox">{oneCat.body}</div>
         <div className="subAndRateBox">
+          <button
+            className="subButton"
+            // onClick={alert("Функция временно недоступна")}
+          >
+            Купить билет
+          </button>
           <RatingSystem setRate={setRate} />
         </div>
       </div>

@@ -2,10 +2,10 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-// import OneEventCard from "../OneEventCard/OneEventCard";
 import { getFetchCategories } from "../../redux/thunk/asyncCategories";
 import { getFetchSubs } from "../../redux/thunk/asyncSubscribes";
-import TinyOneEventCard from "../TinyOneEventCard/TinyOneEventCard";
+// import TinyOneEventCard from "../TinyOneEventCard/TinyOneEventCard"; //OLD CARDS
+import TinyOneEventCard from "../MaterialTinyCards/MaterialTinyCards";
 const Categories = () => {
   const { subscribed } = useSelector((state) => state.subscribed);
   console.log(",SUBS2>>>>>>>>>>>>>", subscribed);
