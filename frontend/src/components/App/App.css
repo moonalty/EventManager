@@ -92,9 +92,27 @@
   flex-direction: column;
   margin: auto;
   margin-top: 20px;
-
+  
   width: 20vw;
   background-color: rgb(235, 244, 116);
   padding: 10px;
   border-radius: 2%;
+}
+.materialBigMainBox{
+  
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 2%;
+}
+.TinyMAINBOX{
+display: flex;
+justify-content: flex-start;
+align-items: flex-start;
+flex-wrap: wrap;
+margin: 10px;
+padding: 10px;
 }
