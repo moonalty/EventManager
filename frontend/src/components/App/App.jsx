@@ -25,6 +25,8 @@ import Footer from "../Nav-foot/Footer/Footer";
 import Profile from "../Profile/Profile";
 import TinyProfileEventCard from "../TinyProfileEventCard/TinyProfileEventCard";
 import OneProfileEventCard from "../OneProfileEventCard/OneProfileEventCard";
+import Categories1 from "../Nav-foot/Categories1/Categories1";
+import Categories2 from "../Nav-foot/Categories1/Categories2";
 
 function App() {
   return (
@@ -41,7 +43,12 @@ function App() {
           </Grid>
           <Grid item>
             <Grid container>
-              <Grid item sm={8}>
+                <Grid item sm={2} >
+                  <Categories2 />
+                </Grid>
+              <Grid item sm={7}>
+                <Grid container>
+                </Grid>
                 <Routes>
                   <Route path="/profile" element={<Profile />} />
                   <Route
@@ -63,7 +70,7 @@ function App() {
                   <Route path="/search" element={<SearchCards />} />
                 </Routes>
               </Grid>
-              <Grid item sm={4}>
+              <Grid item sm={3}>
                 <Aside />
               </Grid>
             </Grid>
@@ -73,7 +80,6 @@ function App() {
           </Grid>
 
         </Grid>
-      </Grid>
     </BrowserRouter>
 </Provider>
   );

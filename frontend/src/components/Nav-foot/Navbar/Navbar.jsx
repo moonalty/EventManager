@@ -43,7 +43,7 @@ function Navbar() {
   return (
     <Box sx={{ width: "100%", height:'100px' ,backgroundColor:'#ffef62'}} >
       <Tabs aria-label="nav tabs example" sx={{ paddingY: '20px', height: '100px'}} centered>
-        <Categories1 />
+        
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png" alt="" style={{ width: 144, height: 40, margin:10}} onClick={() => navigate(`/`)}/>
         <Search />
         {Object.keys(user).length == 0 ? 
