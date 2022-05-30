@@ -21,7 +21,7 @@ router.route("/").post(async (req, res) => {
     const category = await Category.findOne({ where: { name: categoryName } });
     console.log('CATEGORY!!!!!!!!!!!!!!!!!!!!!!!!!', category);
   console.log(req.session.user.id)
-  const {title} = req.body
+  // const {title} = req.body
   const cardTitle = await Card.findOne({where: {title}})
   if(!cardTitle){
 
@@ -40,6 +40,8 @@ router.route("/").post(async (req, res) => {
       user_id: userId
     });
   }
+
 }});
+
 
 module.exports = router;

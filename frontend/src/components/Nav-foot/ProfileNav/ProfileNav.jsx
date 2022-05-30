@@ -14,11 +14,13 @@ import Logout from '@mui/icons-material/Logout';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFetchLogout } from '../../../redux/thunk/asyncLogout';
 import { useNavigate } from 'react-router-dom';
+import { getFetchOrgCards } from '../../../redux/thunk/asyncOrgCards';
 
  function Profile() {
   const [anchorEl, setAnchorEl] = React.useState(null);
-   const dispatch = useDispatch();
-   const navigate = useNavigate()
+  // const {orgCards} = useSelector((state) => state.orgCards)
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
   const open = Boolean(anchorEl);
    const { user } = useSelector((state) => state.user);
    console.log('qqqqqqq',user)
@@ -28,8 +30,13 @@ import { useNavigate } from 'react-router-dom';
   const handleClose = () => {
     setAnchorEl(null);
   };
-   const logout = () => {
-     dispatch(getFetchLogout())
+  const logout = () => {
+    dispatch(getFetchLogout())
+  }
+  const showProfile = ()=> {
+    dispatch(getFetchOrgCards())
+    // console.log(orgCards);
+    navigate('/profile')
    }
   return (
     <React.Fragment>
@@ -81,7 +88,7 @@ import { useNavigate } from 'react-router-dom';
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem onClick={() => navigate("/profile")}>
+        <MenuItem onClick={showProfile}>
           <Avatar /> Личный кабинет
         </MenuItem>
         <Divider />
