@@ -25,12 +25,24 @@ export const postFetchSerchCards = (val) => {
   };
 };
 
-export const deleteCardFetch = (id) => {
+export const deleteSubFetch = (id) => {
   return (dispatch) => {
     fetch("/subscribe", {
       headers: { "content-type": "application/json" },
       method: "delete",
       body: JSON.stringify({ id }),
+    }).then((res) => res.json());
+    // .then((data) => dispatch(cardsDeleteAC(data)));
+  };
+};
+
+export const deleteCardFetch = (el) => {
+  // console.log('EL>>>>>>>>',el);
+  return (dispatch) => {
+    fetch("/cards", {
+      headers: { "content-type": "application/json" },
+      method: "delete",
+      body: JSON.stringify({ el }),
     })
       .then((res) => res.json())
       .then((data) => dispatch(cardsDeleteAC(data)));
