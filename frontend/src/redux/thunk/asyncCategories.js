@@ -20,8 +20,6 @@ export const getFetchAllCategories = () => {
   };
 };
 
-
-
 // export const delFetchTasks = (id) => {
 
 export const getFetchOneCategory = (cat, el) => {
