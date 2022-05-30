@@ -11,15 +11,15 @@ import SearchIcon from '@mui/icons-material/Search';
 function Search() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  useEffect(() => {
-    dispatch(getFetchAllCards())
-  }, [dispatch])
-
   const { cards } = useSelector(state => state.cards);
   const { search } = useSelector(state => state.search)
-  console.log(search);
+  useEffect(() => {
+    dispatch(getFetchAllCards())
+  }, [search?.data])
 
-  console.log(cards.data);
+  // console.log(search);
+
+  // console.log(cards.data);
   return (
    
       <Autocomplete
@@ -32,8 +32,8 @@ function Search() {
           if (e.key === 'Enter'){
             e.defaultMuiPrevented = true;
             dispatch(postFetchSerchCards(e.target.value))
-            navigate(`/search/${search.data[0].category_id}/${search.data[0].id}`);
-            console.log(e.target.value)
+            navigate(`/categories/${search.data[0].category_id}/${search.data[0].id}`);
+            // console.log(e.target.value)
           }
           }}
       />

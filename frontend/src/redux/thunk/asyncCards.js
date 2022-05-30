@@ -9,7 +9,7 @@ export const getFetchAllCards = () => {
 };
 
 export const postFetchSerchCards = (val) => {
-  console.log(val);
+  // console.log(val);
     return (dispatch) => {
       fetch("/cards", {
         headers: { "content-type": "application/json" },
