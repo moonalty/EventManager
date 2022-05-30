@@ -13,7 +13,7 @@ import {
 } from "../../redux/thunk/asyncCategories";
 import { getFetchCheckRate, getFetchRate } from "../../redux/thunk/asyncRate";
 import RatingSystem from "../RatingSystem/RatingSystem";
-import { deleteCardFetch } from "../../redux/thunk/asyncCards";
+import { deleteSubFetch } from "../../redux/thunk/asyncCards";
 
 const OneProfileEventCard = () => {
   const { el } = useParams();
@@ -30,7 +30,7 @@ const OneProfileEventCard = () => {
     dispatch(getFetchRate(+el, rate));
   };
   const deleteItem = () => {
-    dispatch(deleteCardFetch(+id));
+    dispatch(deleteSubFetch(+id));
     navigator(-1);
   };
 

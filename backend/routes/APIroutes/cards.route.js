@@ -15,6 +15,12 @@ const {val} = req.body;
   res.json({data});
 })
 
+.delete(async (req, res) => {
+  const {el} = req.body;
+  await Subscription.destroy({where: {card_id: el}})
+  await Card.destroy({where: {id: el}});
+  res.json({el})
+})
 
 
 module.exports = router;

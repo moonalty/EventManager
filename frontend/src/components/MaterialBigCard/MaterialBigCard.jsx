@@ -13,12 +13,14 @@ import {
 } from "../../redux/thunk/asyncCategories";
 import { getFetchCheckRate, getFetchRate } from "../../redux/thunk/asyncRate";
 import RatingSystem from "../RatingSystem/RatingSystem";
+import { deleteCardFetch } from "../../redux/thunk/asyncCards";
 
 const OneEventCard = () => {
   const navigator = useNavigate();
   const { oneCategory: oneCat } = useSelector((state) => state.oneCategory);
   const { user } = useSelector((state) => state.user);
-  console.log('USER>>>>>>>>>>>',user);
+  console.log("USER>>>>>>>>>>>", user);
+  console.log("oneCAT>>>>>>>", oneCat);
   const { subscribed } = useSelector((state) => state.subscribed);
   // const { rate } = useSelector((state) => state.rate);
   const [subState, setSubState] = React.useState(true);
@@ -40,7 +42,10 @@ const OneEventCard = () => {
     const rate = e.target.innerText;
     dispatch(getFetchRate(+el, rate));
   };
-
+  const deleteCard = () => {
+    dispatch(deleteCardFetch(+el));
+    navigator(-1);
+  };
   return (
     <Card className="materialBigMainBox" sx={{ maxWidth: 345 }}>
       <CardMedia component="img" height="420" image={oneCat.image} alt="#" />
@@ -70,7 +75,12 @@ const OneEventCard = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Купить билет</Button>
+        {user.id === oneCat.user_id ? (
+          <Button onClick={deleteCard}>Удалить</Button>
+        ) : (
+          <Button size="small">Купить билет</Button>
+        )}
+
         {subState && (
           <Button onClick={subscribe} size="small">
             Добавить в избранное
