@@ -4,9 +4,13 @@ import {
 } from "../actionCreators/categoriesAC";
 import { categoriesAllRenderAC } from "../actionCreators/categoriesAC";
 
-export const getFetchCategories = (cat) => {
+export const getFetchCategories = (cat, filter) => {
   return (dispatch) => {
-    fetch(`/categories/${cat}`)
+    fetch(`/categories/${cat}`, {
+                headers: { "content-type": "application/json" },
+                method: "POST",
+                body: JSON.stringify({ cat, filter }),
+              })
       .then((response) => response.json())
       .then((data) => dispatch(showCategories(data)));
   };
