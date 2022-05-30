@@ -68,7 +68,7 @@ function OrgModal({ active, setActive }, props) {
       onClick={() => setActive()}
     >
       <div onClick={(e) => e.stopPropagation()}>
-        <Card sx={{ maxWidth: 900 }} className="OrgModal_content">
+        <Card sx={{ maxWidth: 600 }} className="OrgModal_content">
           <form onSubmit={cardToBD}>
             <TextField
               required
