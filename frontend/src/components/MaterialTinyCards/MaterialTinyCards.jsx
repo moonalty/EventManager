@@ -6,6 +6,8 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
+import Filter from "../Filter/Filter";
+
 
 const TinyOneEventCard = ({ el, cat }) => {
   const navigate = useNavigate();
@@ -13,6 +15,8 @@ const TinyOneEventCard = ({ el, cat }) => {
     navigate(`/categories/${cat}/${el.id}`);
   };
   return (
+    <>
+      
     <div className="materialMainBox" >
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia
@@ -40,6 +44,7 @@ const TinyOneEventCard = ({ el, cat }) => {
         </CardActions>
       </Card>
     </div>
+    </>
   );
 };
 export default TinyOneEventCard;
