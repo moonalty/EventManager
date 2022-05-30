@@ -4,8 +4,7 @@ import styles from './map.module.css'
 function Map() {
   return (
     <div className={styles.map}>
-      Please standBy. Here is gonna be a map!
-        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtxnfx9dVXeH1qU87GW7YUL9WMmgfg_6R_BQ&usqp=CAU' />
+      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ade9e4bf79c71fd874128bbef7ccd7b5e2dd345ecfade17f831ea916b37c87e5e&ampsource=constructor"  ></iframe>
     </div>
   );
 }

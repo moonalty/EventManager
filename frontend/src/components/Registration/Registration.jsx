@@ -36,11 +36,11 @@ function Registration() {
           autoComplete="off"
         >
          <div >
-          <TextField  id="name" type="text" placeholder="имя"  variant="filled" />
-          <TextField id="email" placeholder="электронная почта"  variant="filled" />
+        <TextField id="name" type="text" placeholder="имя" required variant="filled" />
+        <TextField id="email" placeholder="электронная почта" required  variant="filled" />
           </div>
           <div>
-          <TextField id="password"   placeholder="пароль" minLength="8" maxLength="16" type="password" required variant="filled" />
+        <TextField id="password" placeholder="пароль" minLength="8" maxLength="16" type="password" required variant="filled" />
           <TextField id="password2"  placeholder="пароль" minLength="8" maxLength="16" type="password" required variant="filled" />
           </div>
           <div >
