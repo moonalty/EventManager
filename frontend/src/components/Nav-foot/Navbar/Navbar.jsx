@@ -37,10 +37,10 @@ function Navbar() {
 
    const {user} = useSelector(store=>store.user);
     console.log("----------------------->",user)
+
    React.useEffect(()=>{
-     
     dispatch(sessionFetch())
-   }, [])
+   }, [dispatch])
    
 
   const handleChange = (event, newValue) => {

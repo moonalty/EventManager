@@ -3,7 +3,7 @@ import Map from "../Aside/components/Map/Map";
 import Categories from "../Categories/Categories";
 import Advertising from "../Aside/components/Advertising/Advertising";
 import "./App.css";
-import { Provider } from "react-redux";
+import { Provider, useDispatch } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Calendar from "../Aside/components/Calendar/Calendar";
 import Home from "../Home/Home";
@@ -36,6 +36,7 @@ import OneProfileEventCard from "../MaterialProfileBigCard/MaterialProfileBigCar
 
 
 function App() {
+
   return (
     <Provider store={store}>
       <BrowserRouter>

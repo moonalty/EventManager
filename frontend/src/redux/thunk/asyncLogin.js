@@ -22,7 +22,7 @@ export const loginFetch = (payload) => {
 
 export const sessionFetch = () => {
   return (dispatch) => {
-    fetch("/", {
+    fetch("/session", {
       headers: { "content-type": "application/json" },
       method: "GET",
     }).then((res) => res.json())
