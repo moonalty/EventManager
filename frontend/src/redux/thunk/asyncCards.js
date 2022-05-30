@@ -1,4 +1,8 @@
-import { cardsAllRenderAC, cardsSearchRenderAC } from "../actionCreators/cardsAC";
+import {
+  cardsAllRenderAC,
+  cardsDeleteAC,
+  cardsSearchRenderAC,
+} from "../actionCreators/cardsAC";
 
 export const getFetchAllCards = () => {
   return (dispatch) => {
@@ -10,13 +14,25 @@ export const getFetchAllCards = () => {
 
 export const postFetchSerchCards = (val) => {
   // console.log(val);
-    return (dispatch) => {
-      fetch("/cards", {
-        headers: { "content-type": "application/json" },
-        method: "POST",
-        body: JSON.stringify({val})
-      })
-        .then((response) => response.json())
-        .then((data) => dispatch(cardsSearchRenderAC(data)));
-    };
-}
+  return (dispatch) => {
+    fetch("/cards", {
+      headers: { "content-type": "application/json" },
+      method: "POST",
+      body: JSON.stringify({ val }),
+    })
+      .then((response) => response.json())
+      .then((data) => dispatch(cardsSearchRenderAC(data)));
+  };
+};
+
+export const deleteCardFetch = (id) => {
+  return (dispatch) => {
+    fetch("/subscribe", {
+      headers: { "content-type": "application/json" },
+      method: "delete",
+      body: JSON.stringify({ id }),
+    })
+      .then((res) => res.json())
+      .then((data) => dispatch(cardsDeleteAC(data)));
+  };
+};
