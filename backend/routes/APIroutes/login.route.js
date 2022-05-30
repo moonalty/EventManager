@@ -24,12 +24,14 @@ router.post("/", async (req, res) => {
       console.log(user);
       res.json(user);
     } else {
-      res.status(304).json({
+      res.json({
         text: "Неверный пароль или логин",
       });
     }
   } catch (error) {
-    console.log("error");
+    res.json({
+      text: "Неверный пароль или логин",
+    });
   }
 });
 

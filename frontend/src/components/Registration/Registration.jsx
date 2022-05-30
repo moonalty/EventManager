@@ -1,8 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-
 import {  registrationFetch } from "../../redux/thunk/asyncReg";
-
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
@@ -13,35 +11,21 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 function Registration() {
   const dispatch = useDispatch();
   
-
   const addUser = (e) => {
     e.preventDefault();
-
     const data = {
       name: e.target.name.value,
       email: e.target.email.value,
       password: e.target.password.value,
       password2: e.target.password2.value,
       role: e.target.role.checked,
-
-      
-    };
-
-   
-      
-      dispatch(registrationFetch(data));
-     
-      
   
-     
-    
+    }; 
+      dispatch(registrationFetch(data));  
   };
+
   return (
-
-
-
-   
-        <Box className="registration"  onSubmit={addUser}
+  <Box className="registration"  onSubmit={addUser}
           component="form"
           sx={{
             '& > :not(style)': { m: 1, width: '25ch' , display: "box" , marginLeft: 'auto',

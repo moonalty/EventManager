@@ -88,7 +88,7 @@ import { getFetchOrgCards } from '../../../redux/thunk/asyncOrgCards';
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem onClick={showProfile}>
+        <MenuItem  onClick={showProfile}>
           <Avatar /> Личный кабинет
         </MenuItem>
         <Divider />
