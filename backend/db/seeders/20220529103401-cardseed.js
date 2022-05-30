@@ -9,32 +9,21 @@ module.exports = {
           name: "vasya",
           email: "vasya@google.ru",
           password: "123123",
-          role: "User",
+          role: "Пользователь",
           rating: 4,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           name: "vasaya",
-          email: "vasaya@google.ru",
-          password: "123123",
-          role: "User",
+          email: "111@111",
+          password: "12345678",
+          role: "Организатор",
           rating: 4,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
       ],
-      await queryInterface.bulkInsert(
-        "Categories",
-        [
-          {
-            name: "fun",
-            createdAt: new Date(),
-            updatedAt: new Date(),
-          },
-        ],
-        {}
-      )
     );
   },
 };
