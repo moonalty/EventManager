@@ -29,7 +29,7 @@ function Registration() {
           component="form"
           sx={{
             '& > :not(style)': { m: 1, width: '25ch' , display: "box" , marginLeft: 'auto',
-            marginRight:'auto', padding:'20', textAlign:'center' },
+            marginRight:'auto', padding:'20', textAlign:'center'  },
           
           }}
           noValidate
