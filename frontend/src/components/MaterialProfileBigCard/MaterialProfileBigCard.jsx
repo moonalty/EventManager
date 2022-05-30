@@ -13,6 +13,7 @@ import {
 } from "../../redux/thunk/asyncCategories";
 import { getFetchCheckRate, getFetchRate } from "../../redux/thunk/asyncRate";
 import RatingSystem from "../RatingSystem/RatingSystem";
+import { deleteCardFetch } from "../../redux/thunk/asyncCards";
 
 const OneProfileEventCard = () => {
   const { el } = useParams();
@@ -27,6 +28,10 @@ const OneProfileEventCard = () => {
     e.preventDefault();
     const rate = e.target.innerText;
     dispatch(getFetchRate(+el, rate));
+  };
+  const deleteItem = () => {
+    dispatch(deleteCardFetch(+id));
+    navigator(-1);
   };
 
   return (
@@ -59,6 +64,7 @@ const OneProfileEventCard = () => {
       </CardContent>
       <CardActions>
         <Button size="small">Купить билет</Button>
+        <Button onClick={deleteItem}>Перестать отслеживать</Button>
       </CardActions>
       <div>
         <RatingSystem setRate={setRate} />

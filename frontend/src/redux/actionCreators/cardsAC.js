@@ -1,4 +1,5 @@
 import { SHOW_ALL_CARDS, SHOW_SEARCH_CARDS } from "../actionTypes/cardsAT";
+import { DELETE_CARD } from "../actionTypes/categoriesAT";
 
 export const cardsAllRenderAC = (payload) => {
   return {
@@ -13,3 +14,9 @@ export const cardsSearchRenderAC = (payload) => {
   };
 };
 
+export const cardsDeleteAC = (payload) => {
+  return {
+    type: DELETE_CARD,
+    payload,
+  };
+};

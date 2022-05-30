@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Subscription } = require("../../db/models");
+const { Subscription , Card} = require("../../db/models");
 
 router.route("/:el").get(async (req, res) => {
   const { el } = req.params;
@@ -32,5 +32,13 @@ router.route("/:el").get(async (req, res) => {
   // res.json({ message: "ALREADY EXIST" });
   // }
 });
+router.route('/').delete(async (req, res) => {
+  const {id} = req.body;
+  const user = req.session.user
+  await Subscription.destroy({where: {card_id:id, user_id: user.id}})
+  // await Card.destroy({where: {id: id}})
+  res.json({id})
+})
+
 
 module.exports = router;

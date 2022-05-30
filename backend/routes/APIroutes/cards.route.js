@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Card } = require("../../db/models");
+const { Card, Subscription } = require("../../db/models");
 
 router.route("/")
 .get(async (req, res) => {
@@ -13,7 +13,8 @@ const {val} = req.body;
   const data = await Card.findAll({ where: {title:val}});
   // console.log(cat1);
   res.json({data});
-});
+})
+
 
 
 module.exports = router;
