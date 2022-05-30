@@ -32,7 +32,7 @@ function Login() {
 
 
     
-    navigate("/");
+    //navigate("/");
   };
 
   return (
@@ -49,7 +49,7 @@ function Login() {
   >
    <div >
 
-  <TextField id="email" placeholder="электронная почта"  variant="filled" />
+  <TextField id="email" placeholder="электронная почта" required  variant="filled" />
     </div>
     <div>
     <TextField id="password"   placeholder="пароль" minLength="8" maxLength="16" type="password" required variant="filled" />

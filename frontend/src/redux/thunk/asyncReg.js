@@ -10,7 +10,7 @@ export const registrationFetch = (data) => {
     })
       .then((res) => res.json())
       .then((data) =>
-        data.text === "false" ? alert("jopa") : window.location.assign("/login") 
+        data.text === "true" ?  window.location.assign("/login") : alert('Введите корректные данные')
       );
   };
 };
