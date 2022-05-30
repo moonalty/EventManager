@@ -25,7 +25,9 @@ import Profile from "../Profile/Profile";
 // import TinyProfileEventCard from "../TinyProfileEventCard/TinyProfileEventCard";
 // import OneProfileEventCard from "../OneProfileEventCard/OneProfileEventCard";
 // import Categories1 from "../Nav-foot/Categories1/Categories1";
-import Categories2 from "../Nav-foot/Categories1/Categories2";
+
+import CategoriesList from "../Nav-foot/Categories1/CategoriesList";
+
 
 // import TinyProfileEventCard from "../TinyProfileEventCard/TinyProfileEventCard";
 // import OneProfileEventCard from "../OneProfileEventCard/OneProfileEventCard";
@@ -48,7 +50,7 @@ function App() {
           <Grid item>
             <Grid container>
                 <Grid item sm={2} >
-                  <Categories2 />
+                  <CategoriesList />
                 </Grid>
               <Grid item sm={7}>
                 <Grid container>

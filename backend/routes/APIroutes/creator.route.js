@@ -5,6 +5,7 @@ const {Card} = require("../../db/models");
 router.route('/')
 .post( async (req, res)=> {
   const userId = req.session.user.id;
+  console.log(req.session.user.id)
   const {title} = req.body
   const cardTitle = await Card.findOne({where: {title}})
   if(!cardTitle){

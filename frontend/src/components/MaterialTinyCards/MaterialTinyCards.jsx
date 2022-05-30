@@ -13,30 +13,27 @@ const TinyOneEventCard = ({ el, cat }) => {
     navigate(`/categories/${cat}/${el.id}`);
   };
   return (
-    <div className="materialMainBox" >
+    <div className="materialMainBox">
       <Card sx={{ maxWidth: 345 }}>
-        <CardMedia
-          component="img"
-          height="340"
-          image={el.image}
-          alt='#'
-        />
+        <CardMedia component="img" height="340" image={el.image} alt="#" />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {el.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Дата мероприятия: 
-           {el.date_start}
+            Дата мероприятия:
+            {el.date_start}
           </Typography>
           <Typography>
-            Стоимость мероприятия: 
+            Стоимость мероприятия:
             {el.cost} рублей
           </Typography>
         </CardContent>
         <CardActions>
           {/* <Button size="small">Share</Button> */}
-          <Button size="small" onClick={openItem}>Подробнее</Button>
+          <Button size="small" onClick={openItem}>
+            Подробнее
+          </Button>
         </CardActions>
       </Card>
     </div>

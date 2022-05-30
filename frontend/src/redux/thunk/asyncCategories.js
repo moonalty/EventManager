@@ -6,11 +6,9 @@ import { categoriesAllRenderAC } from "../actionCreators/categoriesAC";
 
 export const getFetchCategories = (cat) => {
   return (dispatch) => {
-    console.log(cat);
     fetch(`/categories/${cat}`)
       .then((response) => response.json())
-      .then((data) => console.log("this DATA", data));
-    // .then((data) => dispatch(showCategories(data)));
+      .then((data) => dispatch(showCategories(data)));
   };
 };
 

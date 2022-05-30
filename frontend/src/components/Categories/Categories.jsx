@@ -8,15 +8,13 @@ import { getFetchSubs } from "../../redux/thunk/asyncSubscribes";
 import TinyOneEventCard from "../MaterialTinyCards/MaterialTinyCards";
 const Categories = () => {
   const { subscribed } = useSelector((state) => state.subscribed);
-  // console.log(",SUBS2>>>>>>>>>>>>>", subscribed);
   const { categories } = useSelector((state) => state.categories);
   const { cat } = useParams();
   const dispatch = useDispatch();
-  console.log("//////", categories);
   useEffect(() => {
     dispatch(getFetchCategories(cat));
     dispatch(getFetchSubs());
-  }, [dispatch]);
+  }, [cat]);
   // console.log(cat);
   return (
     <div className="TinyMAINBOX">
