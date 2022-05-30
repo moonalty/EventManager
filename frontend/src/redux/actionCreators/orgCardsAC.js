@@ -1,4 +1,4 @@
-import { ORGCARDS } from '../actionTypes/orgCardsAT'
+import { ORGCARDS, ADD_CARD } from '../actionTypes/orgCardsAT'
 
 export const orgCardsAC = (payload) => {
   return {
@@ -6,3 +6,10 @@ export const orgCardsAC = (payload) => {
     payload,
   };
 };
+
+export const addCardsAC = (payload) => {
+  return {
+    type: ADD_CARD,
+    payload,
+  }
+}
