@@ -1,5 +1,5 @@
 
-import {creatorAC} from '../actionCreators/creatorAC'
+import {addCardsAC} from '../actionCreators/orgCardsAC'
 
 
 export const getFetchCreator = (payload) => {
@@ -12,6 +12,6 @@ export const getFetchCreator = (payload) => {
     })
     .then((response) => response.json())
     // .then((payload) => console.log('!!!!!!!!!!!!!!DATA!!!!!!!!!!!!!!!!',payload))
-    .then((data) => dispatch(creatorAC(data)))
+    .then((data) => dispatch(addCardsAC(data)))
   }
 }

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Subscription, Card, User } = require("../../db/models");
+const { Subscription, Card, User , Category} = require("../../db/models");
 
 router.route("/").get(async (req, res) => {
   const userId = req.session.user.id;
