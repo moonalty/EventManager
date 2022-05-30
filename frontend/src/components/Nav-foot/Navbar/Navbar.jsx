@@ -40,7 +40,7 @@ function Navbar() {
    React.useEffect(()=>{
      
     dispatch(sessionFetch())
-   },[])
+   }, [])
    
 
   const handleChange = (event, newValue) => {

@@ -40,7 +40,8 @@ router.route("/").post(async (req, res) => {
       user_id: userId
     });
   }
-  }
-});
+
+}});
+
 
 module.exports = router;

@@ -30,7 +30,7 @@ const OneEventCard = () => {
     dispatch(getFetchOneCategory(el));
     const finder = subscribed.find((ele) => ele[0].id === +el);
     if (finder) setSubState(!subState);
-  }, [dispatch]);
+  }, [el]);
   const subscribe = () => {
     dispatch(getFetchSubscribe(cat, el));
     navigator(-1);
