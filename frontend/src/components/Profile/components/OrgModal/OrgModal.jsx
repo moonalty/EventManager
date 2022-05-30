@@ -48,9 +48,9 @@ function OrgModal({ active, setActive }, props) {
       org_link: event.target.org_link.value,
       body: event.target.body.value,
     };
-    console.log("DATA", event.target.categoryName.value.name);
+    console.log("DATA", event.target.categoryName.value);
     dispatch(getFetchCreator(data));
-    dispatch(creatorAC(data))
+    
   };
   const categoriesChange = (event) => {
     setCategories(event.target.value);

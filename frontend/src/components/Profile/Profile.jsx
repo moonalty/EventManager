@@ -7,20 +7,16 @@ import OrgProfile from "./components/OrgProfile/OrgProfile";
 import UserProfile from "./components/UserProfile/UserProfile";
 import { creatorAC } from "../../redux/actionCreators/creatorAC";
 import { subscribedAC } from "../../redux/actionCreators/subscribesAC";
+import { getFetchCreator } from "../../redux/thunk/asyncCreator";
+
 const Profile = () => {
   const dispatch = useDispatch();
   const { subscribed } = useSelector((state) => state.subscribed);
+  const {creators} = useSelector((state)=> state.creators)
   const { user } = useSelector((state) => state.user);
-  useEffect(() => {
-    console.log(">>>>SUBS", user);
-    const data = getFetchSubs();
-    console.log("BLYAAAAAAAAAAAAAAAAAAAA", data);
-    if (user.role === "Организатор") {
-      dispatch(creatorAC(data));
-    } else {
-      dispatch(subscribedAC(data));
-    }
-  }, [user.role, dispatch]);
+ useEffect(()=> {
+  
+ }, [])
   return (
     <Grid container>
       <Grid item style={{ width: "100%", height: "100%" }}>

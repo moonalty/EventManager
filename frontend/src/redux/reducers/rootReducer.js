@@ -3,14 +3,13 @@ import { allCardsReducer } from "./cardsReducer";
 import { allCategoriesReducer } from "./categoriesReducer";
 import { creatorReducer } from "./creatorReduser";
 import { loginUser } from "./userReducer";
-
+import {orgCardsReducer} from './orgCardsReducer'
 import { subscribedReducer } from "./subscribedReducer";
 import { rateReducer } from "./rateReducer";
 
 export const rootReducer = combineReducers({
   categories: allCategoriesReducer,
   allCategories: allCategoriesReducer,
-
   user: loginUser,
   oneCategory: allCategoriesReducer,
   subscribe: allCategoriesReducer,
@@ -20,4 +19,5 @@ export const rootReducer = combineReducers({
   search: allCardsReducer,
   user: loginUser,
   rate: rateReducer,
+  orgCards: orgCardsReducer,
 });
