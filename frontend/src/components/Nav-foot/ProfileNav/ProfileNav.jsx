@@ -21,6 +21,7 @@ import { useNavigate } from 'react-router-dom';
    const navigate = useNavigate()
   const open = Boolean(anchorEl);
    const { user } = useSelector((state) => state.user);
+   console.log('qqqqqqq',user)
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -42,7 +43,7 @@ import { useNavigate } from 'react-router-dom';
             aria-expanded={open ? 'true' : undefined}
           
           >
-          <Avatar sx={{ width: 32, height: 32 ,backgroundColor: 'red'}}>{user?.name[0]}</Avatar>
+          <Avatar sx={{ width: 32, height: 32 ,backgroundColor: 'red'}}>{user?.user?.name[0]}</Avatar>
           </IconButton>
         </Tooltip>
       <Menu
