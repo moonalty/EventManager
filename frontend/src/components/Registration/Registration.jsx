@@ -3,9 +3,10 @@ import { useDispatch } from "react-redux";
 import {  registrationFetch } from "../../redux/thunk/asyncReg";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import Checkbox from '@mui/material/Checkbox';
+import Switch from '@mui/material/Switch';
 import Button from '@mui/material/Button';
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
 
 
 function Registration() {
@@ -25,7 +26,7 @@ function Registration() {
   };
 
   return (
-  <Box className="registration"  onSubmit={addUser}
+  <Box onSubmit={addUser}
           component="form"
           sx={{
             '& > :not(style)': { m: 1, width: '25ch' , display: "box" , marginLeft: 'auto',
@@ -36,17 +37,19 @@ function Registration() {
           autoComplete="off"
         >
          <div >
-        <TextField id="name" type="text" placeholder="имя" required variant="filled" />
-        <TextField id="email" placeholder="электронная почта" required  variant="filled" />
+        <TextField   id="name"  type="text" placeholder="имя" required variant="outlined" />
+        <TextField id="email" placeholder="электронная почта" required  variant="outlined" />
           </div>
           <div>
-        <TextField id="password" placeholder="пароль" minLength="8" maxLength="16" type="password" required variant="filled" />
-          <TextField id="password2"  placeholder="пароль" minLength="8" maxLength="16" type="password" required variant="filled" />
+        <TextField id="password" placeholder="пароль" minLength="8" maxLength="16" type="password" required variant="outlined" />
+          <TextField id="password2"  placeholder="пароль" minLength="8" maxLength="16" type="password" required variant="outlined" />
           </div>
           <div >
            <Button 
-            variant="contained" type="submit" >Зарегистрироваться</Button>
-           <Checkbox id="role" {...label} defaultChecked />Организатор 
+            aria-label="fingerprint" color="success" type="submit" >Зарегистрироваться</Button>
+          <h>Организатор</h>
+          
+           <Switch  id="role" {...label} defaultChecked color="default" />
            </div>
         </Box>
      

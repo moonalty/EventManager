@@ -1,3 +1,4 @@
+
 .MuiTabs-root {
 	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   
@@ -71,7 +72,7 @@
   width: 100px;
 }
 .subButton{
-  background-color: rgb(251, 251, 8);
+  background-color: #8db8f0;
   height: 70px;
   width: 150px;
   border-radius: 10%;
@@ -106,7 +107,7 @@
   margin-top: 20px;
   
   width: 20vw;
-  background-color: rgb(235, 244, 116);
+  background-color: #8db8f0;
   padding: 10px;
   border-radius: 2%;
 }
@@ -149,9 +150,11 @@ body {
 }
 
 
-
 footer {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  height: 60px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
 
 
 }
