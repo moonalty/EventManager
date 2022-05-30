@@ -30,8 +30,6 @@ router.post('/', async (req, res) => {
 
 
 
-try {
-
 
   if (user) {
     res.json({
@@ -72,17 +70,9 @@ try {
   }
 
 
-} catch(error){
- 
-console.log(error)
 
 
-}
- 
-
-
-
-
+  
 });
 
 
