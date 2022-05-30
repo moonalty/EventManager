@@ -10,16 +10,17 @@ import TinyOneEventCard from "../MaterialTinyCards/MaterialTinyCards";
 const Categories = () => {
   const { subscribed } = useSelector((state) => state.subscribed);
   const { categories } = useSelector((state) => state.categories);
+  const [filter,setFilter] = useState('date')
   const { cat } = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getFetchCategories(cat));
+    dispatch(getFetchCategories(cat, filter));
     // dispatch(getFetchSubs());
-  }, [cat]);
-  // console.log(cat);
+  }, [cat, filter]);
+  console.log(filter);
   return (
     <>
-    <Filter />
+      <Filter filter={filter} setFilter={setFilter}/>
     <div className="TinyMAINBOX">
       {/* <>{list.map((el) => (el = <OneEventCard key={el.id} el={el} />))}</> */}
       {categories.map(
