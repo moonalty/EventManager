@@ -19,7 +19,7 @@ router.use("/registration", regRouter);
 router.use("/login", loginRouter);
 router.use("/logout", logoutRouter);
 router.use("/profile", profileRouter);
-// router.use("/profile", creatorRouter);
+router.use("/profile", creatorRouter);
 router.use("/cards", cardsRouter);
 router.use("/rate", rateRouter);
 

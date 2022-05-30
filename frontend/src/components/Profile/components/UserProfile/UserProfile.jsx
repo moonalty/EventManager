@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { getFetchSubs } from "../../../../redux/thunk/asyncSubscribes";
 import TinyProfileEventCard from "../../../MaterialProfileTinyCards/MaterialProfileTinyCards";
 
 
@@ -7,6 +8,9 @@ function UserProfile() {
   const dispatch = useDispatch();
   const { subscribed } = useSelector((state) => state.subscribed);
   
+  useEffect(()=> {
+    dispatch(getFetchSubs())
+  },[dispatch])
 
 
 

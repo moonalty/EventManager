@@ -6,7 +6,7 @@ router.route("/").get(async (req, res) => {
   // console.log(req.session.user)
   let arr = [];
   const user = await User.findOne({where: {id : userId}})
-  console.log(user.role);
+  // console.log(user.role);
   if (user.role === 'Пользователь'){
     const subs = await Subscription.findAll({ where: { user_id: userId } });
     for (let i = 0; i < subs.length; i++) {
@@ -16,8 +16,8 @@ router.route("/").get(async (req, res) => {
     }
   } else if(user.role === 'Организатор') {
     const creatorCards = await Card.findAll({where: {user_id: userId}})
-    console.log(creatorCards);
     arr = creatorCards
+    console.log(arr);
 }
   // console.log("ARR", arr);
   // const userSubs = await Card.findAll({where: {id: }})
@@ -25,6 +25,6 @@ router.route("/").get(async (req, res) => {
 });
 router.route("/:id").get((req, res) => {
   const { id } = req.params;
-  console.log(id);
+  // console.log(id);
 });
 module.exports = router;
