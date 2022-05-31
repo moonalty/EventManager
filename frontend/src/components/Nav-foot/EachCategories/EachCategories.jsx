@@ -1,4 +1,4 @@
-import { Avatar, ListItem, ListItemAvatar, ListItemText, MenuItem } from '@mui/material';
+import { Avatar, Link, ListItem, ListItemAvatar, ListItemText, MenuItem } from '@mui/material';
 import React from 'react';
 import FlagIcon from '@mui/icons-material/Flag';
 
@@ -11,10 +11,10 @@ function EachCategories({ eachcategory, handleClose}) {
     //   </MenuItem>
     // </>
 
-    <ListItem onClick={() => handleClose(eachcategory.id)}>
+    <ListItem className='ListItemCategories' onClick={() => handleClose(eachcategory.id)}>
       <ListItemAvatar>
         <Avatar>
-          <FlagIcon />
+          <i class="gg-alarm"></i>
         </Avatar>
       </ListItemAvatar>
       <ListItemText primary={eachcategory.name}  />

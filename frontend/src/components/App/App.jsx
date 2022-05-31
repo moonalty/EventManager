@@ -34,6 +34,7 @@ import CategoriesList from "../Nav-foot/Categories1/CategoriesList";
 // import OneProfileEventCard from "../OneProfileEventCard/OneProfileEventCard";
 import OneEventCard from "../MaterialBigCard/MaterialBigCard";
 import OneProfileEventCard from "../MaterialProfileBigCard/MaterialProfileBigCard";
+import WelcomePage from "../WelcomePage/WelcomePage";
 
 
 function App() {
@@ -48,6 +49,9 @@ function App() {
         >
           <Grid item>
             <Navbar />
+          </Grid>
+          <Grid item>
+            <WelcomePage />
           </Grid>
           <Grid item>
             <Grid container>

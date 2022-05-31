@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import Filter from "../Filter/Filter";
-
+import PaginationControlled from "../Pagination/Pagination";
 
 const TinyOneEventCard = ({ el, cat }) => {
   const navigate = useNavigate();
@@ -15,7 +15,6 @@ const TinyOneEventCard = ({ el, cat }) => {
     navigate(`/categories/${cat}/${el.id}`);
   };
   return (
-
     <div className="materialMainBox">
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia component="img" height="340" image={el.image} alt="#" />
