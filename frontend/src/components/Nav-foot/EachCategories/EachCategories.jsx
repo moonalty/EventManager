@@ -11,7 +11,7 @@ function EachCategories({ eachcategory, handleClose}) {
     //   </MenuItem>
     // </>
 
-    <ListItem onClick={() => handleClose(eachcategory.id)}>
+    <ListItem className='ListItemCategories' onClick={() => handleClose(eachcategory.id)}>
       <ListItemAvatar>
         <Avatar>
           <i class="gg-alarm"></i>

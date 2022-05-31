@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
+import PaginationControlled from '../../Pagination/Pagination';
 
 // function Copyright() {
 //   return (
@@ -20,6 +21,9 @@ import Link from '@mui/material/Link';
 
  function Footer() {
   return (
+    <>
+      {/* <PaginationControlled  /> */}
+
     <Box
       sx={{
         display: 'flex',
@@ -28,7 +32,7 @@ import Link from '@mui/material/Link';
         
         
       }}
-    >
+      >
       <CssBaseline />
       <Container component="main" sx={{ mt: 0, mb: 2 }} maxWidth="sm">
         <Typography variant="h2" component="h1" gutterBottom>
@@ -48,7 +52,7 @@ import Link from '@mui/material/Link';
           mt: 20,
           backgroundColor: '#ffef62'
         }}
-      >
+        >
         <Container maxWidth="sm">
           <Typography variant="body1">
             Event Manager
@@ -57,6 +61,7 @@ import Link from '@mui/material/Link';
         </Container>
       </Box>
     </Box>
+        </>
   );
 }
 
