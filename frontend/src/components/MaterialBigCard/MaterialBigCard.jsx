@@ -41,8 +41,10 @@ const OneEventCard = () => {
     if (finder) setSubState(!subState);
   }, [el]);
   const subscribe = () => {
+    if(user?.id) {
     dispatch(getFetchSubscribe(cat, el));
-    navigator(-1);
+      navigator(-1)
+    }
   };
   const setRate = (e) => {
     e.preventDefault();
@@ -88,7 +90,7 @@ const OneEventCard = () => {
           <Button size="small">Купить билет</Button>
         )}
 
-        {subState && (
+        {(subState&&user?.role==='Пользователь') && (
           <Button onClick={subscribe} size="small">
             Добавить в избранное
           </Button>
