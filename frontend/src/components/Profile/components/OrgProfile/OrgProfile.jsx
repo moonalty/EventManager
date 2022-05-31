@@ -9,6 +9,10 @@ import OrgModal from '../OrgModal/OrgModal';
 import { useSelector, useDispatch } from "react-redux";
 import { getFetchCreator } from '../../../../redux/thunk/asyncCreator';
 import { getFetchOrgCards } from '../../../../redux/thunk/asyncOrgCards';
+import { useNavigate } from 'react-router-dom'
+
+
+
 export default function OrgProfile() {
   const {orgCards} = useSelector((state) => state.orgCards)
   console.log('CREATORS+++++++', orgCards);
@@ -16,6 +20,8 @@ export default function OrgProfile() {
   React.useEffect(() =>{
     dispatch(getFetchOrgCards())
   },[dispatch])
+  
+
   const [orgModalActive, setOrgModalActive] = React.useState(false)
   return (
     <Box sx={{ minWidth: 275 }}>
@@ -27,10 +33,10 @@ export default function OrgProfile() {
               
             </Button>
             <OrgModal active={orgModalActive} setActive={()=>setOrgModalActive(false)} />
-            <ImageList sx={{ width: 500, height: 450 }} variant="woven" cols={3} gap={8}>
+            <ImageList sx={{ width: 1080, height: 863}} variant="woven" cols={3} gap={8}>
               {orgCards?.map((item) => (
      <div className="materialMainBox">
-     <Card sx={{ maxWidth: 345 }}>
+     <Card sx={{ maxWidth: 245 }}>
        <CardMedia component="img" height="340" image={item?.image} alt="#" />
        <CardContent>
          <Typography gutterBottom variant="h5" component="div">
@@ -45,12 +51,6 @@ export default function OrgProfile() {
            {item?.cost} рублей
          </Typography>
        </CardContent>
-       <CardActions>
-         {/* <Button size="small">Share</Button> */}
-         <Button size="small" >
-           Подробнее
-         </Button>
-       </CardActions>
      </Card>
    </div>
   ))} 

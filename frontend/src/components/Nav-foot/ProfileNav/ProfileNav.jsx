@@ -23,6 +23,7 @@ import { getFetchOrgCards } from '../../../redux/thunk/asyncOrgCards';
   const navigate = useNavigate()
   const open = Boolean(anchorEl);
    const { user } = useSelector((state) => state.user);
+   console.log('qqqqqqq',user)
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -87,7 +88,7 @@ import { getFetchOrgCards } from '../../../redux/thunk/asyncOrgCards';
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem onClick={showProfile}>
+        <MenuItem  onClick={showProfile}>
           <Avatar /> Личный кабинет
         </MenuItem>
         <Divider />

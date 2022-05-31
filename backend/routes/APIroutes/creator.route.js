@@ -39,6 +39,7 @@ router.route("/").post(async (req, res) => {
       is_active: true,
       user_id: userId
     });
+    res.json(newCard)
   }
 
 }});

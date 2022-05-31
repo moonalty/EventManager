@@ -19,6 +19,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { getFetchCreator } from "../../../../redux/thunk/asyncCreator";
 import { useSelector, useDispatch } from "react-redux";
 import {creatorAC} from "../../../../redux/actionCreators/creatorAC"
+import { getFetchOrgCards } from "../../../../redux/thunk/asyncOrgCards";
 
 const ITEM_HEIGHT = 48;
 
@@ -31,6 +32,7 @@ function OrgModal({ active, setActive }, props) {
   console.log("ACTIVE STATE", active);
   const [people, setPeople] = React.useState("");
   const [categories, setCategories] = React.useState("");
+  
 
   const cardToBD = (event) => {
     event.preventDefault();
@@ -66,11 +68,11 @@ function OrgModal({ active, setActive }, props) {
       onClick={() => setActive()}
     >
       <div onClick={(e) => e.stopPropagation()}>
-        <Card sx={{ maxWidth: 900 }} className="OrgModal_content">
+        <Card sx={{ maxWidth: 600 }} className="OrgModal_content">
           <form onSubmit={cardToBD}>
             <TextField
               required
-              type="file"
+              // type="file"
               name="picture"
               style={{ width: "400px", margin: "5px" }}
               id="outlined-required"
@@ -185,7 +187,7 @@ function OrgModal({ active, setActive }, props) {
               <br />
             </CardContent>
             <CardActions style={{ justifyContent: "center" }}>
-              <Button size="small" color="primary" type="submit">
+              <Button size="small" color="primary" type="submit" >
                 Сохранить мероприятие
               </Button>
             </CardActions>

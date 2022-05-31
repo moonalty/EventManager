@@ -37,10 +37,10 @@ function Navbar() {
 
    const {user} = useSelector(store=>store.user);
     console.log("----------------------->",user)
+
    React.useEffect(()=>{
-     
     dispatch(sessionFetch())
-   }, [])
+   }, [dispatch])
    
 
   const handleChange = (event, newValue) => {
@@ -49,10 +49,10 @@ function Navbar() {
 
 
   return (
-    <Box sx={{ width: "100%", height:'100px' ,backgroundColor:'#ffef62'}} >
-      <Tabs aria-label="nav tabs example" sx={{ paddingY: '20px', height: '100px'}} >
+    <Box sx={{ width: "100%", height:'100px' ,backgroundColor:'#8db8f0'}} >
+      <Tabs aria-label="nav tabs example" sx={{  height: '60px' }} >
         
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png" alt="" style={{ width: 144, height: 40, margin:10}} onClick={() => navigate(`/`)}/>
+        <img src="https://ktokyda.ru/shared/images/fe/logo.png?v=0.0.2" alt="" style={{ width: 144, height: 40, margin:10}} onClick={() => navigate(`/`)}/>
         <Search />
         {Object.keys(user).length == 0 ? 
         <>

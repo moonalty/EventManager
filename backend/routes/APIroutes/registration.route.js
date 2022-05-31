@@ -19,12 +19,18 @@ router.post('/', async (req, res) => {
     role,
   } = req.body;
   console.log(req.body)
+
+
   const user = await User.findOne({
     where: {
       email,
     },
   });
   console.log(user);
+
+
+
+
   if (user) {
     res.json({
       text: 'false',
@@ -62,6 +68,11 @@ router.post('/', async (req, res) => {
     }
  
   }
+
+
+
+
+  
 });
 
 

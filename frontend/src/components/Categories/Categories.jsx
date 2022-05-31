@@ -10,11 +10,13 @@ import Paginations from "../Pagination/Pagination";
 const Categories = () => {
   const { subscribed } = useSelector((state) => state.subscribed);
   const { categories } = useSelector((state) => state.categories);
+  const [filter,setFilter] = useState('date')
   const { cat } = useParams();
   const [currentPage, setCurrentPage] = useState(1);
   const [cardsPerPage] = useState(4);
   const dispatch = useDispatch();
   useEffect(() => {
+
     dispatch(getFetchCategories(cat));
   }, [cat]);
   const lastCardIndex = currentPage * cardsPerPage;
@@ -35,6 +37,21 @@ const Categories = () => {
         total={categories.length}
         paginate={paginate}
       />
+
+    dispatch(getFetchCategories(cat, filter));
+    // dispatch(getFetchSubs());
+  }, [cat, filter]);
+  console.log(filter);
+  return (
+    <>
+      <Filter filter={filter} setFilter={setFilter}/>
+    <div className="TinyMAINBOX">
+      {/* <>{list.map((el) => (el = <OneEventCard key={el.id} el={el} />))}</> */}
+      {categories.map(
+        (el) => (el = <TinyOneEventCard el={el} key={el.id} cat={cat} />)
+      )}
+    </div>
+
     </>
   );
 };

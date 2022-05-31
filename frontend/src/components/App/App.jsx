@@ -3,7 +3,7 @@ import Map from "../Aside/components/Map/Map";
 import Categories from "../Categories/Categories";
 import Advertising from "../Aside/components/Advertising/Advertising";
 import "./App.css";
-import { Provider } from "react-redux";
+import { Provider, useDispatch } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Calendar from "../Aside/components/Calendar/Calendar";
 import Home from "../Home/Home";
@@ -13,6 +13,7 @@ import { store } from "../../redux/store";
 import Navbar from "../Nav-foot/Navbar/Navbar";
 import Registration from "../Registration/Registration";
 import Login from "../Login/Login";
+
 // import OneEventCard from "../OneEventCard/OneEventCard";
 
 import SearchCards from "../Nav-foot/Search/SearchCards/SearchCards";
@@ -36,6 +37,7 @@ import OneProfileEventCard from "../MaterialProfileBigCard/MaterialProfileBigCar
 
 
 function App() {
+
   return (
     <Provider store={store}>
       <BrowserRouter>
@@ -65,6 +67,7 @@ function App() {
                     path="/categories/:cat/:el"
                     element={<OneEventCard />}
                   />
+                 
                   <Route path="/registration" element={<Registration />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/" element={<Home />} />
