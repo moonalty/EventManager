@@ -1,6 +1,6 @@
 import { Avatar, Link, ListItem, ListItemAvatar, ListItemText, MenuItem } from '@mui/material';
 import React from 'react';
-import FlagIcon from '@mui/icons-material/Flag';
+import ColorLensIcon from '@mui/icons-material/ColorLens';
 
 function EachCategories({ eachcategory, handleClose}) {
 
@@ -14,7 +14,7 @@ function EachCategories({ eachcategory, handleClose}) {
     <ListItem className='ListItemCategories' onClick={() => handleClose(eachcategory.id)}>
       <ListItemAvatar>
         <Avatar style={{ backgroundColor: '#f9db79'}}>
-          <i class="gg-alarm"></i>
+          <ColorLensIcon />
         </Avatar>
       </ListItemAvatar>
       <ListItemText primary={eachcategory.name}  />
