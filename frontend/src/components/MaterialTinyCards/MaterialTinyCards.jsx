@@ -15,8 +15,8 @@ const TinyOneEventCard = ({ el, cat }) => {
     navigate(`/categories/${cat}/${el.id}`);
   };
   return (
-    <div className="materialMainBox">
-      <Card sx={{ maxWidth: 345 }}>
+    <div className="materialMainBox" >
+      <Card sx={{ width: 360, fontFamily:'Roboto'}} >
         <CardMedia component="img" height="340" image={el.image} alt="#" />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
