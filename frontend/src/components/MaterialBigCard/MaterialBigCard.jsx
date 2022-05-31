@@ -14,18 +14,25 @@ import {
 import { getFetchCheckRate, getFetchRate } from "../../redux/thunk/asyncRate";
 import RatingSystem from "../RatingSystem/RatingSystem";
 import { deleteCardFetch } from "../../redux/thunk/asyncCards";
+import { welcomeAC } from "../../redux/actionCreators/welcomeAC";
 
 const OneEventCard = () => {
   const navigator = useNavigate();
   const { oneCategory: oneCat } = useSelector((state) => state.oneCategory);
   const { user } = useSelector((state) => state.user);
-  console.log("USER>>>>>>>>>>>", user);
-  console.log("oneCAT>>>>>>>", oneCat);
+  // console.log("USER>>>>>>>>>>>", user);
+  // console.log("oneCAT>>>>>>>", oneCat);
   const { subscribed } = useSelector((state) => state.subscribed);
+  const { allCategories } = useSelector(state => state.allCategories)
   // const { rate } = useSelector((state) => state.rate);
   const [subState, setSubState] = React.useState(true);
-  console.log("SUBSTATE>>>>", subState);
+  // console.log(catName.name)
+  // console.log("SUBSTATE>>>>", subState);
   const { el, cat } = useParams();
+  const catName = allCategories?.title.find(el => el?.id === Number(cat));
+  React.useEffect(() => {
+    dispatch(welcomeAC(catName.name))
+  }, [cat])
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(getFetchCheckRate(+el));
