@@ -10,6 +10,7 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
 
+
 function Registration() {
   const dispatch = useDispatch();
   
@@ -42,7 +43,8 @@ function Registration() {
           autoComplete="off"
         >
          <div  >
-        <TextField style={{padding: '2px'}}  id="name"  type="text" placeholder="имя" required variant="outlined" />
+         
+        <TextField style={{padding: '2px'}}  id="name"   type="text" placeholder="имя" required variant="outlined" />
         <TextField id="email" placeholder="электронная почта" required  variant="outlined" />
           </div>
           <div >
