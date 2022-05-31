@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import {  registrationFetch } from "../../redux/thunk/asyncReg";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Switch from '@mui/material/Switch';
 import Button from '@mui/material/Button';
+import { welcomeAC } from "../../redux/actionCreators/welcomeAC";
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
 
 function Registration() {
   const dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch(welcomeAC('Регистрация'))
+  }, [])
   
   const addUser = (e) => {
     e.preventDefault();

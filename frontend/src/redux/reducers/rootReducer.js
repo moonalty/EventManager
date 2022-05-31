@@ -6,6 +6,7 @@ import { loginUser } from "./userReducer";
 import {orgCardsReducer} from './orgCardsReducer'
 import { subscribedReducer } from "./subscribedReducer";
 import { rateReducer } from "./rateReducer";
+import { welcomeReducer } from "./welcomeReducer";
 
 export const rootReducer = combineReducers({
   categories: allCategoriesReducer,
@@ -17,7 +18,7 @@ export const rootReducer = combineReducers({
   creators: creatorReducer,
   cards: allCardsReducer,
   search: allCardsReducer,
-  user: loginUser,
   rate: rateReducer,
   orgCards: orgCardsReducer,
+  welcome: welcomeReducer,
 });

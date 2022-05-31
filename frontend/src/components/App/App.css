@@ -12,7 +12,7 @@
 
 
 .mainBox{
-  background-color: rgb(233, 208, 254);
+  background-color: rgb(255, 255, 255);
   padding: 10px;
   margin: 0 auto;
   width: 50vw;
@@ -41,7 +41,7 @@
   border: 1px solid purple;
   border-radius: 15%;
   width: 20vw;
-  background-color: rgb(233, 208, 254);
+  background-color: rgb(255, 255, 255);
   padding: 10px;
   
 }
@@ -75,7 +75,7 @@
   width: 100px;
 }
 .subButton{
-  background-color: #8db8f0;
+  background-color: #ffffff;
   height: 70px;
   width: 150px;
   border-radius: 10%;
@@ -110,7 +110,7 @@
   margin-top: 20px;
   
   width: 20vw;
-  background-color: #8db8f0;
+  background-color: #ffffff;
   padding: 10px;
   border-radius: 2%;
 }
@@ -141,7 +141,7 @@ padding: 10px;
 }
 body {
 
-	background: linear-gradient(-45deg, #e28a70, #ed6c9d, #74c6e3, #80d6c2);
+	background: ;
 
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
