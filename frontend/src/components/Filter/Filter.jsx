@@ -15,9 +15,10 @@ function Filter({ filterarr, setFilterarr}) {
 
   const filterFunc =(e) =>{
     const filterparam = e.target.value
-    const new1 = categories.sort((a, b) => a.cost > b.cost ? 1 : -1)
-    setFilterarr(new1)
-     console.log('новый',new1);
+    if (filterparam == 'cost'){
+      const new1 = categories.sort((a, b) => a.cost > b.cost ? 1 : -1)
+      setFilterarr(new1)
+    } 
     console.log('filterparam', filterparam);
   }
  
