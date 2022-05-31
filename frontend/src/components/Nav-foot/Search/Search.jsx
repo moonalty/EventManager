@@ -13,12 +13,13 @@ function Search() {
   const navigate = useNavigate();
   const { cards } = useSelector(state => state.cards);
   const { search } = useSelector(state => state.search)
+  const { orgCards } = useSelector(state => state.orgCards)
   useEffect(() => {
+    // console.log('ljhjj',change)
     dispatch(getFetchAllCards())
-  }, [search?.data])
-
+  }, [search?.data, orgCards])
   // console.log(search);
-
+  // console.log('ljhjj222', change)
   // console.log(cards.data);
   return (
    

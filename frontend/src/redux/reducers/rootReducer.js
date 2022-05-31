@@ -7,6 +7,7 @@ import {orgCardsReducer} from './orgCardsReducer'
 import { subscribedReducer } from "./subscribedReducer";
 import { rateReducer } from "./rateReducer";
 import { welcomeReducer } from "./welcomeReducer";
+import { changeStateCardsReducer } from "./changeStateCardsReducer";
 
 export const rootReducer = combineReducers({
   categories: allCategoriesReducer,
@@ -21,4 +22,5 @@ export const rootReducer = combineReducers({
   rate: rateReducer,
   orgCards: orgCardsReducer,
   welcome: welcomeReducer,
+  change: changeStateCardsReducer
 });

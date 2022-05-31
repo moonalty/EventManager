@@ -55,7 +55,7 @@ function Navbar() {
 
       <Tabs aria-label="nav tabs example" sx={{  height: '60px' }} >
         
-        <img src="https://ktokyda.ru/shared/images/fe/logo.png?v=0.0.2" alt="" style={{ width: 144, height: 40, margin:10}} onClick={() => navigate(`/`)}/>
+        <img src="/image/logo.png" alt="" style={{ width: 60, height: 60, marginLeft:10, marginRight:30}} onClick={() => navigate(`/`)}/>
         <Search  />
         {Object.keys(user).length == 0 ? 
         <>

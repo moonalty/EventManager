@@ -11,7 +11,12 @@ function Home() {
     dispatch(welcomeAC('Добро пожаловать'))
   },[])
   return (
-    <>Home</>
+    <div style={{height:400, backgroundColor:'grey', borderRadius:10}}>
+      <img src="/image/logo.png" alt="" style={{ width: 150, height: 150, marginLeft: 10, marginRight: 30 }} />
+      <p>Мы молодой проект 'Куда дальше?'</p>
+      <p>Наша цень помогать людям находить интересные мероприятия и развлечения на любой вкус</p>
+      <p>У нас на сайте Вы можете начти тысячи идей куда выбраться из дома в любимом городе Санкт-Петербург</p>
+    </div>
     // // <Grid
     // //   container
     // //   style={{ width: "100%", height: "100%" }}
