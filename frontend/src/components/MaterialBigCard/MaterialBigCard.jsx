@@ -71,15 +71,10 @@ const OneEventCard = () => {
           До: {oneCat.date_end}
         </Typography>
         <Typography>
-          Начало в: {oneCat.time_start}
-          <br />
-          Заканчивается: {oneCat.time_end}
+          Мероприятия рассчитано на: {oneCat.people_count} человек
         </Typography>
         <Typography>
-          Мероприятия рассчитано на -{oneCat.people_count} человек
-        </Typography>
-        <Typography>
-          Стоимость билета:
+          Стоимость билета: 
           {oneCat.cost} рублей
         </Typography>
       </CardContent>

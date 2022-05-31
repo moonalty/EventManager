@@ -36,6 +36,7 @@ import CategoriesList from "../Nav-foot/Categories1/CategoriesList";
 import OneEventCard from "../MaterialBigCard/MaterialBigCard";
 import OneProfileEventCard from "../MaterialProfileBigCard/MaterialProfileBigCard";
 import WelcomePage from "../WelcomePage/WelcomePage";
+import Navbar2 from "../Nav-foot/Navbar/Navbar2";
 
 
 function App() {

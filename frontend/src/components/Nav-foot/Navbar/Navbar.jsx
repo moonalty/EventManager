@@ -53,13 +53,13 @@ function Navbar() {
     <Box sx={{ width: "100%", height:'80px' }} >
 
 
-      <Tabs aria-label="nav tabs example" sx={{  height: '100px' }} >
+      <Tabs aria-label="nav tabs example" sx={{ height: '100px' }} >
         
-        <img src="/image/logo.png" alt="" style={{ width: 60, height: 60, marginLeft:10, marginRight:30}} onClick={() => navigate(`/`)}/>
-        <Search  />
+        <img src="/image/logo.png" alt="" style={{ width: 80, height: 80, marginLeft:10, marginRight:30}} onClick={() => navigate(`/`)}/>
+        <Search  style={{marginRight: 300}}/>
         {Object.keys(user).length == 0 ? 
         <>
-        <Tab label="Регистрация" onClick={() => navigate(`/registration`)} />
+          <Tab label="Регистрация" onClick={() => navigate(`/registration`)} />
         <Tab label="Логин" onClick={() => navigate(`/login`)} />
           </> :
         <Profile />
