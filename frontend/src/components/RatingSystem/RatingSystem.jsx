@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const RatingSystem = ({ setRate }) => {
   const { rate } = useSelector((state) => state.rate);
-  console.log(rate.result);
+ 
   const dispatch = useDispatch();
   return (
     <>

@@ -68,13 +68,14 @@ function OrgModal({ active, setActive }, props) {
       onClick={() => setActive()}
     >
       <div onClick={(e) => e.stopPropagation()}>
-        <Card sx={{ maxWidth: 600 }} className="OrgModal_content">
+        <Card sx={{ maxWidth: 600, maxHeight: 600, overflow: "auto", display: "flex" }} className="OrgModal_content">
           <form onSubmit={cardToBD}>
+            <Typography>Добавить мероприятие</Typography>
             <TextField
               required
               // type="file"
               name="picture"
-              style={{ width: "400px", margin: "5px" }}
+              style={{ width: "400px",margin: "5px" }}
               id="outlined-required"
               label="Добавить фото"
               InputLabelProps={{ shrink: true }}

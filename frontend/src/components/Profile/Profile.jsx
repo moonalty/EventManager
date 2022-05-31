@@ -8,15 +8,17 @@ import UserProfile from "./components/UserProfile/UserProfile";
 import { creatorAC } from "../../redux/actionCreators/creatorAC";
 import { subscribedAC } from "../../redux/actionCreators/subscribesAC";
 import { getFetchCreator } from "../../redux/thunk/asyncCreator";
+import { welcomeAC } from "../../redux/actionCreators/welcomeAC";
 
 const Profile = () => {
   const dispatch = useDispatch();
   const { subscribed } = useSelector((state) => state.subscribed);
   const {creators} = useSelector((state)=> state.creators)
+ 
   const { user } = useSelector((state) => state.user);
- useEffect(()=> {
-  
- }, [])
+  useEffect(() => {
+    dispatch(welcomeAC('Личный кабинет'))
+  }, [])
   return (
     <Grid container>
       <Grid item style={{ width: "100%", height: "100%" }}>
