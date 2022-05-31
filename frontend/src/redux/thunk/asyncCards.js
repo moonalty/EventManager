@@ -48,3 +48,15 @@ export const deleteCardFetch = (el) => {
       .then((data) => dispatch(cardsDeleteAC(data)));
   };
 };
+
+// export const deleteCreatorCardFetch = (el) => {
+//   return (dispatch) => {
+//     fetch("/creator", {
+//       headers: { "content-type": "application/json" },
+//       method: "delete",
+//       body: JSON.stringify({ el }),
+//     })
+//       .then((res) => res.json())
+//       .then((data) => dispatch(cardsDeleteAC(data)));
+//   };
+// };

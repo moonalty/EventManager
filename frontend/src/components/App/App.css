@@ -26,6 +26,10 @@
 
   
 }
+.ListItemCategories{
+  cursor: pointer;
+
+}
 .tinyMainbox{
   font-size: large;
   display: flex;
@@ -36,7 +40,6 @@
   margin-top: 20px;
   border: 1px solid purple;
   border-radius: 15%;
-
   width: 20vw;
   background-color: rgb(233, 208, 254);
   padding: 10px;
@@ -163,6 +166,7 @@ body {
   flex-direction: row;
   list-style-type: none;
 
+
 }
 .page-item{
 }
@@ -173,6 +177,7 @@ body {
   border-radius: 100%;
   margin: 5px;
   margin-top: 30px;
+  cursor: pointer;
 }
 
 
