@@ -11,11 +11,7 @@ export const loginFetch = (payload) => {
      .then((res) => res.json())  
      
       .then((data) => data.text === 'Неверный пароль или логин' ? alert('Неверный пароль или логин') : window.location.assign("/") && dispatch(loginUserAC(data)))
-      // .then((res) => res.json())
-      // .then((data) => {
-      //   dispatch(sessionUserAC(data));
-       
-      // });
+    
   };
 };
 

@@ -23,12 +23,14 @@ function Search() {
   // console.log(cards.data);
   return (
    
-      <Autocomplete
+     <div className='seachDiv'>
+
+<Autocomplete
         id="free-solo-demo"
         freeSolo
         options={cards?.data?.map((option) => option.title)}
-      renderInput={(params) => <TextField  {...params}  placeholder="Поиск" style={{background:'white', fontSize:'10px', }} />}
-        sx={{ width: '150px', height: '5px'}}
+      renderInput={(params) => <TextField  {...params}  placeholder="Поиск" style={{background:'white',}} />}
+        sx={{ width: '150px', baclgroundColor:'white'}}
         onKeyDown={(e)=>{
           if (e.key === 'Enter'){
             e.defaultMuiPrevented = true;
@@ -39,6 +41,9 @@ function Search() {
           }}
       />
    
+
+     </div>
+    
   );
 }
 export default Search

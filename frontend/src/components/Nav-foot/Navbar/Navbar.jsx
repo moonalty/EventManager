@@ -50,10 +50,10 @@ function Navbar() {
 
   return (
 
-    <Box sx={{ width: "100%", height:'60px' }} >
+    <Box sx={{ width: "100%", height:'80px' }} >
 
 
-      <Tabs aria-label="nav tabs example" sx={{  height: '60px' }} >
+      <Tabs aria-label="nav tabs example" sx={{  height: '100px' }} >
         
         <img src="/image/logo.png" alt="" style={{ width: 60, height: 60, marginLeft:10, marginRight:30}} onClick={() => navigate(`/`)}/>
         <Search  />

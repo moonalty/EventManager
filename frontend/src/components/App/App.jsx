@@ -14,6 +14,7 @@ import Navbar from "../Nav-foot/Navbar/Navbar";
 import Registration from "../Registration/Registration";
 import Login from "../Login/Login";
 
+
 // import OneEventCard from "../OneEventCard/OneEventCard";
 
 import SearchCards from "../Nav-foot/Search/SearchCards/SearchCards";
@@ -74,6 +75,7 @@ function App() {
                  
                   <Route path="/registration" element={<Registration />} />
                   <Route path="/login" element={<Login />} />
+                
                   <Route path="/" element={<Home />} />
                   <Route path="/categories/:cat" element={<Categories />} />
 

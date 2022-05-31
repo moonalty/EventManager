@@ -2,24 +2,16 @@
 
 
 
-.MuiFormControl-root{
 
-
-position:relative;
-
-
-}
-
-.css-p1hkwx-MuiAutocomplete-root {
+.seachDiv {
+  background-color:#1d1d1d;
+  padding: 10px;
+  
 
 
 
 }
 
-.MuiAutocomplete-inputFocused {
-
-background: white;
-}
 
 
 .MuiInputLabel-animated{
