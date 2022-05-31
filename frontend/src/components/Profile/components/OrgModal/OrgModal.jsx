@@ -21,6 +21,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { creatorAC } from "../../../../redux/actionCreators/creatorAC";
 import { getFetchOrgCards } from "../../../../redux/thunk/asyncOrgCards";
 
+import { changeStateCardsReducer } from "../../../../redux/reducers/changeStateCardsReducer";
+
 const ITEM_HEIGHT = 48;
 
 function OrgModal({ active, setActive }, props) {
@@ -48,6 +50,7 @@ function OrgModal({ active, setActive }, props) {
     };
     dispatch(getFetchCreator(data));
     setActive(false);
+    dispatch(changeStateCardsReducer())
   };
   const categoriesChange = (event) => {
     setCategories(event.target.value);

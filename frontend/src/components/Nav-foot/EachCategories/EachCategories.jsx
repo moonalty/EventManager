@@ -13,7 +13,7 @@ function EachCategories({ eachcategory, handleClose}) {
 
     <ListItem className='ListItemCategories' onClick={() => handleClose(eachcategory.id)}>
       <ListItemAvatar>
-        <Avatar>
+        <Avatar style={{ backgroundColor: '#f9db79'}}>
           <i class="gg-alarm"></i>
         </Avatar>
       </ListItemAvatar>

@@ -18,27 +18,29 @@ const Categories = () => {
   const {user} = useSelector((state)=> state.user);
   const [filter,setFilter] = useState('date')
   const { allCategories } = useSelector(state => state.allCategories)
-
+  const [filterarr, setFilterarr] = useState(categories)
   const { cat } = useParams();
   const [currentPage, setCurrentPage] = useState(1);
   const [cardsPerPage] = useState(4);
   const dispatch = useDispatch();
   // console.log(typeof cat)
-  const catName = allCategories?.title.find(el => el?.id === Number(cat));
-  console.log(catName.name)
+  // console.log(catName.name)
   console.log(user)
-
+  console.log('allcat',allCategories)
+  const catName = allCategories?.title?.find(el => el?.id === Number(cat));
   useEffect(() => {
-
+    
     dispatch(getFetchCategories(cat, filter));
     // if(Object.key(user).length>0) {
-    //   dispatch(getFetchSubs());
-    // }
+      //   dispatch(getFetchSubs());
+      // }
+    dispatch(welcomeAC(catName?.name))
+  }, [cat, filter, allCategories]);
     
-  }, [cat, filter]);
-  useEffect(() => {
-    dispatch(welcomeAC(catName.name))
-  }, [cat])
+  // useEffect(() => {
+
+  //   dispatch(welcomeAC(catName?.name))
+  // }, [cat])
   // console.log(filter);
 
   //   dispatch(getFetchCategories(cat));
@@ -54,7 +56,7 @@ const Categories = () => {
 
   return (
     <>
-      <Filter />
+      <Filter filterarr={filterarr} setFilterarr={setFilterarr}/>
       <div className="TinyMAINBOX">
         {currentCard.map(
           (el) => (el = <TinyOneEventCard el={el} key={el.id} cat={cat} />)
