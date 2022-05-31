@@ -1,11 +1,17 @@
 import { CardMedia, Grid } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { welcomeAC } from "../../redux/actionCreators/welcomeAC";
 import Aside from "../Aside/Aside";
 import styles from "./home.module.css";
 
 function Home() {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(welcomeAC('Добро пожаловать'))
+  },[])
   return (
-    <></>
+    <>Home</>
     // // <Grid
     // //   container
     // //   style={{ width: "100%", height: "100%" }}

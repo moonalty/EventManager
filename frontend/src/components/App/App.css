@@ -42,7 +42,9 @@ background: white;
 
 
 .mainBox{
+
   background-color: white;
+
   padding: 10px;
   margin: 0 auto;
   width: 50vw;
@@ -56,6 +58,10 @@ background: white;
 
   
 }
+.ListItemCategories{
+  cursor: pointer;
+
+}
 .tinyMainbox{
   font-size: large;
   display: flex;
@@ -66,9 +72,10 @@ background: white;
   margin-top: 20px;
   border: 1px solid purple;
   border-radius: 15%;
-
   width: 20vw;
+
   background-color: white;
+
   padding: 10px;
   
 }
@@ -102,7 +109,7 @@ background: white;
   width: 100px;
 }
 .subButton{
- 
+
   height: 70px;
   width: 150px;
   border-radius: 10%;
@@ -151,19 +158,27 @@ background: white;
   flex-direction: column;
   border-radius: 2%;
 }
-.TinyMAINBOX{
-display: flex;
-justify-content: flex-start;
+.categoriesContentCards{
+  display: flex;
+  justify-content: flex-start;
 align-items: flex-start;
 flex-wrap: wrap;
 margin: 10px;
 padding: 10px;
-
+}
+.TinyMAINBOX{
+  display: flex;
+  justify-content:flex-start;
+  align-items:flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 body {
+
 	background: white;
 
   margin: 0%;
+
 
 	height: 100vh;
 }
@@ -179,6 +194,7 @@ body {
 		background-position: 0% 50%;
 	}
 }
+
 
 .MuiTypography-colorTextSecondary {
   color: #f6f8fc;
@@ -196,4 +212,26 @@ footer {
 
 
 }
+
+.pagination{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  list-style-type: none;
+
+
+}
+.page-item{
+}
+.pagiButton{
+  background-color: transparent;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  margin: 5px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+
 

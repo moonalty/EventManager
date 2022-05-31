@@ -36,7 +36,7 @@ function Navbar() {
    const dispatch = useDispatch();
 
    const {user} = useSelector(store=>store.user);
-    console.log("----------------------->",user)
+    
 
    React.useEffect(()=>{
     dispatch(sessionFetch())
@@ -49,7 +49,9 @@ function Navbar() {
 
 
   return (
+
     <Box sx={{ width: "100%", height:'100px' }} >
+
       <Tabs aria-label="nav tabs example" sx={{  height: '60px' }} >
         
         <img src="https://ktokyda.ru/shared/images/fe/logo.png?v=0.0.2" alt="" style={{ width: 144, height: 40, margin:10}} onClick={() => navigate(`/`)}/>
