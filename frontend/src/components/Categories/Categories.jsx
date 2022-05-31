@@ -12,9 +12,10 @@ import { welcomeAC } from "../../redux/actionCreators/welcomeAC";
 import TinyOneEventCard from "../MaterialTinyCards/MaterialTinyCards";
 import Paginations from "../Pagination/Pagination";
 const Categories = () => {
+   const { subscribed } = useSelector((state) => state.subscribed);
 
-  // const { subscribed } = useSelector((state) => state.subscribed);
   const { categories } = useSelector((state) => state.categories);
+  const {user} = useSelector((state)=> state.user);
   const [filter,setFilter] = useState('date')
   const { allCategories } = useSelector(state => state.allCategories)
 
@@ -25,19 +26,23 @@ const Categories = () => {
   // console.log(typeof cat)
   const catName = allCategories?.title.find(el => el?.id === Number(cat));
   console.log(catName.name)
+  console.log(user)
 
   useEffect(() => {
 
     dispatch(getFetchCategories(cat, filter));
-    // dispatch(getFetchSubs());
+    // if(Object.key(user).length>0) {
+    //   dispatch(getFetchSubs());
+    // }
+    
   }, [cat, filter]);
   useEffect(() => {
     dispatch(welcomeAC(catName.name))
   }, [cat])
   // console.log(filter);
 
-    dispatch(getFetchCategories(cat));
-  }, [cat]);
+  //   dispatch(getFetchCategories(cat));
+  // }, [cat]);
   useEffect(() => {
     setCurrentPage(1);
   }, [cat]);
