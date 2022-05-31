@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginFetch } from "../../redux/thunk/asyncLogin";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import { welcomeAC } from "../../redux/actionCreators/welcomeAC";
+
+import Button from '@mui/material/Button';
+
 
 function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    dispatch(welcomeAC('Войти в аккаунт'))
+  }, [])
 
   const logUser = (e) => {
     e.preventDefault();
@@ -16,48 +26,49 @@ function Login() {
       password: e.target.password.value,
     };
 
-    // fetch("/login", {
-    //   headers: { "content-type": "application/json" },
-    //   method: "POST",
-    //   body: JSON.stringify(data),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => dispatch(loginUserAC(data)))
 
     dispatch(loginFetch(data));
-    navigate("/");
+    // if(!localStorage.getItem('user')){  
+    //   localStorage.setItem('user',data.email) 
+    // }else{
+    //   localStorage.removeItem('user') 
+    //   localStorage.setItem('user',data.email) 
+    // }
+
+
+    
+    //navigate("/");
   };
 
   return (
-    <div className="container">
-      <div className="container">
-        <form onSubmit={logUser}>
-          <input
-            id="email"
-            type="text"
-            placeholder="электронная почта"
-            className="validate"
-            required
-          />
-          <input
-            id="password"
-            minLength="8"
-            maxLength="16"
-            type="password"
-            placeholder="пароль"
-            className="validate"
-            required
-          />
 
-          <button
-            type="submit"
-            className="waves-effect waves-light btn-large brown lighten-2"
-          >
-            Авторизоваться<i className="material-icons left"></i>
-          </button>
-        </form>
-      </div>
+<Box className="login"  onSubmit={logUser}
+    component="form"
+    sx={{
+      '& > :not(style)': { m: 1, width: '25ch' , display: "box" , marginLeft: 'auto',
+      marginRight:'auto', padding:'20', textAlign:'center' },
+    
+    }}
+    noValidate
+    autoComplete="off"
+  >
+   <div >
+
+  <TextField id="email" placeholder="электронная почта" required  variant="outlined" />
     </div>
+    <div>
+    <TextField id="password"   placeholder="пароль" minLength="8" maxLength="16" type="password" required variant="outlined" />
+    
+    </div>
+    <div >
+     <Button 
+      aria-label="fingerprint" color="success" type="submit" >Авторизоваться</Button>
+   
+     </div>
+  </Box>
+
+
+
   );
 }
 export default Login;

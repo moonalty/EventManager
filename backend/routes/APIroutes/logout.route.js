@@ -3,14 +3,14 @@ const bcrypt = require("bcrypt");
 const {User} = require('../../db/models')
 
 
-router.get('/logout', (req, res) => {
+router.get('/', (req, res) => {
   const {
     user
   } = req.session;
   if (user) {
     req.session.destroy();
-    res.clearCookie('sid');
-    res.redirect('/');
+    // res.clearCookie('sid');
+    res.json({text:'выйти'});
   }
 });
 

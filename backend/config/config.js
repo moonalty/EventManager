@@ -3,6 +3,7 @@ const path = require("path");
 const session = require("express-session");
 const isSession = require("../middleware/session");
 const sessionConfig = require("./sessionConfig");
+const fileUpload = require("express-fileupload");
 const cors = require("cors");
 
 module.exports = function config(app) {
@@ -12,4 +13,5 @@ module.exports = function config(app) {
   app.use(session(sessionConfig));
   app.use(isSession);
   app.use(cors());
+  app.use(fileUpload());
 };

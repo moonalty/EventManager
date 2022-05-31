@@ -1,67 +1,69 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import {  registrationFetch } from "../../redux/thunk/asyncReg";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Switch from '@mui/material/Switch';
+import Button from '@mui/material/Button';
+import { welcomeAC } from "../../redux/actionCreators/welcomeAC";
+const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
-import { useNavigate } from "react-router-dom";
-import { registrationFetch } from "../../redux/thunk/asyncReg";
+
 
 function Registration() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-
+  
+  useEffect(() => {
+    dispatch(welcomeAC('Регистрация'))
+  }, [])
+  
   const addUser = (e) => {
     e.preventDefault();
-
     const data = {
       name: e.target.name.value,
       email: e.target.email.value,
       password: e.target.password.value,
       password2: e.target.password2.value,
-    };
-
-
-    if (data.password === data.password2) {
-      dispatch(registrationFetch(data));
-      navigate("/");
-    } 
+      role: e.target.role.checked,
+  
+    }; 
+      dispatch(registrationFetch(data));  
   };
+
   return (
-    <div className="container">
-      <div className="container">
-        <form onSubmit={addUser}>
-          <input id="name" type="text" placeholder="имя" className="validate" />
-          <input
-            id="email"
-            type="text"
-            placeholder="электронная почта"
-            className="validate"
-          />
-          <input
-            id="password"
-            minLength="8"
-            maxLength="16"
-            placeholder="пароль"
-            type="password"
-            className="validate"
-            required
-          />
-          <input
-            id="password2"
-            minLength="8"
-            maxLength="16"
-            placeholder="повторите пароль"
-            type="password"
-            className="validate"
-            required
-          />
-          <button
-            type="submit"
-            className="waves-effect waves-light btn-large brown lighten-2"
-          >
-            Зарегистрироваться<i className="material-icons left"></i>
-          </button>
-        </form>
-      </div>
-    </div>
+  <Box onSubmit={addUser}
+          component="form"
+          sx={{
+            '& > :not(style)': { m: 1, width: '25ch' , display: "box" , marginLeft: 'auto',
+            marginRight:'auto', padding:'20', textAlign:'center'  },
+          
+          }}
+          noValidate
+          autoComplete="off"
+        >
+         <div >
+        <TextField   id="name"  type="text" placeholder="имя" required variant="outlined" />
+        <TextField id="email" placeholder="электронная почта" required  variant="outlined" />
+          </div>
+          <div>
+        <TextField id="password" placeholder="пароль" minLength="8" maxLength="16" type="password" required variant="outlined" />
+          <TextField id="password2"  placeholder="пароль" minLength="8" maxLength="16" type="password" required variant="outlined" />
+          </div>
+          <div >
+           <Button 
+            aria-label="fingerprint" color="success" type="submit" >Зарегистрироваться</Button>
+          <h>Организатор</h>
+          
+           <Switch  id="role" {...label} defaultChecked size="small" />
+           </div>
+        </Box>
+     
+    
+       
+
+
+
+
   );
 }
 

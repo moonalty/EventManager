@@ -1,4 +1,4 @@
-"use strict";
+const moment = require('moment')
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("Cards", {
@@ -19,16 +19,22 @@ module.exports = {
       },
       date_start: {
         type: Sequelize.DATE,
+        get() {
+          return moment(this.getDataValue('date_start')).format('DD/MM/YYYY h:mm')
+        }
       },
       date_end: {
         type: Sequelize.DATE,
+        get() {
+          return moment(this.getDataValue('date_end')).format('DD/MM/YYYY h:mm')
+        }
       },
-      time_start: {
-        type: Sequelize.TEXT,
-      },
-      time_end: {
-        type: Sequelize.TEXT,
-      },
+      // time_start: {
+      //   type: Sequelize.TEXT,
+      // },
+      // time_end: {
+      //   type: Sequelize.TEXT,
+      // },
       adress: {
         type: Sequelize.TEXT,
       },
