@@ -26,8 +26,8 @@ function Search() {
         id="free-solo-demo"
         freeSolo
         options={cards?.data?.map((option) => option.title)}
-      renderInput={(params) => <TextField variant="standard" {...params}  label="Поиск" />}
-        sx={{ width: 150, height: 20 }}
+      renderInput={(params) => <TextField  {...params}  placeholder="Поиск" style={{background:'white', fontSize:'10px', }} />}
+        sx={{ width: '150px', height: '5px'}}
         onKeyDown={(e)=>{
           if (e.key === 'Enter'){
             e.defaultMuiPrevented = true;

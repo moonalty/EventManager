@@ -1,17 +1,18 @@
-.css-1a1fmpi-MuiInputBase-root-MuiInput-root:before {
-  border-bottom: 1px solid aliceblue;
 
-  color: white;
+
+
+
+.MuiFormControl-root{
+
+
+position:relative;
+
+
 }
 
-.MuiFormLabel-colorPrimary {
-background: white;
+.css-p1hkwx-MuiAutocomplete-root {
 
-}
 
-.MuiInputLabel-root.Mui-focused{
-  color: white;
-  
 
 }
 
@@ -34,10 +35,7 @@ background: white;
   
 }
 
-.MuiGrid-item  {
-  padding: 1px;
-  
-}
+
 
 
 .mainBox{
@@ -204,11 +202,21 @@ body {
 .css-i4bv87-MuiSvgIcon-root {
   color: aliceblue
 }
+
+.rightBlock{
+  display: flex;
+  flex-direction:column;
+
+ justify-content:space-between;
+}
+
 footer {
   background-color: #1d1d1d;
   
   
-  margin-top: 50px;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
   
 
 
