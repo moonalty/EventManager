@@ -61,7 +61,7 @@ function Login() {
     
     </div>
     <div >
-     <Button 
+     <Button style={{padding: '2px', color: '#000000'}}
       aria-label="fingerprint" color="success" type="submit" >Авторизоваться</Button>
    
      </div>

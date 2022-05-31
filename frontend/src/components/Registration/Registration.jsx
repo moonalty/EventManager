@@ -34,27 +34,27 @@ function Registration() {
   <Box onSubmit={addUser}
           component="form"
           sx={{
-            '& > :not(style)': { m: 1, width: '25ch' , display: "box" , marginLeft: 'auto',
+            '& > :not(style)': { m: 1, width: '30ch' , display: "box" , marginLeft: 'auto',
             marginRight:'auto', padding:'20', textAlign:'center'  },
           
           }}
           noValidate
           autoComplete="off"
         >
-         <div >
-        <TextField   id="name"  type="text" placeholder="имя" required variant="outlined" />
+         <div  >
+        <TextField style={{padding: '2px'}}  id="name"  type="text" placeholder="имя" required variant="outlined" />
         <TextField id="email" placeholder="электронная почта" required  variant="outlined" />
           </div>
-          <div>
-        <TextField id="password" placeholder="пароль" minLength="8" maxLength="16" type="password" required variant="outlined" />
+          <div >
+        <TextField style={{padding: '2px'}} id="password" placeholder="пароль" minLength="8" maxLength="16" type="password" required variant="outlined" />
           <TextField id="password2"  placeholder="пароль" minLength="8" maxLength="16" type="password" required variant="outlined" />
           </div>
           <div >
-           <Button 
+           <Button style={{padding: '2px', color: '#000000'}}
             aria-label="fingerprint" color="success" type="submit" >Зарегистрироваться</Button>
           <h>Организатор</h>
           
-           <Switch  id="role" {...label} defaultChecked size="small" />
+           <Switch style={{ color: '#f9db79'}} id="role" {...label}  size="small" />
            </div>
         </Box>
      

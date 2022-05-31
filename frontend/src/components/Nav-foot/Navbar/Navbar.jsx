@@ -50,7 +50,7 @@ function Navbar() {
 
   return (
 
-    <Box sx={{ width: "100%", height:'100px' }} >
+    <Box sx={{ width: "100%", height:'60px' }} >
 
       <Tabs aria-label="nav tabs example" sx={{  height: '60px' }} >
         
