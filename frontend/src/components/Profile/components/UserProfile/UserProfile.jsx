@@ -17,7 +17,7 @@ function UserProfile() {
 
   return (
     <div>
-      <h1>Вы подписаны на мероприятия: </h1>
+      <p style={{ fontFamily: 'Roboto', fontWeight: '700', fontSize: '30px'}}>Вы подписаны на мероприятия: </p>
       <div>
         {subscribed?.map(
           (el) => (el = <TinyProfileEventCard el={el[0]} key={el[0]?.id} />)

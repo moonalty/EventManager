@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 'auto',
     marginLeft: theme.spacing(3),
     marginBottom: theme.spacing(0),
+    
 
     [theme.breakpoints.down('md')]: {
       width: '100%',
@@ -34,6 +35,8 @@ const useStyles = makeStyles((theme) => ({
   footerLink: {
     color: "white",
     lineHeight: '15px',
+    fontFamily: 'Roboto',
+    fontWeight: 700,
     
     marginLeft: theme.spacing(3),
     marginRight: theme.spacing(3),
@@ -90,7 +93,8 @@ export default function Footer(props) {
             
            
           </Box>
-          <Typography style={{color:'white'}} component="p" variant="caption" gutterBottom={false}>{content['copy']}</Typography>
+          <Typography style={{
+            color: 'white', fontFamily: 'Roboto'}} component="p" variant="caption" gutterBottom={false}>{content['copy']}</Typography>
         </Box>
         
       </Container>

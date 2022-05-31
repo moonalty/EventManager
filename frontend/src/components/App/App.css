@@ -30,10 +30,9 @@ background: white;
 }
 
 .MuiTabs-root {
-	background: #000000;
+	background: #1d1d1d;
   color: white;
   
-
 }
 
 
@@ -77,6 +76,8 @@ background: white;
   padding: 10px;
   
 }
+
+
 .headerBox{
   width: 100%;
   align-items: center;
@@ -210,9 +211,12 @@ body {
 }
 
 footer {
-  background-color: black;
+  background-color: #1d1d1d;
   
+  
+
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
   
 
 
