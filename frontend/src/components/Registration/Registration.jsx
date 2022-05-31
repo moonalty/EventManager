@@ -49,7 +49,7 @@ function Registration() {
             aria-label="fingerprint" color="success" type="submit" >Зарегистрироваться</Button>
           <h>Организатор</h>
           
-           <Switch  id="role" {...label} defaultChecked color="default" />
+           <Switch  id="role" {...label} defaultChecked size="small" />
            </div>
         </Box>
      

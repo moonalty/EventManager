@@ -49,11 +49,11 @@ function Navbar() {
 
 
   return (
-    <Box sx={{ width: "100%", height:'100px' ,backgroundColor:'#8db8f0'}} >
+    <Box sx={{ width: "100%", height:'100px' }} >
       <Tabs aria-label="nav tabs example" sx={{  height: '60px' }} >
         
         <img src="https://ktokyda.ru/shared/images/fe/logo.png?v=0.0.2" alt="" style={{ width: 144, height: 40, margin:10}} onClick={() => navigate(`/`)}/>
-        <Search />
+        <Search  />
         {Object.keys(user).length == 0 ? 
         <>
         <Tab label="Регистрация" onClick={() => navigate(`/registration`)} />
@@ -67,4 +67,10 @@ function Navbar() {
   );
 }
 
+
+
+
+
+
 export default Navbar;
+
