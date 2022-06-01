@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import {  registrationFetch } from "../../redux/thunk/asyncReg";
 import Box from '@mui/material/Box';
@@ -6,6 +6,9 @@ import TextField from '@mui/material/TextField';
 import Switch from '@mui/material/Switch';
 import Button from '@mui/material/Button';
 import { welcomeAC } from "../../redux/actionCreators/welcomeAC";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import RegModal from "./components/RegModal/RegModal";
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
@@ -13,13 +16,18 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 function Registration() {
   const dispatch = useDispatch();
-  
+
+  const {user} = useSelector(store=>store.user);
+  const navigate = useNavigate()
+  const [active, setActive] = React.useState(false)
+
+
   useEffect(() => {
     dispatch(welcomeAC('Регистрация'))
   }, [])
   
-  const addUser = (e) => {
-    e.preventDefault();
+  const addUser = async(e) => {
+      e.preventDefault();
     const data = {
       name: e.target.name.value,
       email: e.target.email.value,
@@ -28,10 +36,27 @@ function Registration() {
       role: e.target.role.checked,
   
     }; 
-      dispatch(registrationFetch(data));  
+const dataUser = await fetch('/registration', {
+  headers: { "content-type": "application/json" },
+  method: "POST",
+  body: JSON.stringify(data),
+})
+const resp = await dataUser.json()
+
+      if (resp.text === 'true'){
+        navigate('/login')
+      }else{
+        setActive(true)
+      }
+    
   };
 
+
+  console.log('_____________________----регистрация-->',user)
+
+
   return (
+    <>
   <Box onSubmit={addUser}
           component="form"
           sx={{
@@ -57,10 +82,13 @@ function Registration() {
           <h>Организатор</h>
           
            <Switch style={{ color: '#f9db79'}} id="role" {...label}  size="small" />
+           <RegModal active={active} setActive={setActive} />
            </div>
         </Box>
-     
-    
+
+        </>
+
+
        
 
 
