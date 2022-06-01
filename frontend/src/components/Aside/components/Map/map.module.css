@@ -5,5 +5,8 @@
   border: 6px black solid;
   border-bottom: 1px black solid;
   flex-direction: column;
-  /* background-position: url('/home/dmitrii/Загрузки/billy'); */
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }

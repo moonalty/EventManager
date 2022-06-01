@@ -24,20 +24,33 @@ function MyMap() {
   const [zoom, setZoom] = React.useState(9);
   const { cards } = useSelector((state) => state.cards);
   console.log("cardsForPlacemark!!!!!!!!!!", cards);
-  const [ymaps, setYMaps] = useState();
+  const [myYmap, setMyYmap] = useState();
   // const placemarks = useGeocoder(ymaps, adress);
   const [placemarks, setPlacemarks] = useState([]);
   console.log("PLACEMARKSSTATE!!!!!!!!!", placemarks);
 
-  useEffect(async () => {
-    const data = cards?.map((event) => {
-      ymaps.geocode(event.adress).then((x) => x.geoObjects.get(0).geometry.getCoordinates());
-    });
-    console.log("ssssssssss", data);
-    const cords = await Promise.all(data);
-    setPlacemarks(cords);
-    console.log("xxxxxxxxxxxxxxx", cords);
-  }, []);
+  //let ymaps = window.ymaps;
+
+  useEffect(() => {
+    // setTimeout(() => {
+    // console.log('YMAPSYOPT', window.ymaps);
+    if (myYmap) {
+      // console.log("11111111111111111111", cards);
+      const data = cards?.data?.map((event) => {
+        // console.log("EVENT!!!!!", event);
+        // console.log(window.ymaps, "WOHOOOO");
+        return window.ymaps
+          .geocode(event.adress)
+          .then((x) => x.geoObjects.get(0).geometry.getCoordinates());
+      });
+      // console.log("ssssssssss", data);
+      const cords = Promise.all(data).then((cords) => {
+        setPlacemarks(cords);
+        // console.log("xxxxxxxxxxxxxxx", cords);
+      });
+    }
+    // }, 4000);
+  }, [cards, myYmap]);
 
   const mapState = React.useMemo(
     () => ({ center: [59.9386, 30.3141], zoom }),
@@ -50,6 +63,7 @@ function MyMap() {
         query={{
           apikey: "08501024-c117-4e90-8cf0-3d8ba0ef0295",
         }}
+        // onApiAvaliable={(ymaps) => console.log('========================',ymaps)}
       >
         <table>
           <tbody>
@@ -58,14 +72,16 @@ function MyMap() {
                 <Map
                   modules={["geocode"]}
                   onLoad={(ymaps) => {
+                    setMyYmap(ymaps);
                     window.ymaps = ymaps;
-                    console.log("YMAPS");
                   }}
                   state={mapState}
                 >
                   <ZoomControl />
-                  {placemarks?.map((el) => (el = <Placemark />))}
                   <SearchControl type="RouteButton" />
+                  {placemarks?.map((el) => (
+                    <Placemark geometry={el} />
+                  ))}
                 </Map>
               </td>
             </tr>
