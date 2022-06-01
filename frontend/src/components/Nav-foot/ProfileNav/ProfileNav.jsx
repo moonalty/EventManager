@@ -50,7 +50,7 @@ import { getFetchOrgCards } from '../../../redux/thunk/asyncOrgCards';
             aria-expanded={open ? 'true' : undefined}
           
           >
-          <Avatar sx={{ width: 32, height: 32 ,backgroundColor: ''}}>{user?.name[0]}</Avatar>
+          <Avatar sx={{ width: 32, height: 32 ,backgroundColor: ''}}>{user.name&&user?.name[0]}</Avatar>
           </IconButton>
         </Tooltip>
       <Menu
