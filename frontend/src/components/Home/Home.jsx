@@ -8,17 +8,17 @@ import  "./home.css";
 function Home() {
   const dispatch = useDispatch();
   useEffect(()=>{
-    dispatch(welcomeAC('Добро пожаловать'))
+    dispatch(welcomeAC('КУДА ДАЛЬШЕ?'))
   },[])
   return (
     <div className="home">
     <div className="main" >
       <img src="/image/logo.png" alt="" style={{ width: 200, height: 200, marginLeft: 10, marginRight: 30 }} />
-      <div><p className="mainText">Мы молодой проект 'Куда дальше?'</p></div>
+      <div><p className="mainText">МЫ МОЛОДОЙ ПРОЕКТ "КУДА ДАЛЬШЕ?"</p></div>
       </div>
       <div>
       <div className="otherText">
-        <p>Наша цень помогать людям находить интересные мероприятия и развлечения на любой вкус.</p>
+        <p style={{margin:0}}>Наша цень помогать людям находить интересные мероприятия и развлечения на любой вкус.</p>
         <p>У нас на сайте Вы можете начти тысячи идей куда выбраться из дома в любимом городе Санкт-Петербургe</p>
         <p>Мы можем предложить Вам любое приключение на вечер, выходные или даже на целый отпуск!</p></div> 
     </div>

@@ -40,7 +40,7 @@ import { getFetchOrgCards } from '../../../redux/thunk/asyncOrgCards';
    }
   return (
     <React.Fragment>
-        <Tooltip title="Account settings">
+        <Tooltip title="Профиль">
           <IconButton
             onClick={handleClick}
             size="small"
