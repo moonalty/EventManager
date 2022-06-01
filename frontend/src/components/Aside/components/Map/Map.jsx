@@ -24,19 +24,24 @@ import { useSelector } from "react-redux";
 function MyMap() {
   const [zoom, setZoom] = React.useState(9);
   const { cards } = useSelector((state) => state.cards);
-  // console.log("cardsForPlacemark!!!!!!!!!!", cards);
+  console.log("cardsForPlacemark!!!!!!!!!!", cards);
   const [myYmap, setMyYmap] = useState();
   // const placemarks = useGeocoder(ymaps, adress);
   const [placemarks, setPlacemarks] = useState([]);
   // console.log("PLACEMARKSSTATE!!!!!!!!!", placemarks);
   const [mapIsOpen, setMapisOpen] = useState();
+  console.log("MAPISOPEN",mapIsOpen );
   //let ymaps = window.ymaps;
-
+  console.log(React.version);
   useEffect(() => {
     // setTimeout(() => {
     // console.log('YMAPSYOPT', window.ymaps);
     if (myYmap) {
       // console.log("11111111111111111111", cards);
+      const cardTitle = cards?.data?.map((el)=> {
+        return el
+      })
+      setMapisOpen(cardTitle)
       const data = cards?.data?.map((event) => {
         // console.log("EVENT!!!!!", event);
         // console.log(window.ymaps, "WOHOOOO");
@@ -83,8 +88,12 @@ function MyMap() {
                 >
                   <ZoomControl />
                   <SearchControl type="RouteButton" />
-                  {placemarks?.map((el) => (
-                    <Placemark geometry={el} properties ={cards.title} />
+                  {placemarks?.map((el, index) => (
+                    <Placemark geometry={el} properties ={{
+                      // hintContent: mapIsOpen[index],
+                      balloonContent:mapIsOpen[index].adress,
+                      iconCaption : mapIsOpen[index].title
+                  }} />
                   ))}
                 </Map>
               </td>
