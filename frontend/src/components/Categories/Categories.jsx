@@ -25,8 +25,8 @@ const Categories = () => {
   const dispatch = useDispatch();
   // console.log(typeof cat)
   // console.log(catName.name)
-  console.log(user)
-  console.log('allcat',allCategories)
+  // console.log(user)
+  // console.log('allcat',allCategories)
   const catName = allCategories?.title?.find(el => el?.id === Number(cat));
   useEffect(() => {
     

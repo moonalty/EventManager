@@ -83,7 +83,7 @@ function App() {
                   <Route path="/map" element={<Map />} />
                   <Route path="/adverstising" element={<Advertising />} />
                   <Route path="/calendar" element={<Calendar />} />
-                  <Route path="/search/:cat/:el" element={<OneEventCard />} />
+                 
                 </Routes>
               </Grid>
               <Grid item sm={3}>

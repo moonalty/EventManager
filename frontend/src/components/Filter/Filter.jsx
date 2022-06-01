@@ -14,11 +14,15 @@ function Filter({ filterarr, setFilterarr}) {
    console.log('старый',categories);
 
   const filterFunc =(e) =>{
+    
     const filterparam = e.target.value
     if (filterparam == 'cost'){
       const new1 = categories.sort((a, b) => a.cost > b.cost ? 1 : -1)
+      // const new1 = categories.sort((a, b) => a.cost > b.cost ? 1 : -1)
       setFilterarr(new1)
-    } 
+    }  else {
+      setFilterarr(...categories)
+    }
     console.log('filterparam', filterparam);
   }
  
