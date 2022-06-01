@@ -1,10 +1,7 @@
 .map{
-
-  
   display: flex;
   justify-content: flex-end;
   text-align: end;
-  
+  border-radius: 15%;
   flex-direction: column;
-  /* background-position: url('/home/dmitrii/Загрузки/billy'); */
 }
