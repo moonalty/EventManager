@@ -3,7 +3,7 @@ import {sessionUserAC} from "../actionCreators/session_user_AC"
 
 export const loginFetch = (payload) => {
   return (dispatch) => {
-    fetch("/login", {
+    fetch("/login1", {
       headers: { "content-type": "application/json" },
       method: "POST",
       body: JSON.stringify(payload),
