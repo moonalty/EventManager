@@ -56,7 +56,7 @@ const OneEventCard = () => {
     navigator(-1);
   };
   return (
-    <Card className="materialBigMainBox" sx={{ maxWidth: 345 }}>
+    <Card className="materialBigMainBox" sx={{ width: 360 }}>
       <CardMedia component="img" height="420" image={oneCat.image} alt="#" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">

@@ -14,7 +14,7 @@ const TinyProfileEventCard = ({ el, cat }) => {
   };
   return (
     <div className="materialMainBox">
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ width: 360 }}>
         <CardMedia component="img" height="340" image={el?.image} alt="#" />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
