@@ -1,18 +1,39 @@
 
+
+
+
+
+.seachDiv {
+  background-color:#1d1d1d;
+  padding: 10px;
+  
+
+
+
+}
+
+
+
+.MuiInputLabel-animated{
+  border-bottom: 1px solid white;
+ 
+  color: white;
+
+}
+
 .MuiTabs-root {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  
-
-}
-
-.MuiGrid-item  {
-  padding: 1px;
+	background: #1d1d1d;
+  color: white;
   
 }
+
+
 
 
 .mainBox{
-  background-color: rgb(233, 208, 254);
+
+  background-color: white;
+
   padding: 10px;
   margin: 0 auto;
   width: 50vw;
@@ -21,10 +42,14 @@
   justify-content: space-between;
   height: 800px;
   flex-direction: column;
-  border: 1px solid purple;
+  
   border-radius: 15%;
 
   
+}
+.ListItemCategories{
+  cursor: pointer;
+
 }
 .tinyMainbox{
   font-size: large;
@@ -36,12 +61,15 @@
   margin-top: 20px;
   border: 1px solid purple;
   border-radius: 15%;
-
   width: 20vw;
-  background-color: rgb(233, 208, 254);
+
+  background-color: white;
+
   padding: 10px;
   
 }
+
+
 .headerBox{
   width: 100%;
   align-items: center;
@@ -72,7 +100,7 @@
   width: 100px;
 }
 .subButton{
-  background-color: #8db8f0;
+
   height: 70px;
   width: 150px;
   border-radius: 10%;
@@ -107,7 +135,7 @@
   margin-top: 20px;
   
   width: 20vw;
-  background-color: #8db8f0;
+
   padding: 10px;
   border-radius: 2%;
 }
@@ -121,19 +149,28 @@
   flex-direction: column;
   border-radius: 2%;
 }
-.TinyMAINBOX{
-display: flex;
-justify-content: flex-start;
+.categoriesContentCards{
+  display: flex;
+  justify-content: flex-start;
 align-items: flex-start;
 flex-wrap: wrap;
 margin: 10px;
 padding: 10px;
-
+}
+.TinyMAINBOX{
+  display: flex;
+  justify-content:flex-start;
+  align-items:flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 body {
-	background: linear-gradient(-45deg, #8db8f0, #8db8f0, #8db8f0, #8db8f0);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+
+	background: white;
+
+  margin: 0%;
+
+
 	height: 100vh;
 }
 
@@ -150,11 +187,52 @@ body {
 }
 
 
+.MuiTypography-colorTextSecondary {
+  color: #f6f8fc;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  color: aliceblue
+}
+
+.rightBlock{
+  display: flex;
+  flex-direction:column;
+
+ justify-content:space-between;
+}
+
 footer {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  height: 60px;
+  background-color: #1d1d1d;
+  
+  
+
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
   
 
 
 }
+
+.pagination{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  list-style-type: none;
+
+
+}
+.page-item{
+}
+.pagiButton{
+  background-color: transparent;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  margin: 5px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+
+

@@ -14,18 +14,25 @@ import {
 import { getFetchCheckRate, getFetchRate } from "../../redux/thunk/asyncRate";
 import RatingSystem from "../RatingSystem/RatingSystem";
 import { deleteCardFetch } from "../../redux/thunk/asyncCards";
+import { welcomeAC } from "../../redux/actionCreators/welcomeAC";
 
 const OneEventCard = () => {
   const navigator = useNavigate();
   const { oneCategory: oneCat } = useSelector((state) => state.oneCategory);
   const { user } = useSelector((state) => state.user);
-  console.log("USER>>>>>>>>>>>", user);
-  console.log("oneCAT>>>>>>>", oneCat);
+  // console.log("USER>>>>>>>>>>>", user);
+  // console.log("oneCAT>>>>>>>", oneCat);
   const { subscribed } = useSelector((state) => state.subscribed);
+  const { allCategories } = useSelector(state => state.allCategories)
   // const { rate } = useSelector((state) => state.rate);
   const [subState, setSubState] = React.useState(true);
-  console.log("SUBSTATE>>>>", subState);
+  // console.log(catName.name)
+  // console.log("SUBSTATE>>>>", subState);
   const { el, cat } = useParams();
+  const catName = allCategories?.title.find(el => el?.id === Number(cat));
+  React.useEffect(() => {
+    dispatch(welcomeAC(catName.name))
+  }, [cat])
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(getFetchCheckRate(+el));
@@ -34,8 +41,10 @@ const OneEventCard = () => {
     if (finder) setSubState(!subState);
   }, [el]);
   const subscribe = () => {
+    if(user?.id) {
     dispatch(getFetchSubscribe(cat, el));
-    navigator(-1);
+      navigator(-1)
+    }
   };
   const setRate = (e) => {
     e.preventDefault();
@@ -47,7 +56,7 @@ const OneEventCard = () => {
     navigator(-1);
   };
   return (
-    <Card className="materialBigMainBox" sx={{ maxWidth: 345 }}>
+    <Card className="materialBigMainBox" sx={{ width: 360 }}>
       <CardMedia component="img" height="420" image={oneCat.image} alt="#" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
@@ -62,15 +71,10 @@ const OneEventCard = () => {
           До: {oneCat.date_end}
         </Typography>
         <Typography>
-          Начало в: {oneCat.time_start}
-          <br />
-          Заканчивается: {oneCat.time_end}
+          Мероприятия рассчитано на: {oneCat.people_count} человек
         </Typography>
         <Typography>
-          Мероприятия рассчитано на -{oneCat.people_count} человек
-        </Typography>
-        <Typography>
-          Стоимость билета:
+          Стоимость билета: 
           {oneCat.cost} рублей
         </Typography>
       </CardContent>
@@ -81,7 +85,7 @@ const OneEventCard = () => {
           <Button size="small">Купить билет</Button>
         )}
 
-        {subState && (
+        {(subState&&user?.role==='Пользователь') && (
           <Button onClick={subscribe} size="small">
             Добавить в избранное
           </Button>

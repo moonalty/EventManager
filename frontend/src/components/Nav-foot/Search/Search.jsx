@@ -13,21 +13,24 @@ function Search() {
   const navigate = useNavigate();
   const { cards } = useSelector(state => state.cards);
   const { search } = useSelector(state => state.search)
+  const { orgCards } = useSelector(state => state.orgCards)
   useEffect(() => {
+    // console.log('ljhjj',change)
     dispatch(getFetchAllCards())
-  }, [search?.data])
-
+  }, [search?.data, orgCards])
   // console.log(search);
-
+  // console.log('ljhjj222', change)
   // console.log(cards.data);
   return (
    
-      <Autocomplete
+     <div className='seachDiv'>
+
+<Autocomplete
         id="free-solo-demo"
         freeSolo
         options={cards?.data?.map((option) => option.title)}
-      renderInput={(params) => <TextField variant="standard" {...params}  label="Поиск" />}
-        sx={{ width: 150, height: 20 }}
+      renderInput={(params) => <TextField  {...params}  placeholder="Поиск" style={{background:'white',}} />}
+        sx={{ width: '150px', baclgroundColor:'white'}}
         onKeyDown={(e)=>{
           if (e.key === 'Enter'){
             e.defaultMuiPrevented = true;
@@ -38,6 +41,9 @@ function Search() {
           }}
       />
    
+
+     </div>
+    
   );
 }
 export default Search

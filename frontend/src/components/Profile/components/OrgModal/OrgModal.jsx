@@ -18,21 +18,19 @@ import MenuItem from "@mui/material/MenuItem";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { getFetchCreator } from "../../../../redux/thunk/asyncCreator";
 import { useSelector, useDispatch } from "react-redux";
-import {creatorAC} from "../../../../redux/actionCreators/creatorAC"
+import { creatorAC } from "../../../../redux/actionCreators/creatorAC";
 import { getFetchOrgCards } from "../../../../redux/thunk/asyncOrgCards";
+
+import { changeStateCardsReducer } from "../../../../redux/reducers/changeStateCardsReducer";
 
 const ITEM_HEIGHT = 48;
 
 function OrgModal({ active, setActive }, props) {
   const { allCategories } = useSelector((state) => state.allCategories);
   const { user } = useSelector((state) => state.user);
-  console.log("USERRRRRRRRR", user);
   const dispatch = useDispatch();
-  console.log(allCategories);
-  console.log("ACTIVE STATE", active);
   const [people, setPeople] = React.useState("");
   const [categories, setCategories] = React.useState("");
-  
 
   const cardToBD = (event) => {
     event.preventDefault();
@@ -50,13 +48,12 @@ function OrgModal({ active, setActive }, props) {
       org_link: event.target.org_link.value,
       body: event.target.body.value,
     };
-    console.log("DATA", event.target.categoryName.value);
     dispatch(getFetchCreator(data));
-    
+    setActive(false);
+    dispatch(changeStateCardsReducer())
   };
   const categoriesChange = (event) => {
     setCategories(event.target.value);
-    console.log("CATEGORY DATA!@!!!!!!!!!!!", event.target.value);
   };
   const handleChange = (event) => {
     setPeople(event.target.value);
@@ -68,13 +65,14 @@ function OrgModal({ active, setActive }, props) {
       onClick={() => setActive()}
     >
       <div onClick={(e) => e.stopPropagation()}>
-        <Card sx={{ maxWidth: 600 }} className="OrgModal_content">
+        <Card sx={{ maxWidth: 600, maxHeight: 600, overflow: "auto", display: "flex" }} className="OrgModal_content">
           <form onSubmit={cardToBD}>
+            <Typography>Добавить мероприятие</Typography>
             <TextField
               required
               // type="file"
               name="picture"
-              style={{ width: "400px", margin: "5px" }}
+              style={{ width: "400px",margin: "5px" }}
               id="outlined-required"
               label="Добавить фото"
               InputLabelProps={{ shrink: true }}
@@ -135,6 +133,7 @@ function OrgModal({ active, setActive }, props) {
               <TextField
                 required
                 name="cost"
+                type="number"
                 style={{ width: "400px", margin: "5px" }}
                 id="outlined-required"
                 label="Стоимость"
@@ -187,7 +186,7 @@ function OrgModal({ active, setActive }, props) {
               <br />
             </CardContent>
             <CardActions style={{ justifyContent: "center" }}>
-              <Button size="small" color="primary" type="submit" >
+              <Button size="small" color="primary" type="submit">
                 Сохранить мероприятие
               </Button>
             </CardActions>

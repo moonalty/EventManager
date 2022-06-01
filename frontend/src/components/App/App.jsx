@@ -14,6 +14,7 @@ import Navbar from "../Nav-foot/Navbar/Navbar";
 import Registration from "../Registration/Registration";
 import Login from "../Login/Login";
 
+
 // import OneEventCard from "../OneEventCard/OneEventCard";
 
 import SearchCards from "../Nav-foot/Search/SearchCards/SearchCards";
@@ -34,6 +35,8 @@ import CategoriesList from "../Nav-foot/Categories1/CategoriesList";
 // import OneProfileEventCard from "../OneProfileEventCard/OneProfileEventCard";
 import OneEventCard from "../MaterialBigCard/MaterialBigCard";
 import OneProfileEventCard from "../MaterialProfileBigCard/MaterialProfileBigCard";
+import WelcomePage from "../WelcomePage/WelcomePage";
+import Navbar2 from "../Nav-foot/Navbar/Navbar2";
 
 
 function App() {
@@ -48,6 +51,9 @@ function App() {
         >
           <Grid item>
             <Navbar />
+          </Grid>
+          <Grid item>
+            <WelcomePage />
           </Grid>
           <Grid item>
             <Grid container>
@@ -70,6 +76,7 @@ function App() {
                  
                   <Route path="/registration" element={<Registration />} />
                   <Route path="/login" element={<Login />} />
+                
                   <Route path="/" element={<Home />} />
                   <Route path="/categories/:cat" element={<Categories />} />
 

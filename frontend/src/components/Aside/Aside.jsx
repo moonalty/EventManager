@@ -16,9 +16,14 @@ export default function Aside() {
     <Box  >
       <Grid container spacing={2} style={{width:'100%', height:'100%'}}>
         <Grid item justifyContent='flex-end' style={{width:'100%', height:'100%'}} >
+          <div className='rightBlock'>
+          <br />
           <Link to='/calendar'><Calendar /></Link>
+          <br />
           <Link to='/map'> <Map /></Link>
+          <br />
           <Link to='/adverstising'> <Advertising /></Link>
+          </div>
         </Grid>
       </Grid>
     </Box>

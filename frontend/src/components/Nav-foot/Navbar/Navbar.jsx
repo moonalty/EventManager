@@ -36,7 +36,7 @@ function Navbar() {
    const dispatch = useDispatch();
 
    const {user} = useSelector(store=>store.user);
-    console.log("----------------------->",user)
+    
 
    React.useEffect(()=>{
     dispatch(sessionFetch())
@@ -49,14 +49,17 @@ function Navbar() {
 
 
   return (
-    <Box sx={{ width: "100%", height:'100px' ,backgroundColor:'#8db8f0'}} >
-      <Tabs aria-label="nav tabs example" sx={{  height: '60px' }} >
+
+    <Box sx={{ width: "100%", height:'80px' }} >
+
+
+      <Tabs aria-label="nav tabs example" sx={{ height: '100px' }} >
         
-        <img src="https://ktokyda.ru/shared/images/fe/logo.png?v=0.0.2" alt="" style={{ width: 144, height: 40, margin:10}} onClick={() => navigate(`/`)}/>
-        <Search />
+        <img src="/image/logo.png" alt="" style={{ width: 80, height: 80, marginLeft:10, marginRight:30}} onClick={() => navigate(`/`)}/>
+        <Search  style={{marginRight: 300}}/>
         {Object.keys(user).length == 0 ? 
         <>
-        <Tab label="Регистрация" onClick={() => navigate(`/registration`)} />
+          <Tab label="Регистрация" onClick={() => navigate(`/registration`)} />
         <Tab label="Логин" onClick={() => navigate(`/login`)} />
           </> :
         <Profile />
@@ -67,4 +70,10 @@ function Navbar() {
   );
 }
 
+
+
+
+
+
 export default Navbar;
+

@@ -1,4 +1,4 @@
-"use strict";
+const moment = require('moment')
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Card extends Model {
@@ -26,9 +26,15 @@ module.exports = (sequelize, DataTypes) => {
       },
       date_start: {
         type: DataTypes.DATE,
+        get() {
+          return moment(this.getDataValue('date_start')).format('DD/MM/YYYY h:mm')
+        }
       },
       date_end: {
         type: DataTypes.DATE,
+         get() {
+           return moment(this.getDataValue('date_end')).format('DD/MM/YYYY h:mm')
+         }
       },
       // time_start: {
       //   type: DataTypes.TEXT,

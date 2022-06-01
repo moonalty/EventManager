@@ -2,7 +2,6 @@
   display: flex;
   justify-content: flex-end;
   text-align: end;
-  border: 6px black solid;
-  border-bottom: 1px black solid;
+  border-radius: 15%;
   flex-direction: column;
 }

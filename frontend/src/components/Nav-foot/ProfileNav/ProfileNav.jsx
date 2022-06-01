@@ -40,7 +40,7 @@ import { getFetchOrgCards } from '../../../redux/thunk/asyncOrgCards';
    }
   return (
     <React.Fragment>
-        <Tooltip title="Account settings">
+        <Tooltip title="Профиль">
           <IconButton
             onClick={handleClick}
             size="small"
@@ -50,7 +50,7 @@ import { getFetchOrgCards } from '../../../redux/thunk/asyncOrgCards';
             aria-expanded={open ? 'true' : undefined}
           
           >
-          <Avatar sx={{ width: 32, height: 32 ,backgroundColor: 'red'}}>{user?.name[0]}</Avatar>
+          <Avatar sx={{ width: 32, height: 32 ,backgroundColor: ''}}>{user?.name[0]}</Avatar>
           </IconButton>
         </Tooltip>
       <Menu

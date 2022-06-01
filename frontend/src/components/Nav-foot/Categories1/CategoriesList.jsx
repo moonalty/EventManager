@@ -28,7 +28,7 @@ export default function FolderList() {
     }
   };
   return (
-    <List sx={{ width: '100%', height:'100%',maxWidth: 360, }}>
+    <List  sx={{ width: '100%', height:'100%',maxWidth: 360, }}>
       {allCategories?.title?.map(eachcategory => <EachCategories key={eachcategory.id} eachcategory={eachcategory} handleClose={handleClose} />)}
     </List>
   );
