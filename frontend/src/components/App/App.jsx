@@ -14,7 +14,6 @@ import Navbar from "../Nav-foot/Navbar/Navbar";
 import Registration from "../Registration/Registration";
 import Login from "../Login/Login";
 
-
 // import OneEventCard from "../OneEventCard/OneEventCard";
 
 import SearchCards from "../Nav-foot/Search/SearchCards/SearchCards";
@@ -30,7 +29,6 @@ import Profile from "../Profile/Profile";
 
 import CategoriesList from "../Nav-foot/Categories1/CategoriesList";
 
-
 // import TinyProfileEventCard from "../TinyProfileEventCard/TinyProfileEventCard";
 // import OneProfileEventCard from "../OneProfileEventCard/OneProfileEventCard";
 import OneEventCard from "../MaterialBigCard/MaterialBigCard";
@@ -38,9 +36,7 @@ import OneProfileEventCard from "../MaterialProfileBigCard/MaterialProfileBigCar
 import WelcomePage from "../WelcomePage/WelcomePage";
 import Navbar2 from "../Nav-foot/Navbar/Navbar2";
 
-
 function App() {
-
   return (
     <Provider store={store}>
       <BrowserRouter>
@@ -57,12 +53,11 @@ function App() {
           </Grid>
           <Grid item>
             <Grid container>
-                <Grid item sm={2} >
-                  <CategoriesList />
-                </Grid>
+              <Grid item sm={2}>
+                <CategoriesList />
+              </Grid>
               <Grid item sm={7}>
-                <Grid container>
-                </Grid>
+                <Grid container></Grid>
                 <Routes>
                   <Route path="/profile" element={<Profile />} />
                   <Route
@@ -73,10 +68,10 @@ function App() {
                     path="/categories/:cat/:el"
                     element={<OneEventCard />}
                   />
-                 
+
                   <Route path="/registration" element={<Registration />} />
                   <Route path="/login" element={<Login />} />
-                
+
                   <Route path="/" element={<Home />} />
                   <Route path="/categories/:cat" element={<Categories />} />
 
@@ -95,10 +90,8 @@ function App() {
             </Grid>
           </Grid>
         </Grid>
-
-    </BrowserRouter>
-</Provider>
-
+      </BrowserRouter>
+    </Provider>
   );
 }
 

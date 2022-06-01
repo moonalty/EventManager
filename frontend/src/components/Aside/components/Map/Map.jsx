@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./map.module.css";
+import stylesIsOpen from "./mapIsOpen.module.css";
 import {
   YMaps,
   Map,
@@ -23,12 +24,12 @@ import { useSelector } from "react-redux";
 function MyMap() {
   const [zoom, setZoom] = React.useState(9);
   const { cards } = useSelector((state) => state.cards);
-  console.log("cardsForPlacemark!!!!!!!!!!", cards);
+  // console.log("cardsForPlacemark!!!!!!!!!!", cards);
   const [myYmap, setMyYmap] = useState();
   // const placemarks = useGeocoder(ymaps, adress);
   const [placemarks, setPlacemarks] = useState([]);
-  console.log("PLACEMARKSSTATE!!!!!!!!!", placemarks);
-
+  // console.log("PLACEMARKSSTATE!!!!!!!!!", placemarks);
+  const [mapIsOpen, setMapisOpen] = useState();
   //let ymaps = window.ymaps;
 
   useEffect(() => {
@@ -56,7 +57,7 @@ function MyMap() {
     () => ({ center: [59.9386, 30.3141], zoom }),
     [zoom]
   );
-  console.log("myMAPS");
+  // console.log("myMAPS");
   return (
     <div className={styles.map}>
       <YMaps
@@ -70,6 +71,9 @@ function MyMap() {
             <tr>
               <td>
                 <Map
+                  // onClick={setMapisOpen(stylesIsOpen)}
+                  width="100%"
+                  height="400px"
                   modules={["geocode"]}
                   onLoad={(ymaps) => {
                     setMyYmap(ymaps);
@@ -80,7 +84,7 @@ function MyMap() {
                   <ZoomControl />
                   <SearchControl type="RouteButton" />
                   {placemarks?.map((el) => (
-                    <Placemark geometry={el} />
+                    <Placemark geometry={el} properties ={cards.title} />
                   ))}
                 </Map>
               </td>
