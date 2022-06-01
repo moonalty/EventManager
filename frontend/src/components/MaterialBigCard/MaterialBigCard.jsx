@@ -29,15 +29,15 @@ const OneEventCard = () => {
   // console.log(catName.name)
   // console.log("SUBSTATE>>>>", subState);
   const { el, cat } = useParams();
-  const catName = allCategories?.title.find(el => el?.id === Number(cat));
+  const catName = allCategories?.title?.find(el => el?.id === Number(cat));
   React.useEffect(() => {
-    dispatch(welcomeAC(catName.name))
+    dispatch(welcomeAC(catName?.name))
   }, [cat])
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(getFetchCheckRate(+el));
     dispatch(getFetchOneCategory(el));
-    const finder = subscribed.find((ele) => ele[0].id === +el);
+    const finder = subscribed?.find((ele) => ele[0].id === +el);
     if (finder) setSubState(!subState);
   }, [el]);
   const subscribe = () => {

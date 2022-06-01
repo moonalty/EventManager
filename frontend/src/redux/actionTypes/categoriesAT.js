@@ -7,3 +7,6 @@ export const ONE_CATEGORY = "ONE_CATEGORY";
 export const SUBSCRIBE = "SUBSCRIBE";
 
 export const DELETE_CARD = "DELETE_CARD";
+
+
+export const FILTER_CATEGORIES = "FILTER_CATEGORIES";
