@@ -27,7 +27,7 @@ function Login() {
       password: e.target.password.value,
     };
     console.log(data);
-    const dataUser = await fetch("/login", {
+    const dataUser = await fetch("/login1", {
       headers: { "content-type": "application/json" },
       method: "POST",
       body: JSON.stringify(data),
