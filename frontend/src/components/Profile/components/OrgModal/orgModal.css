@@ -4,11 +4,10 @@
   width: 100%;
   left: 0;
   background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(100%);
   transition: 0.5s;
- 
-  /* pointer-events: none; */
 
+  /* pointer-events: none; */
 }
 
 .modal_wrapper.open {
@@ -23,6 +22,4 @@
 
 .modal_wrapper.close {
   height: 0;
-  display: none;
 }
-

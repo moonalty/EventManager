@@ -18,17 +18,6 @@ import { margin } from '@mui/system';
 
 
 
-// function LinkTab(props) {
-//   return (
-//     <Tab
-//       component="a"
-//       onClick={(event) => {
-//         event.preventDefault();
-//       }}
-//       {...props}
-//     />
-//   );
-// }
 
 function Navbar() {
   const [value, setValue] = React.useState(1);
