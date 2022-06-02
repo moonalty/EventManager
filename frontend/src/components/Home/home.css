@@ -1,10 +1,11 @@
 .home{
   margin-top: 30px;
-  height: 420px;
+  height: 1400px;
   background-color: grey;
   border-radius: 10px;
  color: white;
  margin-right: 5px;
+ align-items: center;
 }
 .main{
   display: flex;
@@ -19,9 +20,9 @@
 }
 .otherText{
   
-   font-family: 'Mulish';
+   font-family: 'Oswald';
    
-    font-weight: 400;
-    font-size: 20px;
+    font-weight: 300;
+    font-size: 25px;
    margin: 10px;
 }

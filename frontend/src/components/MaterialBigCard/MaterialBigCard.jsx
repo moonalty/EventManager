@@ -55,6 +55,7 @@ const OneEventCard = () => {
     dispatch(deleteCardFetch(+el));
     navigator(-1);
   };
+  console.log(oneCat);
   return (
     <Card className="materialBigMainBox" sx={{ width: 360 }}>
       <CardMedia component="img" height="420" image={oneCat.image} alt="#" />
@@ -82,7 +83,7 @@ const OneEventCard = () => {
         {user.id === oneCat.user_id ? (
           <Button onClick={deleteCard}>Удалить</Button>
         ) : (
-          <Button size="small">Купить билет</Button>
+            <Button size="small" ><a href={oneCat?.org_link} target="_blank">Купить билет</a></Button>
         )}
 
         {(subState&&user?.role==='Пользователь') && (

@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { welcomeAC } from "../../redux/actionCreators/welcomeAC";
 import Aside from "../Aside/Aside";
+import ImageMain from "../ImageMain/ImaheMain";
 import  "./home.css";
 
 function Home() {
@@ -22,7 +23,9 @@ function Home() {
         <p>У нас на сайте Вы можете начти тысячи идей куда выбраться из дома в любимом городе Санкт-Петербургe</p>
         <p>Мы можем предложить Вам любое приключение на вечер, выходные или даже на целый отпуск!</p></div> 
     </div>
+    <ImageMain  />
     </div>
+
     // // <Grid
     // //   container
     // //   style={{ width: "100%", height: "100%" }}
