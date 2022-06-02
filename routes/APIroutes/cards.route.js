@@ -13,7 +13,7 @@ router
     const { val } = req.body;
     const data = await Card.findAll({ where: { title: val } });
     // console.log(cat1);
-    res.json({ data });
+    res.json({ data })
   })
 
   .delete(async (req, res) => {
