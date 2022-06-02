@@ -17,7 +17,7 @@ router.use("/categories", categoriesRouteApi);
 router.use("/subscribe", subscribeRouter);
 router.use("/title", titleRouter);
 router.use("/registration", regRouter);
-router.use("/login", loginRouter);
+router.use("/login1", loginRouter);
 router.use("/logout", logoutRouter);
 router.use("/profile", profileRouter);
 router.use("/profile", creatorRouter);
