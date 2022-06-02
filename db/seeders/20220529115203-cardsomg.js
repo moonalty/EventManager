@@ -15,7 +15,7 @@ module.exports = {
           adress: "Санкт-Петербург, Некрасова, 43",
           cost: 300,
           people_count: 30,
-          org_link: "govegas.com",
+          org_link: "https://elbrusboot.camp/",
           is_active: true,
           user_id: 1,
           category_id: 1,
