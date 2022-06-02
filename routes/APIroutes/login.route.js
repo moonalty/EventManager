@@ -1,35 +1,38 @@
-const router = require('express').Router();
-const bcrypt = require('bcrypt');
+const router = require("express").Router();
+const bcrypt = require("bcrypt");
 
-const {User} = require('../../db/models')
+const { User } = require("../../db/models");
 
-router.get('/',  (req,res)=>{
-  res.json("ok")
-})
-
+router.get("/", (req, res) => {
+  res.json("ok");
+});
 
 router.post("/", async (req, res) => {
   const { email, password } = req.body;
 
- 
-    const user = await User.findOne({
-      where: {
-        email,
-      },
+  const user = await User.findOne({
+    where: {
+      email,
+    },
+  });
+
+  if (
+    user &&
+    (await bcrypt.compare(password, user.password)) &&
+    email !== "" &&
+    password !== ""
+  ) {
+    req.session.uid = user.id;
+    req.session.user = user;
+    res.json({
+      text: "true",
+      ...user,
     });
-
-    if (user && (await bcrypt.compare(password, user.password)) && email !== '' && password !== '') {
-      req.session.uid = user.id;
-      req.session.user = user;
-      console.log(user);
-      res.json(user);
-    } else {
-      res.json({
-        text: "Неверный пароль или логин",
-      });
-    }
- 
+  } else {
+    res.json({
+      text: "false",
+    });
+  }
 });
-
 
 module.exports = router;
