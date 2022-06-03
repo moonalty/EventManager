@@ -13,31 +13,42 @@ function Search() {
   const navigate = useNavigate();
   const { cards } = useSelector(state => state.cards);
   const { search } = useSelector(state => state.search)
+  const { orgCards } = useSelector(state => state.orgCards)
   useEffect(() => {
+    // console.log('ljhjj',change)
     dispatch(getFetchAllCards())
-  }, [search?.data])
-
+  }, [search?.data, orgCards,dispatch])
   // console.log(search);
-
+  // console.log('ljhjj222', change)
   // console.log(cards.data);
+  const search2 = (e) =>{
+      if (e.key === 'Enter') {
+        e.defaultMuiPrevented = true;
+         dispatch(postFetchSerchCards(e.target.value))
+        if (search?.data[0].title === e.target.value){
+
+          navigate(`/categories/${search?.data[0].category_id}/${search?.data[0].id}`); 
+        }
+        // navigate(`/categories/1/1`); 
+       
+    }
+  }
   return (
    
-      <Autocomplete
+     <div className='seachDiv'>
+
+<Autocomplete
         id="free-solo-demo"
         freeSolo
         options={cards?.data?.map((option) => option.title)}
-      renderInput={(params) => <TextField variant="standard" {...params}  label="Поиск" />}
-        sx={{ width: 150, height: 20 }}
-        onKeyDown={(e)=>{
-          if (e.key === 'Enter'){
-            e.defaultMuiPrevented = true;
-            dispatch(postFetchSerchCards(e.target.value))
-            navigate(`/categories/${search.data[0].category_id}/${search.data[0].id}`);
-            // console.log(e.target.value)
-          }
-          }}
+      renderInput={(params) => <TextField  {...params}  placeholder="Поиск" style={{background:'white',}} />}
+        sx={{ width: '150px', baclgroundColor:'white'}}
+        onKeyUp={search2}
       />
    
+
+     </div>
+    
   );
 }
 export default Search

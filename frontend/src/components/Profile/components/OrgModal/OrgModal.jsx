@@ -21,6 +21,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { creatorAC } from "../../../../redux/actionCreators/creatorAC";
 import { getFetchOrgCards } from "../../../../redux/thunk/asyncOrgCards";
 
+import { changeStateCardsReducer } from "../../../../redux/reducers/changeStateCardsReducer";
+
 const ITEM_HEIGHT = 48;
 
 function OrgModal({ active, setActive }, props) {
@@ -48,6 +50,7 @@ function OrgModal({ active, setActive }, props) {
     };
     dispatch(getFetchCreator(data));
     setActive(false);
+    dispatch(changeStateCardsReducer())
   };
   const categoriesChange = (event) => {
     setCategories(event.target.value);
@@ -73,6 +76,7 @@ function OrgModal({ active, setActive }, props) {
               id="outlined-required"
               label="Добавить фото"
               InputLabelProps={{ shrink: true }}
+              autoComplete="off"
             />
             <CardContent>
               <TextField
@@ -81,6 +85,7 @@ function OrgModal({ active, setActive }, props) {
                 style={{ width: "400px", margin: "5px" }}
                 id="outlined-required"
                 label="Название мероприятия"
+                autoComplete="off"
               />
               <br />
               <Select
@@ -134,6 +139,7 @@ function OrgModal({ active, setActive }, props) {
                 style={{ width: "400px", margin: "5px" }}
                 id="outlined-required"
                 label="Стоимость"
+                autoComplete="off"
               />
               <br />
               <TextField
@@ -142,6 +148,7 @@ function OrgModal({ active, setActive }, props) {
                 style={{ width: "400px", margin: "5px" }}
                 id="outlined-required"
                 label="Адрес проведения мероприятия"
+                autoComplete="off"
               />
               <br />
               <Select
@@ -171,6 +178,7 @@ function OrgModal({ active, setActive }, props) {
                 style={{ width: "400px", margin: "5px" }}
                 id="outlined-required"
                 label="Ссылка на сайт организатора"
+                autoComplete="off"
               />
               <br />
               <TextField
@@ -179,6 +187,7 @@ function OrgModal({ active, setActive }, props) {
                 style={{ width: "400px", margin: "5px" }}
                 id="outlined-required"
                 label="Описание"
+                autoComplete="off"
               />
               <br />
             </CardContent>

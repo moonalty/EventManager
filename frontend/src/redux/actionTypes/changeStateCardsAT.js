@@ -1,0 +1,2 @@
+export const CHANGE_STATE_CARDS = "CHANGE_STATE_CARDS"
+

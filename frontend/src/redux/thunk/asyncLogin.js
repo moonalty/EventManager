@@ -3,19 +3,14 @@ import {sessionUserAC} from "../actionCreators/session_user_AC"
 
 export const loginFetch = (payload) => {
   return (dispatch) => {
-    fetch("/login", {
+    fetch("/login1", {
       headers: { "content-type": "application/json" },
       method: "POST",
       body: JSON.stringify(payload),
     })
      .then((res) => res.json())  
-     
-      .then((data) => data.text === 'Неверный пароль или логин' ? alert('Неверный пароль или логин') : window.location.assign("/") && dispatch(loginUserAC(data)))
-      // .then((res) => res.json())
-      // .then((data) => {
-      //   dispatch(sessionUserAC(data));
-       
-      // });
+     .then((data) => dispatch(loginUserAC(data)))
+    
   };
 };
 

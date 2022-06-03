@@ -14,6 +14,7 @@ import {
 import { getFetchCheckRate, getFetchRate } from "../../redux/thunk/asyncRate";
 import RatingSystem from "../RatingSystem/RatingSystem";
 import { deleteSubFetch } from "../../redux/thunk/asyncCards";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const OneProfileEventCard = () => {
   const { el } = useParams();
@@ -35,7 +36,9 @@ const OneProfileEventCard = () => {
   };
 
   return (
-    <Card className="materialBigMainBox" sx={{ maxWidth: 345 }}>
+     <div className="bigCard">
+      <ArrowBackIcon style={{ color: 'black', width: 40, height: 40, cursor: 'w-resize' }} onClick={() => navigator(-1)} />
+    <Card className="materialBigMainBox" sx={{ width: 360 }}>
       <CardMedia component="img" height="420" image={oneCat.image} alt="#" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
@@ -70,6 +73,7 @@ const OneProfileEventCard = () => {
         <RatingSystem setRate={setRate} />
       </div>
     </Card>
+    </div >
   );
 };
 

@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
       email,
     },
   });
-  console.log(user);
+  
 
 
 

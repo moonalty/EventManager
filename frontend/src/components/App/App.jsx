@@ -29,16 +29,14 @@ import Profile from "../Profile/Profile";
 
 import CategoriesList from "../Nav-foot/Categories1/CategoriesList";
 
-
 // import TinyProfileEventCard from "../TinyProfileEventCard/TinyProfileEventCard";
 // import OneProfileEventCard from "../OneProfileEventCard/OneProfileEventCard";
 import OneEventCard from "../MaterialBigCard/MaterialBigCard";
 import OneProfileEventCard from "../MaterialProfileBigCard/MaterialProfileBigCard";
 import WelcomePage from "../WelcomePage/WelcomePage";
-
+import Navbar2 from "../Nav-foot/Navbar/Navbar2";
 
 function App() {
-
   return (
     <Provider store={store}>
       <BrowserRouter>
@@ -55,12 +53,11 @@ function App() {
           </Grid>
           <Grid item>
             <Grid container>
-                <Grid item sm={2} >
-                  <CategoriesList />
-                </Grid>
+              <Grid item sm={2}>
+                <CategoriesList />
+              </Grid>
               <Grid item sm={7}>
-                <Grid container>
-                </Grid>
+                <Grid container></Grid>
                 <Routes>
                   <Route path="/profile" element={<Profile />} />
                   <Route
@@ -71,16 +68,17 @@ function App() {
                     path="/categories/:cat/:el"
                     element={<OneEventCard />}
                   />
-                 
+
                   <Route path="/registration" element={<Registration />} />
                   <Route path="/login" element={<Login />} />
+
                   <Route path="/" element={<Home />} />
                   <Route path="/categories/:cat" element={<Categories />} />
 
                   <Route path="/map" element={<Map />} />
                   <Route path="/adverstising" element={<Advertising />} />
                   <Route path="/calendar" element={<Calendar />} />
-                  <Route path="/search/:cat/:el" element={<OneEventCard />} />
+                 
                 </Routes>
               </Grid>
               <Grid item sm={3}>
@@ -92,10 +90,8 @@ function App() {
             </Grid>
           </Grid>
         </Grid>
-
-    </BrowserRouter>
-</Provider>
-
+      </BrowserRouter>
+    </Provider>
   );
 }
 

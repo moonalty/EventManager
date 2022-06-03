@@ -4,10 +4,15 @@
   "description": "",
   "main": "add.js",
   "scripts": {
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "start": "app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js --ignore ./sessions",
-    "dbr": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all"
+    "dbr": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all",
+    "db-seed": "npx sequelize-cli db:seed:all",
+    "db-create": "npx sequelize-cli db:create",
+    "db-drop": "npx sequelize-cli db:drop",
+    "db-migrate": "npx sequelize-cli db:migrate"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +27,7 @@
     "moment": "^2.29.3",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
+    "react-yandex-maps": "^4.6.0",
     "sequelize": "^6.20.0",
     "sequelize-cli": "^6.4.1",
     "session-file-store": "^1.5.0",

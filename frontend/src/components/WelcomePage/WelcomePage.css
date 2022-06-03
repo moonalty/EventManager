@@ -1,8 +1,9 @@
 .welcome{
+  margin-bottom: 10px;
    height: 120px;
    background-color: #f9db79;
-   font-family: 'Roboto';
-   font-weight: 400;
+   font-family: 'Oswald';
+   font-weight: 600;
    font-size: 60px;
    color: white;
    display: flex;

@@ -15,6 +15,8 @@ import { getFetchCheckRate, getFetchRate } from "../../redux/thunk/asyncRate";
 import RatingSystem from "../RatingSystem/RatingSystem";
 import { deleteCardFetch } from "../../redux/thunk/asyncCards";
 import { welcomeAC } from "../../redux/actionCreators/welcomeAC";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import './MaterialBigCard.css'
 
 const OneEventCard = () => {
   const navigator = useNavigate();
@@ -29,15 +31,15 @@ const OneEventCard = () => {
   // console.log(catName.name)
   // console.log("SUBSTATE>>>>", subState);
   const { el, cat } = useParams();
-  const catName = allCategories?.title.find(el => el?.id === Number(cat));
+  const catName = allCategories?.title?.find(el => el?.id === Number(cat));
   React.useEffect(() => {
-    dispatch(welcomeAC(catName.name))
+    dispatch(welcomeAC(catName?.name))
   }, [cat])
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(getFetchCheckRate(+el));
     dispatch(getFetchOneCategory(el));
-    const finder = subscribed.find((ele) => ele[0].id === +el);
+    const finder = subscribed?.find((ele) => ele[0].id === +el);
     if (finder) setSubState(!subState);
   }, [el]);
   const subscribe = () => {
@@ -55,8 +57,11 @@ const OneEventCard = () => {
     dispatch(deleteCardFetch(+el));
     navigator(-1);
   };
+  // console.log(oneCat);
   return (
-    <Card className="materialBigMainBox" sx={{ maxWidth: 345 }}>
+    <div className="bigCard">
+      <ArrowBackIcon style={{ color: 'black', width: 40, height: 40, cursor: 'w-resize' }} onClick={() => navigator(-1)}/>
+    <Card className="materialBigMainBox" sx={{ width: 360, }}>
       <CardMedia component="img" height="420" image={oneCat.image} alt="#" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
@@ -71,15 +76,10 @@ const OneEventCard = () => {
           До: {oneCat.date_end}
         </Typography>
         <Typography>
-          Начало в: {oneCat.time_start}
-          <br />
-          Заканчивается: {oneCat.time_end}
+          Мероприятия рассчитано на: {oneCat.people_count} человек
         </Typography>
         <Typography>
-          Мероприятия рассчитано на -{oneCat.people_count} человек
-        </Typography>
-        <Typography>
-          Стоимость билета:
+          Стоимость билета: 
           {oneCat.cost} рублей
         </Typography>
       </CardContent>
@@ -87,7 +87,7 @@ const OneEventCard = () => {
         {user.id === oneCat.user_id ? (
           <Button onClick={deleteCard}>Удалить</Button>
         ) : (
-          <Button size="small">Купить билет</Button>
+            <Button size="small" ><a href={oneCat?.org_link} target="_blank">Купить билет</a></Button>
         )}
 
         {(subState&&user?.role==='Пользователь') && (
@@ -100,6 +100,7 @@ const OneEventCard = () => {
         <RatingSystem setRate={setRate} />
       </div>
     </Card>
+    </div>
   );
 };
 

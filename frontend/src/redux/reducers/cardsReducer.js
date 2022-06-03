@@ -7,6 +7,7 @@ const initialState = {
 };
 
 export const allCardsReducer = (state = initialState, action) => {
+  console.log('CARDSFORMAP!!!!!!!!!!', state.cards);
   switch (action.type) {
     case SHOW_ALL_CARDS:
       return {
@@ -14,7 +15,8 @@ export const allCardsReducer = (state = initialState, action) => {
         cards: action.payload,
       };
     case SHOW_SEARCH_CARDS:
-      return {
+    console.log(action.payload)
+    return {
         ...state,
         search: action.payload,
       };

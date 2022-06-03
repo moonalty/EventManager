@@ -1,17 +1,16 @@
-
+import {loginUserAC} from '../actionCreators/login_user_AC'
 
 export const registrationFetch = (data) => {
-  console.log(data, "asyncReg перед");
-  return () => {
+  
+  return (dispatch) => {
     fetch("/registration", {
       headers: { "content-type": "application/json" },
       method: "POST",
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) =>
-        data.text === "true" ?  window.location.assign("/login") : alert('Введите корректные данные')
-      );
+      .then((data) => dispatch(loginUserAC(data)))
+      
   };
 };
 

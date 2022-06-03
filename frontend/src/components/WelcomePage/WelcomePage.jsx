@@ -8,7 +8,7 @@ function WelcomePage(props) {
   console.log(welcome);
   return (
     <div className='welcome' >
-      {welcome}
+       {welcome}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { Avatar, Link, ListItem, ListItemAvatar, ListItemText, MenuItem } from '@mui/material';
 import React from 'react';
-import FlagIcon from '@mui/icons-material/Flag';
+import ColorLensIcon from '@mui/icons-material/ColorLens';
 
 function EachCategories({ eachcategory, handleClose}) {
 
@@ -11,13 +11,13 @@ function EachCategories({ eachcategory, handleClose}) {
     //   </MenuItem>
     // </>
 
-    <ListItem className='ListItemCategories' onClick={() => handleClose(eachcategory.id)}>
+    <ListItem className='ListItemCategories' onClick={() => handleClose(eachcategory.id)} >
       <ListItemAvatar>
-        <Avatar>
-          <i class="gg-alarm"></i>
+        <Avatar style={{ backgroundColor: '#f9db79'}}>
+          <ColorLensIcon />
         </Avatar>
       </ListItemAvatar>
-      <ListItemText primary={eachcategory.name}  />
+      <ListItemText style={{ fontFamily: 'Oswald' }} primary={eachcategory.name}  />
     </ListItem>
   );
 }

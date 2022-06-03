@@ -18,17 +18,6 @@ import { margin } from '@mui/system';
 
 
 
-// function LinkTab(props) {
-//   return (
-//     <Tab
-//       component="a"
-//       onClick={(event) => {
-//         event.preventDefault();
-//       }}
-//       {...props}
-//     />
-//   );
-// }
 
 function Navbar() {
   const [value, setValue] = React.useState(1);
@@ -37,28 +26,34 @@ function Navbar() {
 
    const {user} = useSelector(store=>store.user);
     
-
+   
    React.useEffect(()=>{
-    dispatch(sessionFetch())
-   }, [dispatch])
+      
+        dispatch(sessionFetch())
+
+    
+
+
+   }, [])
    
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+console.log(user)
 
   return (
 
-    <Box sx={{ width: "100%" }} >
+    <Box sx={{ width: "100%", height:'80px' }} >
 
-      <Tabs aria-label="nav tabs example" sx={{  height: '60px' }} >
+
+      <Tabs aria-label="nav tabs example" sx={{ height: '100px' }} >
         
-        <img src="https://ktokyda.ru/shared/images/fe/logo.png?v=0.0.2" alt="" style={{ width: 144, height: 40, margin:10}} onClick={() => navigate(`/`)}/>
-        <Search  />
+        <img src="/image/logo.png" alt="" style={{ width: 80, height: 80, marginLeft:10, marginRight:30}} onClick={() => navigate(`/`)}/>
+        <Search  style={{marginRight: 300}}/>
         {Object.keys(user).length == 0 ? 
         <>
-        <Tab label="Регистрация" onClick={() => navigate(`/registration`)} />
+          <Tab label="Регистрация" onClick={() => navigate(`/registration`)} />
         <Tab label="Логин" onClick={() => navigate(`/login`)} />
           </> :
         <Profile />
