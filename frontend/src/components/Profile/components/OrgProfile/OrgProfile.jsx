@@ -20,6 +20,7 @@ import { deleteCardFetch } from "../../../../redux/thunk/asyncCards";
 
 export default function OrgProfile() {
   const { orgCards } = useSelector((state) => state.orgCards);
+  const navigate = useNavigate();
   console.log("ORG>>>>", orgCards);
   const dispatch = useDispatch();
   React.useEffect(() => {
@@ -28,6 +29,7 @@ export default function OrgProfile() {
   const deleteCard = (id) => {
     dispatch(deleteCardFetch(id));
     dispatch(getFetchOrgCards());
+    
   };
   const [orgModalActive, setOrgModalActive] = React.useState(false);
   return (

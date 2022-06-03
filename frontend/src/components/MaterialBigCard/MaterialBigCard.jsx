@@ -15,6 +15,8 @@ import { getFetchCheckRate, getFetchRate } from "../../redux/thunk/asyncRate";
 import RatingSystem from "../RatingSystem/RatingSystem";
 import { deleteCardFetch } from "../../redux/thunk/asyncCards";
 import { welcomeAC } from "../../redux/actionCreators/welcomeAC";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import './MaterialBigCard.css'
 
 const OneEventCard = () => {
   const navigator = useNavigate();
@@ -55,9 +57,11 @@ const OneEventCard = () => {
     dispatch(deleteCardFetch(+el));
     navigator(-1);
   };
-  console.log(oneCat);
+  // console.log(oneCat);
   return (
-    <Card className="materialBigMainBox" sx={{ width: 360 }}>
+    <div className="bigCard">
+      <ArrowBackIcon style={{ color: 'black', width: 40, height: 40, cursor: 'w-resize' }} onClick={() => navigator(-1)}/>
+    <Card className="materialBigMainBox" sx={{ width: 360, }}>
       <CardMedia component="img" height="420" image={oneCat.image} alt="#" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
@@ -96,6 +100,7 @@ const OneEventCard = () => {
         <RatingSystem setRate={setRate} />
       </div>
     </Card>
+    </div>
   );
 };
 

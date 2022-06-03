@@ -15,7 +15,8 @@ export const allCardsReducer = (state = initialState, action) => {
         cards: action.payload,
       };
     case SHOW_SEARCH_CARDS:
-      return {
+    console.log(action.payload)
+    return {
         ...state,
         search: action.payload,
       };
