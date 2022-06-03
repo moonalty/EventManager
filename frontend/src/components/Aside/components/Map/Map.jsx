@@ -91,8 +91,8 @@ function MyMap() {
                   {placemarks?.map((el, index) => (
                     <Placemark geometry={el} properties ={{
                       // hintContent: mapIsOpen[index],
-                      balloonContent:mapIsOpen[index].adress,
-                      iconCaption : mapIsOpen[index].title
+                      balloonContent:mapIsOpen[index]?.adress,
+                      iconCaption : mapIsOpen[index]?.title
                   }} />
                   ))}
                 </Map>

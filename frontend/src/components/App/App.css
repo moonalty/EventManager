@@ -92,6 +92,11 @@
 }
 .infosDiv {
 }
+.bigCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
 .tinyMainbox2 {
   margin: 0;

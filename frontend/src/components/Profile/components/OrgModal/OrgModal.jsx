@@ -76,6 +76,7 @@ function OrgModal({ active, setActive }, props) {
               id="outlined-required"
               label="Добавить фото"
               InputLabelProps={{ shrink: true }}
+              autoComplete="off"
             />
             <CardContent>
               <TextField
@@ -84,6 +85,7 @@ function OrgModal({ active, setActive }, props) {
                 style={{ width: "400px", margin: "5px" }}
                 id="outlined-required"
                 label="Название мероприятия"
+                autoComplete="off"
               />
               <br />
               <Select
@@ -137,6 +139,7 @@ function OrgModal({ active, setActive }, props) {
                 style={{ width: "400px", margin: "5px" }}
                 id="outlined-required"
                 label="Стоимость"
+                autoComplete="off"
               />
               <br />
               <TextField
@@ -145,6 +148,7 @@ function OrgModal({ active, setActive }, props) {
                 style={{ width: "400px", margin: "5px" }}
                 id="outlined-required"
                 label="Адрес проведения мероприятия"
+                autoComplete="off"
               />
               <br />
               <Select
@@ -174,6 +178,7 @@ function OrgModal({ active, setActive }, props) {
                 style={{ width: "400px", margin: "5px" }}
                 id="outlined-required"
                 label="Ссылка на сайт организатора"
+                autoComplete="off"
               />
               <br />
               <TextField
@@ -182,6 +187,7 @@ function OrgModal({ active, setActive }, props) {
                 style={{ width: "400px", margin: "5px" }}
                 id="outlined-required"
                 label="Описание"
+                autoComplete="off"
               />
               <br />
             </CardContent>
