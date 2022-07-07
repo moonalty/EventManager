@@ -1,23 +1,29 @@
-import { Avatar, Link, ListItem, ListItemAvatar, ListItemText, MenuItem } from '@mui/material';
-import React from 'react';
-import ColorLensIcon from '@mui/icons-material/ColorLens';
+import {
+  Avatar,
+  Link,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+  MenuItem,
+} from "@mui/material";
+import React from "react";
+import ColorLensIcon from "@mui/icons-material/ColorLens";
 
-function EachCategories({ eachcategory, handleClose}) {
-
+function EachCategories({ eachcategory, handleClose }) {
   return (
-    // <>
-    //   <MenuItem onClick={()=>handleClose(eachcategory.id)} disableRipple>
-    //     {eachcategory.name}
-    //   </MenuItem>
-    // </>
-
-    <ListItem className='ListItemCategories' onClick={() => handleClose(eachcategory.id)} >
+    <ListItem
+      className="ListItemCategories"
+      onClick={() => handleClose(eachcategory.id)}
+    >
       <ListItemAvatar>
-        <Avatar style={{ backgroundColor: '#f9db79'}}>
+        <Avatar style={{ backgroundColor: "#f9db79" }}>
           <ColorLensIcon />
         </Avatar>
       </ListItemAvatar>
-      <ListItemText style={{ fontFamily: 'Oswald' }} primary={eachcategory.name}  />
+      <ListItemText
+        style={{ fontFamily: "Oswald" }}
+        primary={eachcategory.name}
+      />
     </ListItem>
   );
 }

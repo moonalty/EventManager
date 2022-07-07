@@ -7,7 +7,7 @@ const initialState = {
 };
 
 export const allCardsReducer = (state = initialState, action) => {
-  console.log('CARDSFORMAP!!!!!!!!!!', state.cards);
+ 
   switch (action.type) {
     case SHOW_ALL_CARDS:
       return {

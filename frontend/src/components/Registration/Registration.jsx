@@ -45,8 +45,6 @@ function Registration() {
     }
   };
 
-  console.log("_____________________----регистрация-->", user);
-
   return (
     <>
       <Box

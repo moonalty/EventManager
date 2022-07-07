@@ -96,7 +96,7 @@ function OrgModal({ active, setActive }, props) {
                 onChange={categoriesChange}
                 name="categoryName"
                 renderValue={(selected) => {
-                  console.log("SELECTED", selected);
+                
                   if (!!!selected) {
                     return <em>Категория мероприятия</em>;
                   }

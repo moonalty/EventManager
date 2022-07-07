@@ -20,19 +20,17 @@ const OneEventCard = () => {
   const navigator = useNavigate();
   const { oneCategory: oneCat } = useSelector((state) => state.oneCategory);
   const { user } = useSelector((state) => state.user);
-  // console.log("USER>>>>>>>>>>>", user);
-  // console.log("oneCAT>>>>>>>", oneCat);
+
   const { subscribed } = useSelector((state) => state.subscribed);
-  const { allCategories } = useSelector(state => state.allCategories)
-  // const { rate } = useSelector((state) => state.rate);
+  const { allCategories } = useSelector((state) => state.allCategories);
+
   const [subState, setSubState] = React.useState(true);
-  // console.log(catName.name)
-  // console.log("SUBSTATE>>>>", subState);
+
   const { el, cat } = useParams();
-  const catName = allCategories?.title?.find(el => el?.id === Number(cat));
+  const catName = allCategories?.title?.find((el) => el?.id === Number(cat));
   React.useEffect(() => {
-    dispatch(welcomeAC(catName?.name))
-  }, [cat])
+    dispatch(welcomeAC(catName?.name));
+  }, [cat]);
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(getFetchCheckRate(+el));
@@ -41,9 +39,9 @@ const OneEventCard = () => {
     if (finder) setSubState(!subState);
   }, [el]);
   const subscribe = () => {
-    if(user?.id) {
-    dispatch(getFetchSubscribe(cat, el));
-      navigator(-1)
+    if (user?.id) {
+      dispatch(getFetchSubscribe(cat, el));
+      navigator(-1);
     }
   };
   const setRate = (e) => {
@@ -55,7 +53,7 @@ const OneEventCard = () => {
     dispatch(deleteCardFetch(+el));
     navigator(-1);
   };
-  console.log(oneCat);
+
   return (
     <Card className="materialBigMainBox" sx={{ width: 360 }}>
       <CardMedia component="img" height="420" image={oneCat.image} alt="#" />
@@ -75,7 +73,7 @@ const OneEventCard = () => {
           Мероприятия рассчитано на: {oneCat.people_count} человек
         </Typography>
         <Typography>
-          Стоимость билета: 
+          Стоимость билета:
           {oneCat.cost} рублей
         </Typography>
       </CardContent>
@@ -83,10 +81,14 @@ const OneEventCard = () => {
         {user.id === oneCat.user_id ? (
           <Button onClick={deleteCard}>Удалить</Button>
         ) : (
-            <Button size="small" ><a href={oneCat?.org_link} target="_blank">Купить билет</a></Button>
+          <Button size="small">
+            <a href={oneCat?.org_link} target="_blank">
+              Купить билет
+            </a>
+          </Button>
         )}
 
-        {(subState&&user?.role==='Пользователь') && (
+        {subState && user?.role === "Пользователь" && (
           <Button onClick={subscribe} size="small">
             Добавить в избранное
           </Button>

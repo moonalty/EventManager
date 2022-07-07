@@ -20,7 +20,7 @@ import { deleteCardFetch } from "../../../../redux/thunk/asyncCards";
 
 export default function OrgProfile() {
   const { orgCards } = useSelector((state) => state.orgCards);
-  console.log("ORG>>>>", orgCards);
+
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(getFetchOrgCards());

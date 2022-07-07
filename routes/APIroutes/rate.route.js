@@ -8,7 +8,7 @@ router
     const { el, rate } = req.body;
     const currRate = rate.split(" ").shift();
     const card = await Card.findOne({ where: { id: el }, raw: true });
-    // const getR = await User.findOne({ where: { id: card.user_id }, raw: true });
+
     const user = await User.update(
       { rating: +(+currRate) },
       { where: { id: card.user_id } }

@@ -1,7 +1,6 @@
 import * as React from "react";
 
 const Paginations = ({ cardsPerPage, total, paginate }) => {
-  console.log("TOTAL>>", total);
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(total / cardsPerPage); i++) {
     pageNumbers.push(i);

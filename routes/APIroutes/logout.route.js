@@ -1,16 +1,13 @@
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
-const {User} = require('../../db/models')
+const { User } = require("../../db/models");
 
-
-router.get('/', (req, res) => {
-  const {
-    user
-  } = req.session;
+router.get("/", (req, res) => {
+  const { user } = req.session;
   if (user) {
     req.session.destroy();
-    // res.clearCookie('sid');
-    res.json({text:'выйти'});
+
+    res.json({ text: "выйти" });
   }
 });
 

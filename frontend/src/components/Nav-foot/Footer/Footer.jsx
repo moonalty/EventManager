@@ -50,7 +50,7 @@ export default function Footer(props) {
   const classes = useStyles();
 
   const content = {
-    // 'brand': { image: 'nereus-assets/img/nereus-light.png', width: 110 },
+ 
     'copy': '© 2022 Сделано в Санкт-Петербурге.',
     'link1': 'Адрес: г. Санкт-Петербург, ул. Кирочная, д.19',
     'link2': '@: spb@mail.ru',
@@ -59,13 +59,7 @@ export default function Footer(props) {
     ...props.content
   };
 
-  // let brand;
 
-  // if (content.brand.image) {
-  //   brand = <img src={ content.brand.image } alt="" width={ content.brand.width } />;
-  // } else {
-  //   brand = content.brand.text || '';
-  // }
 
   return (
     <footer>
